@@ -38,7 +38,7 @@ const AgenticAI = () => {
 
             {/* Large Background Text */}
             <div className="absolute inset-0 flex items-center justify-center z-0 pointer-events-none">
-                <h2 className="text-[120px] lg:text-[180px] font-bold text-white/10 whitespace-nowrap select-none">
+                <h2 className="text-[120px] lg:text-[180px] font-bold text-white/5 whitespace-nowrap select-none">
                     Agentic AI at work
                 </h2>
             </div>
@@ -72,9 +72,6 @@ const AgenticAI = () => {
                                     {index !== flowCards.length - 1 && (
                                         <div className="absolute left-1/2 -top-4 -bottom-6 lg:-bottom-8 w-[2px] bg-white/30 -translate-x-1/2 -z-10"></div>
                                     )}
-
-                                    {/* Connection dot */}
-                                    <div className="absolute left-1/2 -top-4 w-3 h-3 bg-white rounded-full -translate-x-1/2 z-10"></div>
 
                                     {/* Card */}
                                     <div className="w-full min-h-[auto] lg:min-h-[229px] rounded-[14px] border border-[#C5C5C5] p-6 lg:p-8 backdrop-blur-[15px] bg-white/80 transition-transform hover:scale-[1.02] duration-300">

@@ -74,31 +74,32 @@ const Hero = () => {
 
 
 
-                        <div className="w-full overflow-hidden relative py-4">
+                        <div className="w-full overflow-hidden relative py-4 flex flex-col gap-6 lg:gap-8">
                             {/* Left Fade Overlay */}
                             <div className="absolute left-0 top-0 bottom-0 w-[50px] lg:w-[200px] z-20 pointer-events-none bg-gradient-to-r from-[#ffff] via-[#F4F4F4]/20 to-transparent"></div>
                             {/* Right Fade Overlay */}
                             <div className="absolute right-0 top-0 bottom-0 w-[50px] lg:w-[200px] z-20 pointer-events-none bg-gradient-to-l from-[#ffff] via-[#F4F4F4]/20 to-transparent"></div>
+
+                            {/* Row 1 - Scroll Left */}
                             <div className="flex animate-scroll" style={{ width: 'max-content' }}>
-                                {/* First Set - Dubbed to ensure width > container */}
                                 <div className="flex items-center shrink-0">
-                                    {[...logoCloud.logos, ...logoCloud.logos].map((logo, index) => (
-                                        <div key={`1-${index}`} className="flex items-center gap-2 mx-4 lg:mx-8">
-                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" className="text-gray-400">
-                                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-1.07 3.97-2.9 5.4z" />
-                                            </svg>
-                                            <span className="text-xl font-bold text-gray-400 whitespace-nowrap">{logo}</span>
+                                    {[...logoCloud.rows[0], ...logoCloud.rows[0], ...logoCloud.rows[0]].map((logo, index) => (
+                                        <div key={`r1-1-${index}`} className="flex items-center gap-2 mx-6 lg:mx-10 opacity-60 hover:opacity-100 transition-opacity duration-300 grayscale hover:grayscale-0 cursor-default">
+                                            {/* Logic to show logo image if available - currently using text + icon placeholder */}
+                                            {/* Ideally we map names to imported images */}
+                                            <span className="text-xl lg:text-2xl font-bold font-noto tracking-tight text-gray-500">{logo}</span>
                                         </div>
                                     ))}
                                 </div>
-                                {/* Duplicate Set for Seamless Loop */}
+                            </div>
+
+                            {/* Row 2 - Scroll Right (or Offset) - Implementing reverse scroll would need a new keyframe or just offset */}
+                            {/* For now, let's keep it scrolling left but with different content/speed or just offset start */}
+                            <div className="flex animate-scroll" style={{ width: 'max-content', animationDuration: '30s', animationDirection: 'reverse' }}>
                                 <div className="flex items-center shrink-0">
-                                    {[...logoCloud.logos, ...logoCloud.logos].map((logo, index) => (
-                                        <div key={`2-${index}`} className="flex items-center gap-2 mx-4 lg:mx-8">
-                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" className="text-gray-300">
-                                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-1.07 3.97-2.9 5.4z" />
-                                            </svg>
-                                            <span className="text-xl font-bold text-gray-400 whitespace-nowrap">{logo}</span>
+                                    {[...logoCloud.rows[1], ...logoCloud.rows[1], ...logoCloud.rows[1]].map((logo, index) => (
+                                        <div key={`r2-1-${index}`} className="flex items-center gap-2 mx-6 lg:mx-10 opacity-60 hover:opacity-100 transition-opacity duration-300 grayscale hover:grayscale-0 cursor-default">
+                                            <span className="text-xl lg:text-2xl font-bold font-noto tracking-tight text-gray-500">{logo}</span>
                                         </div>
                                     ))}
                                 </div>

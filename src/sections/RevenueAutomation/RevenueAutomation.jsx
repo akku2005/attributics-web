@@ -108,11 +108,11 @@ const RevenueAutomation = () => {
                                 {slides[currentIndex].topTag}
                             </span>
 
-                            <h2 className="font-noto text-3xl lg:text-[40px] leading-[1.2] font-medium text-[#18181B] mb-4 lg:mb-6 min-h-[auto] lg:min-h-[82px] transition-all duration-300">
+                            <h2 className="font-noto text-3xl lg:text-[40px] leading-[1.2] font-medium text-[#18181B] mb-4 lg:mb-6 min-h-[auto] lg:min-h-[120px] transition-all duration-300">
                                 {slides[currentIndex].topHeadline}
                             </h2>
 
-                            <p className="text-sm lg:text-[16px] leading-relaxed text-[#52525B] min-h-[auto] lg:min-h-[72px] transition-all duration-300">
+                            <p className="text-sm lg:text-[16px] leading-relaxed text-[#52525B] min-h-[auto] lg:min-h-[96px] transition-all duration-300">
                                 {slides[currentIndex].topDescription}
                             </p>
                         </div>
@@ -158,7 +158,7 @@ const RevenueAutomation = () => {
                             {slides[bottomIndex].qaLabel}
                         </span>
 
-                        <h3 className="font-noto text-xl lg:text-[24px] leading-relaxed font-normal text-[#18181B] max-w-full lg:max-w-[800px] min-h-[auto] lg:min-h-[72px]">
+                        <h3 className="font-noto text-xl lg:text-[24px] leading-relaxed font-normal text-[#18181B] max-w-full lg:max-w-[800px] min-h-[auto] lg:min-h-[96px]">
                             {slides[bottomIndex].qaHeadline}
                         </h3>
                     </div>

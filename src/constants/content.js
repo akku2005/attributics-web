@@ -41,9 +41,9 @@ export const siteContent = {
 
     logoCloud: {
         title: 'Trusted by leading enterprises',
-        logos: [
-            'Stripe', 'Shopify', 'Notion', 'Spotify', 'Slack',
-            'Discord', 'Figma', 'Linear', 'Vercel', 'Supabase',
+        rows: [
+            ['Jockey', 'Jockey', 'Jockey', 'Jockey', 'Jockey', 'Jockey'],
+            ['Jockey', 'Jockey', 'Jockey', 'Jockey', 'Jockey', 'Jockey']
         ],
     },
 
