@@ -19,7 +19,6 @@ const HomePage = () => {
         <AgenticAI />
         <CTA />
         <RevenueAutomation />
-        
       </Suspense>
     </main>
   );
