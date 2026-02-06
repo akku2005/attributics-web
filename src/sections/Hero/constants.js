@@ -1,23 +1,23 @@
 
-import AkasaAirLogo from "../../assets/brands/akasaair.svg?react";
-import AmericanaLogo from "../../assets/brands/americana.svg?react";
-import ApparelGroupLogo from "../../assets/brands/apparelgroup.svg?react";
-import AWSLogo from "../../assets/brands/aws.svg?react";
-import AzureLogo from "../../assets/brands/azure.svg?react";
-import CasetifyLogo from "../../assets/brands/casetify.svg?react";
-import ClevertapLogo from "../../assets/brands/clevertap.svg?react";
-import ClubMahindraLogo from "../../assets/brands/clubmahindra.svg?react";
-import DatabricksLogo from "../../assets/brands/databricks.svg?react";
-import GynovedaLogo from "../../assets/brands/gynoveda.svg?react";
-import HBOMaxLogo from "../../assets/brands/hbomax.svg?react";
-import JockeyLogo from "../../assets/brands/jockey.svg?react";
-import KFCLogo from "../../assets/brands/kfc.svg?react";
-import LevisLogo from "../../assets/brands/levis.svg?react";
-import PhitureLogo from "../../assets/brands/phiture.svg?react";
-import PizzaHutLogo from "../../assets/brands/pizzahut.svg?react";
-import PowerBiLogo from "../../assets/brands/powerbi.svg?react";
-import TableauLogo from "../../assets/brands/tableau.svg?react";
-import UnicefLogo from "../../assets/brands/unicef.svg?react";
+import AkasaAirLogo from "../../assets/brands/akasaair.svg";
+import AmericanaLogo from "../../assets/brands/americana.svg";
+import ApparelGroupLogo from "../../assets/brands/apparelgroup.svg";
+import AWSLogo from "../../assets/brands/aws.svg";
+import AzureLogo from "../../assets/brands/azure.svg";
+import CasetifyLogo from "../../assets/brands/casetify.svg";
+import ClevertapLogo from "../../assets/brands/clevertap.svg";
+import ClubMahindraLogo from "../../assets/brands/clubmahindra.svg";
+import DatabricksLogo from "../../assets/brands/databricks.svg";
+import GynovedaLogo from "../../assets/brands/gynoveda.svg";
+import HBOMaxLogo from "../../assets/brands/hbomax.svg";
+import JockeyLogo from "../../assets/brands/jockey.svg";
+import KFCLogo from "../../assets/brands/kfc.svg";
+import LevisLogo from "../../assets/brands/levis.svg";
+import PhitureLogo from "../../assets/brands/phiture.svg";
+import PizzaHutLogo from "../../assets/brands/pizzahut.svg";
+import PowerBiLogo from "../../assets/brands/powerbi.svg";
+import TableauLogo from "../../assets/brands/tableau.svg";
+import UnicefLogo from "../../assets/brands/unicef.svg";
 
 
 export const logoMap = {

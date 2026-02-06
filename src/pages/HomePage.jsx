@@ -6,7 +6,7 @@ const Hero = lazy(() => import('../sections/Hero/Hero'));
 const Metrics = lazy(() => import('../sections/Metrics/Metrics'));
 const Features = lazy(() => import('../sections/Features/Features'));
 const AgenticAI = lazy(() => import('../sections/AgenticAI/AgenticAI'));
-const CTA = lazy(() => import('../sections/CTA/CTA'));
+const Partners = lazy(() => import('../sections/Partners/Partners'));
 const RevenueAutomation = lazy(() => import('../sections/RevenueAutomation/RevenueAutomation'));
 
 const HomePage = () => {
@@ -17,7 +17,7 @@ const HomePage = () => {
         <Metrics />
         <Features />
         <AgenticAI />
-        <CTA />
+        <Partners />
         <RevenueAutomation />
       </Suspense>
     </main>

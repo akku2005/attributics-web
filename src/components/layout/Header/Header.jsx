@@ -63,13 +63,15 @@ const Header = () => {
                 {/* CTA Section */}
                 <div className="flex items-center gap-2 lg:gap-3">
                     <div className="hidden lg:block">
-                        <Button
-                            variant="primary"
-                            size="sm"
-                            className="bg-black text-white hover:bg-gray-900 rounded-lg px-6 py-2 text-sm font-semibold transition-colors"
-                        >
-                            {nav.cta.contact}
-                        </Button>
+                        <Link to="/contact">
+                            <Button
+                                variant="primary"
+                                size="sm"
+                                className="bg-black text-white hover:bg-gray-900 rounded-lg px-6 py-2 text-sm font-semibold transition-colors"
+                            >
+                                {nav.cta.contact}
+                            </Button>
+                        </Link>
                     </div>
 
                     {/* Mobile Menu Button - Visible mainly on small screens */}
@@ -108,20 +110,34 @@ const Header = () => {
             {isMobileMenuOpen && (
                 <div className="absolute top-20 left-4 right-4 bg-white rounded-2xl shadow-xl border border-gray-100 p-4 lg:hidden">
                     <nav className="flex flex-col gap-4">
-                        {nav.links.map((link) => (
-                            <a
-                                key={link.label}
-                                href={link.href}
-                                onClick={(e) => handleNavClick(e, link.href)}
-                                className="font-mono text-[14px] font-normal text-[#131212] hover:text-gray-900 uppercase leading-[100%] tracking-[0%] px-2 py-1 cursor-pointer transition-colors"
-                            >
-                                {link.label}
-                            </a>
-                        ))}
+                        {nav.links.map((link) => {
+                            const isRoute = link.href === '/' || link.href === '/about' || link.href === '/resources' || link.href === '/careers';
+                            return isRoute ? (
+                                <Link
+                                    key={link.label}
+                                    to={link.href}
+                                    onClick={() => setIsMobileMenuOpen(false)}
+                                    className="font-mono text-[14px] font-normal text-[#131212] hover:text-gray-900 uppercase leading-[100%] tracking-[0%] px-2 py-1 cursor-pointer transition-colors"
+                                >
+                                    {link.label}
+                                </Link>
+                            ) : (
+                                <a
+                                    key={link.label}
+                                    href={link.href}
+                                    onClick={(e) => handleNavClick(e, link.href)}
+                                    className="font-mono text-[14px] font-normal text-[#131212] hover:text-gray-900 uppercase leading-[100%] tracking-[0%] px-2 py-1 cursor-pointer transition-colors"
+                                >
+                                    {link.label}
+                                </a>
+                            );
+                        })}
                         <div className="pt-2 border-t border-gray-100 mt-2">
-                            <Button variant="primary" size="sm" className="w-full justify-center bg-black rounded-lg text-white">
-                                {nav.cta.contact}
-                            </Button>
+                            <Link to="/contact">
+                                <Button variant="primary" size="sm" className="w-full justify-center bg-black rounded-lg text-white">
+                                    {nav.cta.contact}
+                                </Button>
+                            </Link>
                         </div>
                     </nav>
                 </div>

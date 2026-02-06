@@ -20,10 +20,11 @@ const featureSlides = [
 ];
 
 const renderLogoRow = (row) => row.map((logo, index) => {
-    const Logo = logoMap[logo];
+    const logoUrl = logoMap[logo];
+    if (!logoUrl) return null; // Skip if logo doesn't exist
     return (
         <div key={`r1-${index}`} className="flex items-center gap-2 mx-6 lg:mx-10 opacity-60 hover:opacity-100 transition-opacity duration-300 grayscale hover:grayscale-0 cursor-default">
-            <Logo className="w-auto h-10 text-gray-500" />
+            <img src={logoUrl} alt={logo} className="w-auto h-10" />
         </div>
     );
 });

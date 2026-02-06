@@ -151,7 +151,7 @@ export const siteContent = {
             },
             {
                 name: 'Team member 3',
-                role: 'Founder',
+                role: 'CFO',
                 bio: 'Marketing strategist with a passion for customer success and growth.',
             },
             {
@@ -170,12 +170,6 @@ export const siteContent = {
                 bio: 'Operations expert ensuring seamless execution and growth.',
             },
         ],
-    },
-
-    cta: {
-        badge: 'READY TO GET STARTED',
-        headline: 'Get a free audit for an intelligent layer for your martech stack.',
-        buttonText: 'Book an audit',
     },
 
     footer: {

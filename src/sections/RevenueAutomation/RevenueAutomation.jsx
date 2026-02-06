@@ -60,28 +60,6 @@ const RevenueAutomation = () => {
                     </h2>
                 </div>
 
-<<<<<<< HEAD
-            {/* Case Study Cards - Full Width Carousel */}
-            <div className=" overflow-x-auto scrollbar-hide" style={{ marginLeft: '202px' }}>
-                <div className="flex gap-[38px] w-max" style={{ width: 'max-content' }}>
-                    {caseStudies.map((study) => (
-                        <div
-                            key={study.id}
-                            className="flex-shrink-0 w-[341px] rounded-[10px] p-[30px] flex flex-col justify-between"
-                            style={{
-                                background: study.gradient,
-                                minHeight: '367px'
-                            }}
-                        >
-                            <div className="flex flex-col gap-[30px]">
-                                {/* Card Title */}
-                                <h3
-                                    className="text-white uppercase text-[24px] leading-[100%]"
-                                    style={{ fontFamily: "'IBM Plex Mono', monospace", fontWeight: 400 }}
-                                >
-                                    {study.title}
-                                </h3>
-=======
                 {/* Case Study Cards - scrollable within Container boundary */}
                 <div className="overflow-x-auto scrollbar-hide revenue-cards-scroll">
                     <div 
@@ -105,7 +83,6 @@ const RevenueAutomation = () => {
                                     >
                                         {study.title}
                                     </h3>
->>>>>>> master
 
                                     {/* Card Description */}
                                     <p
