@@ -8,7 +8,7 @@ const CTA = lazy(() => import('../sections/CTA/CTA'));
 
 const AboutPage = () => {
   return (
-    <main>
+    <main style={{overflow: 'hidden'}}>
       <Suspense fallback={<GlobalLoader />}>
         <About />
         <Team />
