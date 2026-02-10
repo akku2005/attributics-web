@@ -1,4 +1,5 @@
 import Container from '../../components/layout/Container';
+import Block from '../../components/layout/Block/Block';
 import useEmblaCarousel from 'embla-carousel-react';
 // import Autoplay from 'embla-carousel-autoplay';
 
@@ -47,78 +48,76 @@ const RevenueAutomation = () => {
     const isMobile = window.innerWidth < 1024;
 
     return (
-        <section id="solutions" className="py-12 lg:py-24 bg-white overflow-hidden">
+        <Block height='75vh' xpad='15%'>
+        <section id="solutions" className="overflow-hidden py-10">
             {/* Section Header - Inside Container */}
-            <Container>
-                <div className="mb-10">
-                    <p
-                        className="uppercase text-[16px] leading-[100%] tracking-[0%] text-gray-500 mb-4"
-                        style={{
-                            fontFamily: "'IBM Plex Mono', monospace",
-                            fontWeight: 400,
-                            maxWidth: '605.5px'
-                        }}
-                    >
-                        YOUR PLAYBOOK FOR RETENTION
-                    </p>
-                    <h2
-                        className="text-[32px] font-normal text-[#000000] leading-[130%]"
-                        style={{
-                            fontFamily: "'IBM Plex Sans', sans-serif",
-                            maxWidth: '605.5px'
-                        }}
-                    >
-                        From Manual Campaigns to Intelligent Revenue Automation
-                    </h2>
-                </div>
+            <div className="h-[25%] w-full py-8 flex flex-col justify-center items-start">
+                <p className="uppercase text-[16px] leading-[100%] tracking-[0%] text-gray-500 mb-4"
+                    style={{
+                        fontFamily: "'IBM Plex Mono', monospace",
+                        fontWeight: 400,
+                        maxWidth: '605.5px'
+                    }}
+                >
+                    YOUR PLAYBOOK FOR RETENTION
+                </p>
+                <h2
+                    className="text-[32px] font-normal text-[#000000] leading-[130%]"
+                    style={{
+                        fontFamily: "'IBM Plex Sans', sans-serif",
+                        maxWidth: '605.5px'
+                    }}
+                >
+                    From Manual Campaigns to Intelligent Revenue Automation
+                </h2>
+            </div>
 
-                {/* Case Study Cards - scrollable within Container boundary */}
-                <div ref={emblaRef} className={isMobile ? '' : 'mask-fade-x'} style={{ '--fade': '10px' }}>
-                    <div 
-                        className="flex gap-9.75 embla__container" 
-                        style={{  marginLeft: '4px' }}
-                    >
-                        {caseStudies.map((study) => (
-                            <div
-                                key={study.id}
-                                className="shrink-0 w-85.25 embla__slide rounded-[10px] p-7.5 flex flex-col justify-between"
-                                style={{
-                                    background: study.gradient,
-                                    minHeight: '367px'
-                                }}
-                            >
-                                <div className="flex flex-col gap-7.5">
-                                    {/* Card Title */}
-                                    <h3
-                                        className="text-white uppercase text-[24px] leading-[100%]"
-                                        style={{ fontFamily: "'IBM Plex Mono', monospace", fontWeight: 400 }}
-                                    >
-                                        {study.title}
-                                    </h3>
+            {/* Case Study Cards - scrollable within Container boundary */}
+            <div ref={emblaRef} className={isMobile ? '' : 'mask-fade-x'} style={{ '--fade': '10px' }}>
+                <div className="flex gap-9.75 embla__container" 
+                    style={{  marginLeft: '4px' }}
+                >
+                    {caseStudies.map((study) => (
+                        <div
+                            key={study.id}
+                            className="shrink-0 w-85.25 embla__slide rounded-[10px] p-7.5 flex flex-col justify-between"
+                            style={{
+                                background: study.gradient,
+                                minHeight: '367px'
+                            }}
+                        >
+                            <div className="flex flex-col gap-7.5">
+                                {/* Card Title */}
+                                <h3
+                                    className="text-white uppercase text-[24px] leading-[100%]"
+                                    style={{ fontFamily: "'IBM Plex Mono', monospace", fontWeight: 400 }}
+                                >
+                                    {study.title}
+                                </h3>
 
-                                    {/* Card Description */}
-                                    <p
-                                        className="text-white text-[16px] leading-[140%]"
-                                        style={{ fontFamily: "'IBM Plex Sans', sans-serif", fontWeight: 400 }}
-                                    >
-                                        {study.description}
-                                    </p>
-                                </div>
-
-                                {/* Read More Link */}
-                                <a
-                                    href="#"
-                                    className="text-white text-[16px] leading-[140%] inline-flex items-center gap-2 hover:opacity-80 transition-opacity mt-7.5"
+                                {/* Card Description */}
+                                <p
+                                    className="text-white text-[16px] leading-[140%]"
                                     style={{ fontFamily: "'IBM Plex Sans', sans-serif", fontWeight: 400 }}
                                 >
-                                    Read more →
-                                </a>
+                                    {study.description}
+                                </p>
                             </div>
-                        ))}
-                    </div>
+
+                            {/* Read More Link */}
+                            <a
+                                href="#"
+                                className="text-white text-[16px] leading-[140%] inline-flex items-center gap-2 hover:opacity-80 transition-opacity mt-7.5"
+                                style={{ fontFamily: "'IBM Plex Sans', sans-serif", fontWeight: 400 }}
+                            >
+                                Read more →
+                            </a>
+                        </div>
+                    ))}
                 </div>
-            </Container>
+            </div>
         </section>
+        </Block>
     );
 };
 

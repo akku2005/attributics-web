@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Container from '../../components/layout/Container';
+import Block from '../../components/layout/Block';
 import { siteContent } from '../../constants/content';
 import useEmblaCarousel from 'embla-carousel-react';
 import Autoplay from 'embla-carousel-autoplay';
@@ -48,16 +49,17 @@ const MetricCard = ({
       <div
         onMouseEnter={!isMobile ? () => setExpandedCard(index) : undefined}
         onMouseLeave={!isMobile ? () => setExpandedCard(0) : undefined}
-        className="relative rounded-md border border-[#747474] bg-white shrink-0 overflow-hidden p-2 flex flex-row transition-[width] duration-700 ease-in-out h-55 lg:h-55"
-        style={{
-          width: isMobile ? '100%' : isExpanded ? '450px' : '220px',
-        }}
+        className={`
+          relative rounded-md border border-[#747474] bg-white
+          overflow-hidden p-2 flex transition-all duration-700 ease-in-out h-55 lg:h-55
+          ${isMobile ? 'w-full' : isExpanded ? 'flex-[1.8]' : 'flex-[1]'}
+        `}
       >
         {/* Image */}
         <div
           className="relative rounded-sm overflow-hidden shrink-0 transition-[width] duration-700 ease-in-out"
           style={{
-            width: isMobile ? '144px' : isExpanded ? '144px' : '100%',
+            width: isMobile ? '144px' : isExpanded ? '144px' : '100%'
           }}
         >
           <img
@@ -129,43 +131,43 @@ const Metrics = () => {
     );
       
     return (
-        <section id="about" className="py-16 lg:py-24 bg-white w-full">
-            <Container className="px-4">
-                {/* Headline */}
-                <div className="text-center mb-12 lg:mb-16">
-                    <h2 className="mx-auto max-w-2xl text-2xl lg:text-[32px] font-bold leading-snug lg:leading-tight text-center text-[#131212]">
-                        {metrics.headline}{' '}
-                        <span className="text-[#F5614D]">{metrics.highlightedText}</span>
-                    </h2>
-                </div>
+        <Block height='50vh' xpad='15%'>
+        <section id="about" className="h-full w-full">
+          {/* Headline */}
+          <div className="h-[40%] text-center flex justify-center items-center">
+              <h2 className="mx-auto max-w-2xl text-2xl lg:text-[32px] font-bold leading-snug lg:leading-tight text-center text-[#131212]">
+                  {metrics.headline}{' '}
+                  <span className="text-[#F5614D]">{metrics.highlightedText}</span>
+              </h2>
+          </div>
 
-                <div className="relative max-w-7xl mx-auto mask-fade-x flex-[0_0_90%] px-1" style={{ '--fade': '15px' }}>
-                    {/* Mobile carousel */}
-                    <div ref={emblaRef} className="overflow-hidden lg:hidden">
-                        <div className="flex gap-4">
-                            {caseStudies.map((study, index) => (
-                            <div key={index} className="flex-[0_0_90%]">
-                                <MetricCard study={study} isMobile />
-                            </div>
-                            ))}
-                        </div>
-                    </div>
+          <div className="h-[60%] w-full flex relative flex-[0_0_90%] lg:items-center lg:justify-center" style={{ '--fade': '15px'}}>
+              {/* Mobile carousel */}
+              <div ref={emblaRef} className="overflow-hidden lg:hidden">
+                  <div className="flex gap-4">
+                      {caseStudies.map((study, index) => (
+                      <div key={index} className="flex-[0_0_90%]">
+                          <MetricCard study={study} isMobile />
+                      </div>
+                      ))}
+                  </div>
+              </div>
 
-                    {/* Desktop layout (unchanged) */}
-                    <div className="hidden lg:flex justify-center gap-5">
-                        {caseStudies.map((study, index) => (
-                            <MetricCard
-                            key={index}
-                            study={study}
-                            index={index}
-                            expandedCard={expandedCard}
-                            setExpandedCard={setExpandedCard}
-                            />
-                        ))}
-                    </div>
-                </div>
-            </Container>
+              {/* Desktop layout (unchanged) */}
+              <div className="hidden lg:flex justify-center gap-5">
+                  {caseStudies.map((study, index) => (
+                      <MetricCard
+                      key={index}
+                      study={study}
+                      index={index}
+                      expandedCard={expandedCard}
+                      setExpandedCard={setExpandedCard}
+                      />
+                  ))}
+              </div>
+          </div>
         </section>
+        </Block>
     );
 };
 

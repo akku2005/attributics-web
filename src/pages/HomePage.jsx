@@ -1,5 +1,6 @@
 import { Suspense, lazy } from 'react';
 import GlobalLoader from '../components/ui/Loader/GlobalLoader';
+import WhiteSpace from '../components/layout/WhiteSpace/WhiteSpace';
 
 // Lazy load sections with explicit paths
 const Hero = lazy(() => import('../sections/Hero/Hero'));
@@ -14,11 +15,25 @@ const HomePage = () => {
     <main>
       <Suspense fallback={<GlobalLoader />}>
         <Hero />
+        <WhiteSpace height='10vh'/>
+        
         <Metrics />
+        <WhiteSpace height='10vh'/>
+
         <Features />
+        <WhiteSpace height='10vh'/>
+
         <AgenticAI />
+        <WhiteSpace height='10vh'/>
+        
         <Partners />
+        <WhiteSpace height='10vh'/>
+
         <RevenueAutomation />
+        <WhiteSpace height='10vh'/>
+
+        {/* <WhiteSpace height='10vh' background='red'/> */}
+
       </Suspense>
     </main>
   );
