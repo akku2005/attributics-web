@@ -1,10 +1,16 @@
 import Container from '../../components/layout/Container';
+import Block from '../../components/layout/Block/Block';
 
 const Features = () => {
+    // const isMobile = window.innerWidth < 1024;
+    // if (isMobile) {
+    //     height = '200vh';
+    // }
+
     return (
-        <section className="py-12 lg:py-24 overflow-hidden">
-            <Container>
-                <div className="max-w-6xl mx-auto">
+        <Block height='auto' xpad='15%' >
+        <section className="py-12 lg:py-12 overflow-hidden">
+                <div className="mx-auto">
                     {/* Top Row - Two columns */}
                     <div className="flex flex-col lg:flex-row">
                         {/* Left - Title Area */}
@@ -124,8 +130,8 @@ const Features = () => {
                         </div>
                     </div>
                 </div>
-            </Container>
         </section>
+        </Block>
     );
 };
 

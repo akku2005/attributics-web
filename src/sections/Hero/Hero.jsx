@@ -3,7 +3,7 @@ import unionPattern from '../../assets/Union.svg';
 import { logoMap } from "./constants";
 import { useState, useEffect } from 'react';
 
-import { Container } from '../../components';
+import { Block } from '../../components/layout/Block';
 
 // Feature carousel slides
 const featureSlides = [
@@ -60,11 +60,11 @@ const Hero = () => {
     };
 
     return (
-        <section className=" overflow-hidden bg-white">
-            <div className="mx-auto text-center flex flex-col items-center relative z-10 w-full px-[16px] pt-40 pb-12 lg:pb-24">
+        <Block height='100vh'>
+            <div className="h-full w-full items-center relative">
 
                 {/* Hero Image Section */}
-                <div className="mx-auto px-4 relative w-full max-w-344 h-115 lg:h-134.75 overflow-hidden mb-4 lg:mb-10 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+                <div className="h-[75%] relative w-full animate-fade-in-up" style={{ animationDelay: '0.2s'}}>
                 {/* Dot Pattern Background with Gradient */}
                     <div className="absolute inset-0">
                         {/* Base dot pattern using SVG */}
@@ -86,17 +86,17 @@ const Hero = () => {
                     {/* White Card Overlay */}
                     <div
                         className="
-                            absolute
-                            top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
+                            relative 
+                            top-3/5 left-1/2 -translate-x-1/2 -translate-y-1/2
 
                             rounded-[20px]
                             flex
                             flex-col
                             items-center
 
-                            h-auto
-                            gap-[30px]
-                            px-5
+                            h-[55%]
+                            w-[90%]
+                            lg:w-[50%]
                             py-8
 
                             lg:px-20
@@ -104,9 +104,6 @@ const Hero = () => {
                             lg:gap-[40px]
                         "
                         style={{
-                            width: '843px',
-                            height: '400px',
-                            maxWidth: '95%',
                             background: '#FFFFFFCC',
                             border: '1px solid #C9C9C9',
                             backdropFilter: 'blur(8px)',
@@ -114,7 +111,8 @@ const Hero = () => {
                         }}
                     >
                         {/* Icon and Title - Width 384px, Height 26px */}
-                        <div className="flex items-center justify-center gap-2 w-full max-w-[384px]"> <div className="w-6 h-6 bg-[#FF6758] rounded flex items-center justify-center shrink-0">
+                        <div className="h-[25%] flex justify-center items-center text-center gap-2 w-full px-10"> 
+                            <div className="w-6 h-6 bg-[#FF6758] rounded flex items-center justify-center shrink-0">
                                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2">
                                     <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
                                     <polyline points="17 6 23 6 23 12"></polyline>
@@ -126,11 +124,21 @@ const Hero = () => {
                         </div>
 
                         {/* Description Carousel - Width 683px, Height 84px */}
-                        <div className="relative w-full max-w-170.75 min-h-[84px] overflow-hidden px-2">{featureSlides.map((slide, index) => (
-                                <p
+                        <div className="h-[45%] relative w-full">
+                            {featureSlides.map((slide, index) => (
+                               <p
                                     key={slide.id}
-                                    className={`absolute inset-0 text-[#131212] font-ibm-sans text-[16px] sm:text-[18px] lg:text-[20px] font-normal leading-[140%] text-center transition-opacity duration-700 ease-in-out ${index === currentSlide ? 'opacity-100' : 'opacity-0'
-                                        }`}
+                                    className={`
+                                    absolute inset-0
+                                    flex items-center justify-center
+                                    text-[#131212]
+                                    text-[16px] sm:text-[18px] lg:text-[20px]
+                                    leading-[140%]
+                                    text-center
+                                    transition-opacity duration-700
+                                    ${index === currentSlide ? 'opacity-100' : 'opacity-0'}
+                                    px-3
+                               `}
                                 >
                                     {slide.description}
                                 </p>
@@ -138,7 +146,7 @@ const Hero = () => {
                         </div>
 
                         {/* Pagination Dots */}
-                        <div className="flex justify-center items-center" style={{ width: '70px', height: '6px', gap: '4px' }}>
+                        <div className="h-[5%] flex justify-center items-center" style={{ width: '70px', height: '6px', gap: '4px' }}>
                             {featureSlides.map((_, index) => (
                                 <button
                                     key={index}
@@ -155,7 +163,8 @@ const Hero = () => {
                         </div>
 
                         {/* CTA Buttons */}
-                        <div className="flex flex-col sm:flex-row gap-6 sm:gap-8 justify-center items-center"> <button className="flex flex-row justify-center items-center gap-2.5 w-full sm:w-48.5 h-12.5 bg-[#000000] text-white text-[16px] font-normal leading-[140%] rounded-sm hover:bg-[#1a1a1a] transition-colors cursor-pointer whitespace-nowrap" style={{ fontFamily: 'IBM Plex Sans, sans-serif', padding: '8px 12px' }}>
+                        <div className="h-[25%] flex flex-col sm:flex-row gap-6 sm:gap-8 justify-center items-center"> 
+                            <button className="flex flex-row justify-center items-center gap-2.5 w-full sm:w-48.5 h-12.5 bg-[#000000] text-white text-[16px] font-normal leading-[140%] rounded-sm hover:bg-[#1a1a1a] transition-colors cursor-pointer whitespace-nowrap" style={{ fontFamily: 'IBM Plex Sans, sans-serif', padding: '8px 12px' }}>
                                 <span className="text-[#6B9FFF]">✦</span>
                                 <span>See how it works</span>
                                 <span>→</span>
@@ -171,33 +180,35 @@ const Hero = () => {
                 {/* Logo Cloud Section - Marquee */}
                 <div
                 className="
+                relative 
+                    h-[25%]
                     w-full
-                    max-w-344
-                    min-h-[220px] sm:min-h-[260px]
-                    mx-auto
-                    mt-6 sm:mt-8 lg:mt-6
-                    px-4 sm:px-6
                     flex
                     flex-col
                     items-center
                     justify-center
                     rounded-[20px]
                     overflow-hidden
-                "
+
+                    pt-8
+                    pb-6
+                    lg:pt-12
+                    lg:pb-6
+                " 
                 >
-                    <p className="font-mono text-[12px] uppercase tracking-wider text-[#131212] mb-6 sm:mb-8 text-center">
+                    <p className="relative h-[30%] font-mono text-[12px] uppercase tracking-wider text-[#131212] text-center">
                         {logoCloud.title}
                     </p>
 
                     <div
                     className="
+                        h-[70%]
                         w-full
                         overflow-hidden
                         relative
-                        py-3 sm:py-4
                         flex
                         flex-col
-                        gap-5 sm:gap-6 lg:gap-8
+                        gap-6 lg:gap-6
                         mask-fade-x
                     "
                     style={{ '--fade': '15px' }}
@@ -211,7 +222,7 @@ const Hero = () => {
                 </div>
 
             </div>
-        </section>
+        </Block>
     );
 };
 

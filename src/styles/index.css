@@ -248,3 +248,8 @@ body::-webkit-scrollbar {
             black calc(100% - var(--fade)),
             transparent);
 }
+
+/* GLOBAL VARIABLES */
+.brand-title {
+    
+}

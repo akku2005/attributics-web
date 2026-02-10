@@ -3,6 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import Button from '../../ui/Button';
 import { siteContent } from '../../../constants/content';
 import logo from '../../../assets/logo/Exclude.svg';
+import Block from '../Block/Block';
 
 const Header = () => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -23,8 +24,9 @@ const Header = () => {
     };
 
     return (
-        <header className="fixed top-8 left-4 right-4 z-50 flex justify-center">
-            <div className="bg-white/70 backdrop-blur-xl border border-[#858E9B] rounded-lg transition-all duration-300 p-2.5 flex items-center w-full max-w-328.75 justify-between ring-1 ring-black/5 h-15">
+        <header className="fixed top-4 left-4 right-4 z-50 flex justify-center">
+        <Block xpad='15%' height='auto'>
+        <div className="bg-white/70 backdrop-blur-xl border border-[#858E9B] rounded-lg transition-all duration-300 p-2.5 flex items-center w-full justify-between ring-1 ring-black/5 h-15">
 
                 {/* Logo Section */}
                 <Link to="/" className="flex items-center gap-2 lg:gap-2.5 ml-2 lg:ml-0">
@@ -152,6 +154,7 @@ const Header = () => {
                     </nav>
                 </div>
             )}
+        </Block>
         </header>
     );
 };
