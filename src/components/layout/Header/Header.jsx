@@ -24,7 +24,7 @@ const Header = () => {
     };
 
     return (
-        <header className="fixed top-4 left-4 right-4 z-50 flex justify-center">
+        <header className="fixed top-4 left-0 right-0 z-50 flex justify-center">
         <Block xpad='5%' height='auto'>
         <div className="bg-white/70 backdrop-blur-xl border border-[#858E9B] rounded-lg transition-all duration-300 p-2.5 flex items-center w-full justify-between ring-1 ring-black/5 h-15">
 
