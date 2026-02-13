@@ -31,7 +31,7 @@ const bottomRight = { name: 'Americana', logo: americana };
 
 const Partners = () => {
     return (
-        <Block xpad="15%">
+        <Block>
             <section className="relative w-full overflow-hidden flex flex-col justify-end mt-20 mb-20">
                 {/* Dotted Mask Background */}
                 <div className="absolute inset-0 pointer-events-none">
@@ -59,8 +59,9 @@ const Partners = () => {
 
                 {/* Glass Card */}
                 <div
-                    className="relative z-10 mx-auto lg:w-[90%] w-[98%] rounded-t-[10px] border-t border-r border-l flex flex-col items-center"
+                    className="relative z-10 mx-[13.8%] rounded-t-[10px] border-t border-r border-l flex flex-col items-center"
                     style={{
+                        paddingBottom: '1%',
                         background:
                             'linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.1) 105.18%)',
                         backdropFilter: 'blur(4px)',
@@ -70,6 +71,18 @@ const Partners = () => {
                         borderWidth: '1px 1px 0px 1px',
                     }}
                 >
+                    {/* Title and Subheading */}
+                    <div className="text-center lg:px-16 py-12">
+                        <h2 className="mx-auto max-w-2xl text-2xl lg:text-[32px] font-bold leading-snug lg:leading-tight text-center text-[#131212]"
+                            style={{font: 'noto sans', fontWeight: 500, fontStyle: 'medium', lineHeight: '140%', letterSpacing: '0%'}}>
+                            Backed by{' '}
+                            <span className="text-[#F5614D]">Industry Leaders</span>
+                        </h2>
+                        <p className="mt-2 text-sm lg:text-base text-[#747474]">
+                            Collaborating with industry leaders to drive innovation and success.
+                        </p>
+                    </div>
+
                     <div className="w-full px-8 sm:px-12 lg:px-16 pt-8 lg:pt-10">
 
                         {/* Row 1 */}

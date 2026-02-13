@@ -121,6 +121,13 @@ const RevenueAutomation = () => {
                 >
                     YOUR PLAYBOOK FOR RETENTION
                 </p>
+                <h2 className="text-[32px] font-normal text-[#000000] leading-[130%]"
+                    style={{font: 'noto sans', fontSize: '35px', fontWeight: 500, fontStyle: 'medium', lineHeight: '140%', letterSpacing: '0%'}}>
+                    From Manual Campaigns To
+                    <br />
+                    <span className="text-[#F5614D]">Intelligent Revenue Automation</span>
+                </h2>
+{/*                 
                 <h2
                     className="text-[32px] font-normal text-[#000000] leading-[130%]"
                     style={{
@@ -129,7 +136,7 @@ const RevenueAutomation = () => {
                     }}
                 >
                     From Manual Campaigns to Intelligent Revenue Automation
-                </h2>
+                </h2> */}
             </div>
 
             {/* Case Study Cards - scrollable within Container boundary */}

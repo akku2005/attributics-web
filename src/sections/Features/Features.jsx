@@ -2,10 +2,13 @@ import Block from '../../components/layout/Block/Block';
 import graphImage from '../../assets/features/Group137.png';
 import unionPattern from '../../assets/Union.svg';
 
+// experimental
+import BetterL from './BetterL';
+
 const Features = () => {
     return (
-        <Block height="60vh">
-            <section className="relative w-full overflow-hidden flex flex-col justify-center items-center py-12 lg:py-16">
+        <Block minHeight="60vh">
+            <section className="relative w-full h-full overflow-hidden flex flex-col justify-center items-center py-14" style={{backgroundColor: ''}}>
                 {/* Background Section */}
                 <div className="absolute inset-0">
                     {/* Base dot pattern using SVG */}
@@ -24,23 +27,17 @@ const Features = () => {
                     />
                 </div>
 
-                {/* Graph Section */}
-                <div className="relative z-10">
-                    <img
-                        style={{
-                            transform: 'scaleX(1.1)',
-                            transformOrigin: 'center'
-                        }}
-                        src={graphImage}
-                        alt="Graph"
-                        className="w-full h-auto object-contain"
-                    />
+                <div className="relative w-full">
+                    <div className='w-full'>
+                        <BetterL />
+                    </div>
 
                     {/* Overlap Layer */}
-                    <div className="absolute inset-0 flex items-start justify-start px-2 py-20  pointer-events-none">
+                    <div className="absolute top-0 left-[35%] -translate-x-full flex items-start justify-start py-20 pointer-events-none">
                         <div className="text-left">
                             <p
                                 style={{
+
                                     fontFamily: 'IBM Plex Sans',
                                     fontWeight: '400',
                                     fontStyle: 'Regular',
@@ -51,6 +48,14 @@ const Features = () => {
                                 }}>
                                 Agentic AI at work
                             </p>
+
+                            <h2 className="mx-auto max-w-2xl text-2xl lg:text-[32px] font-bold leading-snug lg:leading-tight text-center text-[#131212]"
+                                style={{font: 'noto sans', fontSize: '35px', fontWeight: 500, fontStyle: 'medium', lineHeight: '140%', letterSpacing: '0%'}}>
+                                From Engagement
+                                <br />
+                                <span className="text-[#F5614D]">To Life Time Value</span>
+                            </h2>
+{/*                             
                             <p style={{
                                 font: 'noto sans',
                                 fontWeight: '500',
@@ -61,9 +66,10 @@ const Features = () => {
                             }}>
                                 From Engagement <br/>
                                 To Life Time Value
-                            </p>
+                            </p> */}
                         </div>
                     </div>
+
                 </div>
             </section>
         </Block>
