@@ -31,11 +31,10 @@ const bottomRight = { name: 'Americana', logo: americana };
 
 const Partners = () => {
     return (
-        <Block height='60vh' xpad='15%'>
-        <section className="h-[100%] w-full relative flex items-end justify-center overflow-hidden">
-
+        <Block xpad="15%">
+            <section className="relative w-full overflow-hidden flex flex-col justify-end mt-20 mb-20">
                 {/* Dotted Mask Background */}
-                <div className="h-[100%] w-full absolute inset-0 pointer-events-none">
+                <div className="absolute inset-0 pointer-events-none">
                     <div
                         className="absolute inset-0"
                         style={{
@@ -58,13 +57,12 @@ const Partners = () => {
                     />
                 </div>
 
-                {/* Outer Glass Card - positioned at bottom */}
+                {/* Glass Card */}
                 <div
-                    className="h-auto lg:w-[90%] w-[98%] bottom-[1.5%] absolute z-10 rounded-t-[10px] border-t border-r border-l flex flex-col items-center"
+                    className="relative z-10 mx-auto lg:w-[90%] w-[98%] rounded-t-[10px] border-t border-r border-l flex flex-col items-center"
                     style={{
-                        left: '50%',
-                        transform: 'translateX(-50%)',
-                        background: 'linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.1) 105.18%)',
+                        background:
+                            'linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.1) 105.18%)',
                         backdropFilter: 'blur(4px)',
                         WebkitBackdropFilter: 'blur(4px)',
                         borderColor: '#C1C1C1',
@@ -72,51 +70,50 @@ const Partners = () => {
                         borderWidth: '1px 1px 0px 1px',
                     }}
                 >
-                    <div className="w-full px-8 sm:px-12 lg:px-16 pt-8 lg:pt-10 pb-0">
+                    <div className="w-full px-8 sm:px-12 lg:px-16 pt-8 lg:pt-10">
 
                         {/* Row 1 */}
-                        <div className="grid grid-cols-4 gap-y-4 mb-6">
+                        <div className="grid grid-cols-4 gap-y-4">
                             {row1.map((p, i) => (
                                 <div key={i} className="flex justify-center py-4">
                                     <img
                                         src={p.logo}
                                         alt={p.name}
-                                        className="h-6 w-auto max-w-27.5 object-contain filter grayscale opacity-70 hover:opacity-100 hover:grayscale-0 transition-all"
+                                        className="h-6 w-auto object-contain grayscale opacity-70 hover:opacity-100 hover:grayscale-0 transition-all"
                                     />
                                 </div>
                             ))}
                         </div>
 
                         {/* Row 2 */}
-                        <div className="grid grid-cols-4 gap-y-4 mb-9">
+                        <div className="grid grid-cols-4 gap-y-4 mb-6">
                             {row2.map((p, i) => (
                                 <div key={i} className="flex justify-center py-4">
                                     <img
                                         src={p.logo}
                                         alt={p.name}
-                                        className="h-6 w-auto max-w-27.5 object-contain filter grayscale opacity-70 hover:opacity-100 hover:grayscale-0 transition-all"
+                                        className="h-6 w-auto object-contain grayscale opacity-70 hover:opacity-100 hover:grayscale-0 transition-all"
                                     />
                                 </div>
                             ))}
                         </div>
 
                         {/* Bottom Center Row */}
-                        <div className="w-full flex items-center justify-between pb-0 pt-1">
-                            <div className="w-25 flex justify-center">
+                        <div className="flex items-center justify-between pt-1">
+
+                            <div className="w-24 flex justify-center">
                                 <img
                                     src={bottomLeft.logo}
                                     alt={bottomLeft.name}
-                                    className="h-5 max-w-22.5 object-contain filter grayscale opacity-40"
+                                    className="h-5 object-contain grayscale opacity-40"
                                 />
                             </div>
 
                             <div
-                                className="flex-1 mx-4 flex items-center justify-center rounded-t-[10px] border-t border-r border-l"
+                                className="flex-1 mx-4 flex items-center justify-center rounded-t-[10px] border-t border-r border-l max-w-[593px] h-[134px]"
                                 style={{
-                                    width: '593px',
-                                    maxWidth: '593px',
-                                    height: '134px',
-                                    background: 'linear-gradient(180deg, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0) 95.81%)',
+                                    background:
+                                        'linear-gradient(180deg, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0) 95.81%)',
                                     backdropFilter: 'blur(4px)',
                                     WebkitBackdropFilter: 'blur(4px)',
                                     borderColor: '#C1C1C1',
@@ -131,20 +128,21 @@ const Partners = () => {
                                 />
                             </div>
 
-                            <div className="w-25 flex justify-center">
+                            <div className="w-24 flex justify-center">
                                 <img
                                     src={bottomRight.logo}
                                     alt={bottomRight.name}
-                                    className="h-5 max-w-22.5 object-contain filter grayscale opacity-40"
+                                    className="h-5 object-contain grayscale opacity-40"
                                 />
                             </div>
-                        </div>
 
+                        </div>
                     </div>
                 </div>
-        </section>
+            </section>
         </Block>
     );
 };
+
 
 export default Partners;

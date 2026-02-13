@@ -2,7 +2,6 @@ import { siteContent } from '../../constants/content';
 import unionPattern from '../../assets/Union.svg';
 import { logoMap } from "./constants";
 import { useState, useEffect } from 'react';
-
 import { Block } from '../../components/layout/Block';
 
 // Feature carousel slides
@@ -34,7 +33,7 @@ const renderLogoRow = (row) => row.map((logo, index) => {
 const LogoMarqueeRow = (row, reverse = false) => {
     return (
         <div className="flex overflow-hidden">
-            <div className={`flex w-max items-center shrink-0 ${reverse ? 'animate-marquee-reverse' : 'animate-marquee'}`}>
+            <div className={`flex w-max lg:gap-10  items-center shrink-0 ${reverse ? 'animate-marquee-reverse' : 'animate-marquee'}`}>
                 {renderLogoRow(row)}
                 {renderLogoRow(row)}
             </div>
@@ -60,9 +59,12 @@ const Hero = () => {
     };
 
     return (
-        <Block height='100vh'>
-            <div className="h-full w-full items-center relative">
-
+        <Block minHeight='100vh'>
+            <div
+                className="h-screen w-full items-center relative"
+                // Alternatively, you can use inline styles:
+                // style={{ height: '100vh', width: '100%' }}
+            >
                 {/* Hero Image Section */}
                 <div className="h-[75%] relative w-full animate-fade-in-up" style={{ animationDelay: '0.2s'}}>
                 {/* Dot Pattern Background with Gradient */}
@@ -221,7 +223,6 @@ const Hero = () => {
                         {LogoMarqueeRow(logoCloud.rows[1], true)}
                     </div>
                 </div>
-
             </div>
         </Block>
     );

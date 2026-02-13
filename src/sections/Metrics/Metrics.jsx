@@ -131,17 +131,17 @@ const Metrics = () => {
     );
       
     return (
-        <Block height='50vh' xpad='15%'>
-        <section id="about" className="h-full w-full">
+        <Block height='60vh' xpad='15%'>
+        <section id="about" className="h-full w-full flex flex-col">
           {/* Headline */}
-          <div className="h-[40%] text-center flex justify-center items-center">
+          <div className="flex-[4] text-center flex justify-center items-center">
               <h2 className="mx-auto max-w-2xl text-2xl lg:text-[32px] font-bold leading-snug lg:leading-tight text-center text-[#131212]">
                   {metrics.headline}{' '}
                   <span className="text-[#F5614D]">{metrics.highlightedText}</span>
               </h2>
           </div>
 
-          <div className="h-[60%] w-full flex relative flex-[0_0_90%] lg:items-center lg:justify-center" style={{ '--fade': '15px'}}>
+          <div className="flex-[6] w-full flex relative flex-[0_0_90%] lg:items-center lg:justify-center pt-12" style={{ '--fade': '15px'}}>
               {/* Mobile carousel */}
               <div ref={emblaRef} className="overflow-hidden lg:hidden">
                   <div className="flex gap-4">
