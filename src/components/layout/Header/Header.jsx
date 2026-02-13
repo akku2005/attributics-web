@@ -145,7 +145,7 @@ const Header = () => {
                             );
                         })}
                         <div className="pt-2 border-t border-gray-100 mt-2">
-                            <Link to="/contact">
+                            <Link to="/contact" onClick={() => setIsMobileMenuOpen(false)}>
                                 <Button variant="primary" size="sm" className="w-full justify-center bg-black rounded-lg text-white">
                                     {nav.cta.contact}
                                 </Button>

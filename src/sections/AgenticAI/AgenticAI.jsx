@@ -1,10 +1,11 @@
 import Container from '../../components/layout/Container';
 import Block from '../../components/layout/Block/Block';
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
 import discoveryBg from '../../assets/discovery_background.svg';
 import discoveryVectorBg from '../../assets/discovery_background_vector.svg';
 import useEmblaCarousel from 'embla-carousel-react';
 import Autoplay from 'embla-carousel-autoplay';
+import WheelGestures from 'embla-carousel-wheel-gestures'
 
 // Auto-scrolling questions/content with bold segments
 const scrollingQuestions = [
@@ -17,40 +18,43 @@ const scrollingQuestions = [
 ];
 
 const AgenticAI = () => {
-    const [emblaRef, emblaApi] = useEmblaCarousel(
-        { 
-            align: 'start',
-            loop: true,
-            dragFree: false,
-        },
-        [Autoplay({ delay: 3500, stopOnInteraction: true })]
-    );  
+  const [emblaRef, emblaApi] = useEmblaCarousel(
+    {
+      loop: true,
+      align: 'center',
+      dragFree: false,
+      duration: 50,
+    },
+    [
+      WheelGestures({ forceWheelAxis: 'x', wheelSpeed: 0.6 }),
+      Autoplay({ delay: 3500, stopOnInteraction: false }),
+    ]
+  )
 
-    const [selectedIndex, setSelectedIndex] = useState(0)
+  const [index, setIndex] = useState(0)
 
-    useEffect(() => {
-        if (!emblaApi) return
-      
-        const onSelect = () => {
-            setSelectedIndex(emblaApi.selectedScrollSnap())
-            // emblaApi.autoplay.reset()
-        }
-      
-        emblaApi.on('select', onSelect)
-        onSelect()
+  useEffect(() => {
+    if (!emblaApi) return
+    const onSelect = () => setIndex(emblaApi.selectedScrollSnap())
+    emblaApi.on('select', onSelect)
+    onSelect()
+    return () => emblaApi.off('select', onSelect)
+  }, [emblaApi])
 
-        return () => emblaApi.off('select', onSelect)
-    }, [emblaApi])
-      
-    const handleDotClick = (index) => {
-        emblaApi?.scrollTo(index)
-    }
+  const handleDotClick = (i) => {
+    if (!emblaApi) return
+  
+    const autoplay = emblaApi.plugins()?.autoplay
+    autoplay?.reset()
+    emblaApi.scrollTo(i)
+  }
+  
 
     return (
-        <Block height='55vh' xpad='15%'>
-        <section id="products" className="w-full h-full">
+        <Block xpad='15%'>
+        <section id="products" className="w-full flex flex-col">
             {/* Top Section - Headline with CTA */}
-            <div className="lg:h-[50%] h-[60%] justify-center items-center py-8 flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 sm:gap-6 ">
+            <div className="flex-[5] justify-center items-center py-8 flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 sm:gap-6 ">
                 <div className="flex-1">
                     <h2 className="text-3xl sm:text-4xl lg:text-5xl font-normal leading-snug sm:leading-tight lg:leading-[140%] text-[#131212] mb-3 font-sans">
                         Facing the same problems?
@@ -70,7 +74,7 @@ const AgenticAI = () => {
             </div>
 
             {/* Carousel Container */}
-            <div className="lg:h-[45%] h-[37%] w-full py-0 flex items-center justify-center relative rounded-[10px] overflow-hidden bg-linear-to-br from-[#F2F2F2] to-[#FFA791]">
+            <div className="flex-[5] w-full py-25 flex items-center justify-center relative rounded-[10px] overflow-hidden bg-linear-to-br from-[#F2F2F2] to-[#FFA791]">
                 {/* Backgrounds */}
                 <img
                     src={discoveryBg}
@@ -82,12 +86,12 @@ const AgenticAI = () => {
                 />
 
                 {/* Carousel */}
-                <div className="relative z-10 w-full h-full flex items-center justify-center px-4 sm:px-6 lg:px-8">
-                    <div ref={emblaRef} className="w-full h-full ">
-                        <div className="flex h-full">
+                <div className="absolute z-10 w-full h-full flex items-center justify-center px-4 sm:px-6 lg:px-8">
+                    <div ref={emblaRef} className="w-full h-full overflow-hidden">
+                      <div className="flex h-full embla__container">
                             {scrollingQuestions.map((q, index) => (
                                 <div key={index}
-                                    className="flex-shrink-0 w-full flex items-center justify-center px-4">
+                                className="embla__slide shrink-0 w-full h-full flex items-center justify-center px-4">
                                     <p className="text-center text-sm sm:text-base lg:text-lg xl:text-xl text-[#131212] leading-relaxed [&>strong]:font-bold">
                                         {q}
                                     </p>
@@ -99,13 +103,13 @@ const AgenticAI = () => {
             </div>
 
             {/* Pagination Dots */}
-            <div className="lg:h-[5%] h-[3%] flex justify-center items-center">
+            <div className="flex-[1] flex justify-center items-center py-2">
                 <div className="flex flex-row flex-wrap items-start content-start p-0" style={{ gap: '3px 4px', width: '90px', height: '6px' }}>
-                    {scrollingQuestions.map((_, index) => (
+                    {scrollingQuestions.map((_, i) => (
                         <button
-                            key={index}
-                            onClick={() => handleDotClick(index)}
-                            className={`h-1.5 rounded-full transition-all duration-300 cursor-pointer ${index === selectedIndex
+                            key={i}
+                            onClick={() => handleDotClick(i)}
+                            className={`h-1.5 rounded-full transition-all duration-300 cursor-pointer ${i === index
                                     ? 'w-7.5 bg-[#131212]'
                                     : 'w-1.5 bg-[#CCCCCC] hover:bg-[#999]'
                                 }`}

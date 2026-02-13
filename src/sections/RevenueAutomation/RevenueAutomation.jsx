@@ -2,6 +2,7 @@ import Container from '../../components/layout/Container';
 import Block from '../../components/layout/Block/Block';
 import useEmblaCarousel from 'embla-carousel-react';
 // import Autoplay from 'embla-carousel-autoplay';
+import WheelGestures from 'embla-carousel-wheel-gestures'
 
 const caseStudies = [
     {
@@ -43,15 +44,18 @@ const RevenueAutomation = () => {
             loop: false,
             dragFree: true,
         },
+        [
+            WheelGestures({ forceWheelAxis: 'x', wheelSpeed: 0.6 }),
+        ]
         // [Autoplay({ delay: 3500, stopOnInteraction: true })]
     );
     const isMobile = window.innerWidth < 1024;
 
     return (
         <Block height='75vh' xpad='15%'>
-        <section id="solutions" className="overflow-hidden py-10">
+        <section className="overflow-hidden w-full h-full flex flex-col">
             {/* Section Header - Inside Container */}
-            <div className="h-[25%] w-full py-8 flex flex-col justify-center items-start">
+            <div className="flex-[4] w-full py-8 flex flex-col justify-center items-start">
                 <p className="uppercase text-[16px] leading-[100%] tracking-[0%] text-gray-500 mb-4"
                     style={{
                         fontFamily: "'IBM Plex Mono', monospace",
@@ -73,14 +77,24 @@ const RevenueAutomation = () => {
             </div>
 
             {/* Case Study Cards - scrollable within Container boundary */}
-            <div ref={emblaRef} className={isMobile ? '' : 'mask-fade-x'} style={{ '--fade': '10px' }}>
-                <div className="flex gap-9.75 embla__container" 
+            <div
+                ref={emblaRef}
+                className={`${isMobile ? '' : 'mask-fade-x'} flex-[6] h-full overflow-hidden`}
+            >
+                <div className="flex gap-6.75 embla__container h-full" 
                     style={{  marginLeft: '4px' }}
                 >
                     {caseStudies.map((study) => (
                         <div
                             key={study.id}
-                            className="shrink-0 w-85.25 embla__slide rounded-[10px] p-7.5 flex flex-col justify-between"
+                            className="
+                                embla__slide shrink-0
+                                w-85
+                                rounded-[10px]
+                                p-7.5
+                                flex flex-col justify-between
+                            "
+
                             style={{
                                 background: study.gradient,
                                 minHeight: '367px'

@@ -1,6 +1,6 @@
 const Block = ({
     children,
-    height = '100vh',
+    minHeight = '',
     background,
     xpad = '',
   }) => {
@@ -15,12 +15,13 @@ const Block = ({
     return (
       <div
         style={{
-          width: '100%',
-          height,
-          paddingLeft: xpad,
-          paddingRight: xpad,
-          backgroundColor: background,
+            width: '100%',
+            minHeight,
+            paddingLeft: xpad,
+            paddingRight: xpad,
+            backgroundColor: background,
         }}
+        className="relative"
       >
         {children}
       </div>
@@ -28,4 +29,3 @@ const Block = ({
   };
   
   export default Block;
-  
