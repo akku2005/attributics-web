@@ -13,15 +13,16 @@ const logos = [
     clevertap,
     americana,
     tableau,
-    powerbi,
     azure,
-    databricks,
+    aws,
+    americana,
+    azure,
 ]
 
 const Partners = () => {
     return (
         <Block xpad='15%'>
-            <section className="flex w-full overflow-hidden mt-20 mb-20 justify-between">
+            <section className="flex w-full overflow-hidden justify-between">
 
                 {/* Left side block, contains Title */}
                 <div className='flex items-center' style={{flexBasis: '50%'}}>
@@ -35,6 +36,7 @@ const Partners = () => {
                         </h2>
                         <p className="mt-2 text-sm lg:text-base text-[#747474]">
                             Collaborating with industry leaders to drive innovation and success.
+                            It's the growth that compounds. Intelligent agents continuously optimize engagement, retention, and expansion—turning every customer into a long-term value driver.
                         </p>
                     </div>
                 </div>
@@ -63,12 +65,12 @@ const Partners = () => {
                         style={{
                             background: 'linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.1) 105%)',
                             backdropFilter: 'blur(30px)',
-                            WebkitBackdropFilter: 'blur(100px)',
+                            WebkitBackdropFilter: 'blur(30px)',
                             borderRadius: '10px',
                         }}
                     >
                         {/* Logo Grid - 2 columns */}
-                        <div className="w-full flex justify-between px-12 py-22">
+                        <div className="w-full flex justify-between px-20 py-22">
                             {/* Left column */}
                             <div className="flex flex-col items-center space-y-16">
                                 {logos.filter((_, i) => i % 2 === 0).map((logo, i) => (
