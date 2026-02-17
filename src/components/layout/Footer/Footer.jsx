@@ -1,14 +1,11 @@
-import Container from '../Container';
 import Block from '../Block/Block';
-import { siteContent } from '../../../constants/content';
-
+import { brand, footer, newsletter } from '../../../constants/content';
 import logo from '../../../assets/logo/Exclude.svg';
 
 const Footer = () => {
-    const { brand, footer, newsletter } = siteContent;
 
     return (
-        <Block height='30vh' xpad='0'>
+        <Block xpad='0'>
         <footer className="bg-[#000000] text-white px-8">
             {/* Newsletter Section - Centered */}
             <div className="h-[60%] flex justify-center pt-8">

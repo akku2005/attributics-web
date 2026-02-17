@@ -1,4 +1,4 @@
-import { siteContent } from '../../constants/content';
+import { about } from '../../constants/content';
 import { getGroupPhotos } from './constants';
 import unionPattern from '../../assets/Union.svg';
 import { Container } from '../../components';
@@ -12,7 +12,6 @@ const metricCards = [
 ];
 
 const About = () => {
-    const { about } = siteContent;
     const [animatedMetrics, setAnimatedMetrics] = useState(metricCards.map(() => 0));
     const hasAnimatedRef = useRef(false);
     const metricsRef = useRef(null);

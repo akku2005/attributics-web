@@ -28,13 +28,12 @@ const Partners = () => {
                 <div className='flex items-center' style={{flexBasis: '50%'}}>
                     {/* Title and Subheading */}
                     <div className="">
-                        <h2 className="max-w-2xl text-2xl lg:text-[32px] font-bold leading-snug lg:leading-tight text-[#131212]"
-                            style={{font: 'IBM Plex Sans', fontSize: '3rem', fontWeight: 400, fontStyle: 'regular', lineHeight: '140%', letterSpacing: '0%'}}>
+                        <h2 className="section-title">
                             Backed by
                             <br />
-                            <span className="text-[#F5614D]">Industry Leaders</span>
+                            <span className="highlight">Industry Leaders</span>
                         </h2>
-                        <p className="mt-2 text-sm lg:text-base text-[#747474]">
+                        <p className="section-description">
                             Collaborating with industry leaders to drive innovation and success.
                             It's the growth that compounds. Intelligent agents continuously optimize engagement, retention, and expansion—turning every customer into a long-term value driver.
                         </p>

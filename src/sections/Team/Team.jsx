@@ -1,9 +1,8 @@
 import Container from '../../components/layout/Container';
-import { siteContent } from '../../constants/content';
+import { team } from '../../constants/content';
 import { getTeamPhoto } from './constants';
 
 const Team = () => {
-    const { team } = siteContent;
 
     return (
         <Container>

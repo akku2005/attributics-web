@@ -13,30 +13,35 @@ const caseStudies = [
         image: cardBg01,
         title: "DRIVING DIGITAL TRANSFORMATION WITH MARTECH",
         description: "A leading automobile manufacturer in India partnered with us to establish a Customer 360 view, streamline marketing touchpoints, and enhance digital sales performance.",
+        readMore: "#"
     },
     {
         id: 2,
         image: cardBg02,
         title: "TRANSITION TO A COMPOSABLE CDP",
         description: "A major automobile manufacturer in Indonesia transitioned to a cloud-based CDP, improving scalability, reducing costs, and enabling developer-level personalization.",
+        readMore: "#"
     },
     {
         id: 3,
         image: cardBg03,
         title: "BOOSTING LEAD CONVERSIONS WITH DATA & CRM",
         description: "A large life insurance provider used AI-powered lead scoring and CRM workflows to reduce duplication, improve conversions, and unlock new revenue streams.",
+        readMore: "#"
     },
     {
         id: 4,
         image: cardBg01,
         title: "BOOSTING DATA CONVERSIONS",
         description: "A large retailer revolutionized their data strategy to improve customer engagement and maximize revenue.",
+        readMore: "#"
     },
     {
         id: 5,
         image: cardBg02,
         title: "ACCELERATING CUSTOMER ENGAGEMENT",
         description: "A Fortune 500 company implemented intelligent automation to deliver personalized experiences at scale, increasing customer lifetime value by 40%.",
+        readMore: "#"
     }
 ];
 
@@ -67,28 +72,16 @@ const CaseStudyCard = ({ study }) => {
 
             {/* Content */}
             <div className="relative z-10 flex flex-col gap-7.5">
-                <h3
-                    className="text-white uppercase text-[24px] leading-[100%]"
-                    style={{ fontFamily: "'IBM Plex Mono', monospace", fontWeight: 400 }}
-                >
-                    {study.title}
-                </h3>
-
-                <p
-                    className="text-white text-[16px] leading-[140%]"
-                    style={{ fontFamily: "'IBM Plex Sans', sans-serif", fontWeight: 400 }}
-                >
-                    {study.description}
-                </p>
+                <h3 className='content-title'>{study.title}</h3>
+                <p className='content-description'>{study.description}</p>
             </div>
 
-            <a
-                href="#"
-                className="relative z-10 text-white text-[16px] leading-[140%] inline-flex items-center gap-2 hover:opacity-80 transition-opacity mt-7.5"
-                style={{ fontFamily: "'IBM Plex Sans', sans-serif", fontWeight: 400 }}
-            >
-                Read more →
-            </a>
+            <div className='relative z-10 mt-8'>
+                <a href={study.readMore}
+                    className='content-description'>
+                    Read more →
+                </a>
+            </div>
         </div>
 
     );
@@ -112,31 +105,12 @@ const RevenueAutomation = () => {
         <section className="overflow-hidden w-full h-full flex flex-col">
             {/* Section Header - Inside Container */}
             <div className="flex-[4] w-full py-8 flex flex-col justify-center items-start">
-                <p className="uppercase text-[16px] leading-[100%] tracking-[0%] text-gray-500 mb-4"
-                    style={{
-                        fontFamily: "'IBM Plex Mono', monospace",
-                        fontWeight: 400,
-                        maxWidth: '605.5px'
-                    }}
-                >
-                    YOUR PLAYBOOK FOR RETENTION
-                </p>
-                <h2 className="text-[32px] font-normal text-[#000000] leading-[130%]"
-                    style={{font: 'noto sans', fontSize: '35px', fontWeight: 500, fontStyle: 'medium', lineHeight: '140%', letterSpacing: '0%'}}>
+                <p className='section-eyebrow'>YOUR PLAYBOOK FOR RETENTION</p>
+                <h2 className='section-title'>
                     From Manual Campaigns To
                     <br />
-                    <span className="text-[#F5614D]">Intelligent Revenue Automation</span>
+                    <span className="highlight">Intelligent Revenue Automation</span>
                 </h2>
-{/*                 
-                <h2
-                    className="text-[32px] font-normal text-[#000000] leading-[130%]"
-                    style={{
-                        fontFamily: "'IBM Plex Sans', sans-serif",
-                        maxWidth: '605.5px'
-                    }}
-                >
-                    From Manual Campaigns to Intelligent Revenue Automation
-                </h2> */}
             </div>
 
             {/* Case Study Cards - scrollable within Container boundary */}

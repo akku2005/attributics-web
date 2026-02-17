@@ -1,4 +1,3 @@
-import Container from '../../components/layout/Container';
 import Block from '../../components/layout/Block/Block';
 import { useState, useEffect, useCallback, useRef } from 'react';
 import discoveryBg from '../../assets/discovery_background.svg';
@@ -54,24 +53,31 @@ const AgenticAI = () => {
         <Block xpad='15%'>
         <section id="products" className="w-full flex flex-col">
             {/* Top Section - Headline with CTA */}
-            <div className="flex-[5] justify-center items-center py-8 flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 sm:gap-6 ">
-                <div className="flex-1">
-                    <h2 className="text-3xl sm:text-4xl lg:text-5xl font-normal leading-snug sm:leading-tight lg:leading-[140%] text-[#131212] mb-3 font-sans">
+            <div className="py-8 flex flex-col sm:flex-row sm:items-start sm:justify-between gap-6">
+                {/* Text Block */}
+                <div className="w-full sm:w-[60%]">
+                    <h2 className="section-title">
                         Facing the same problems?
                     </h2>
-                    <p className="text-base sm:text-lg lg:text-xl font-normal leading-relaxed lg:leading-[140%] text-[#666] font-sans max-w-full lg:max-w-3xl">
+
+                    <p className="section-description mt-4">
                         It's the growth that compounds. Intelligent agents continuously optimize engagement, retention, and expansion—turning every customer into a long-term value driver.
                     </p>
                 </div>
-                <div className="shrink-0 w-full sm:w-auto">
-                    <a href="#contact"
-                        className="inline-flex items-center justify-center sm:justify-start gap-2 px-4 py-2.5 sm:px-3 sm:py-2 w-full sm:w-auto bg-[#131212] text-white text-sm font-medium rounded-sm hover:bg-[#333] transition-colors whitespace-nowrap">
+
+                {/* Button */}
+                <div className="w-full sm:w-auto">
+                    <a
+                        href="#contact"
+                        className="inline-flex items-center justify-center gap-2 px-4 py-2.5 w-full sm:w-auto bg-[#131212] text-white text-sm font-medium rounded-sm hover:bg-[#333] transition-colors whitespace-nowrap"
+                    >
                         <span className="text-blue-400">✦</span>
                         <span>Book a call</span>
                         <span>→</span>
                     </a>
                 </div>
             </div>
+
 
             {/* Carousel Container */}
             <div className="flex-[5] w-full py-25 flex items-center justify-center relative rounded-[10px] overflow-hidden bg-linear-to-br from-[#F2F2F2] to-[#FFA791]">

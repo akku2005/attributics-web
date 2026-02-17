@@ -1,14 +1,13 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import Button from '../../ui/Button';
-import { siteContent } from '../../../constants/content';
+import { nav } from '../../../constants/content';
 import logo from '../../../assets/logo/Attributics-Wordmark.png';
 import Block from '../Block/Block';
 
 const Header = () => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const location = useLocation();
-    const { brand, nav } = siteContent;
 
     const handleNavClick = (e, href) => {
         e.preventDefault();
@@ -44,11 +43,7 @@ const Header = () => {
                             <Link
                                 key={link.label}
                                 to={link.href}
-                                className={`font-mono text-[16px] font-normal uppercase leading-[100%] tracking-[0%] transition-all cursor-pointer ${isActive
-                                        ? 'text-[#F5614D] font-semibold'
-                                        : 'text-[#131212] hover:text-gray-900'
-                                    }`}
-                            >
+                                className={`header-link ${isActive ? 'active' : ''}`}>
                                 {link.label}
                             </Link>
                         ) : (

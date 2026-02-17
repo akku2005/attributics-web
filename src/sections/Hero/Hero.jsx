@@ -1,4 +1,4 @@
-import { siteContent } from '../../constants/content';
+import { hero, logoCloud } from '../../constants/content';
 import { logoMap } from "./constants";
 import { useState, useEffect } from 'react';
 import { Block } from '../../components/layout/Block';
@@ -48,7 +48,6 @@ const LogoMarqueeRow = (row) => (
 );
 
 const Hero = () => {
-    const { hero, logoCloud } = siteContent;
     const [currentSlide, setCurrentSlide] = useState(0);
 
     useEffect(() => {
@@ -118,15 +117,16 @@ const Hero = () => {
                         {/* Title Section */}
                         <div className="flex items-center justify-center gap-3 text-center">
                             <div className="w-7 h-7 bg-[#FF6758] rounded flex items-center justify-center">
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2">
-                                    <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" />
-                                    <polyline points="17 6 23 6 23 12" />
+                                <svg width="45" height="45" viewBox="0 0 45 45" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="45" height="45" rx="4.5" fill="#FF6758"/>
+                                    <path d="M26.5742 15H34.2885V22.7143" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                                    <path d="M34.2863 15L23.3898 25.8964C23.2096 26.0731 22.9672 26.1721 22.7148 26.1721C22.4624 26.1721 22.2201 26.0731 22.0398 25.8964L17.6041 21.4607C17.4239 21.284 17.1815 21.1851 16.9291 21.1851C16.6767 21.1851 16.4344 21.284 16.2541 21.4607L9.21484 28.5" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                                 </svg>
                             </div>
 
-                            <span className="font-mono text-lg uppercase text-[#131212]">
+                            <h2 className="hero-title">
                                 {hero.overlay.title}
-                            </span>
+                            </h2>
                         </div>
 
                         {/* Carousel */}
@@ -136,11 +136,8 @@ const Hero = () => {
                                     key={slide.id}
                                     className={`
                                         absolute inset-0
-                                        flex items-center justify-center
-                                        text-center
-                                        text-base lg:text-lg
-                                        leading-relaxed
-                                        transition-opacity duration-700
+                                        transition-opacity duration-500
+                                        hero-description
                                         ${index === currentSlide ? 'opacity-100' : 'opacity-0'}
                                     `}
                                 >
@@ -168,12 +165,12 @@ const Hero = () => {
                         <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
                             <button className="flex items-center gap-2 px-6 py-3 bg-black text-white rounded-md hover:bg-neutral-900 transition">
                                 <span className="text-[#6B9FFF]">✦</span>
-                                <span>See how it works</span>
+                                <p className='hero-button-label'>See how it works</p>
                                 <span>→</span>
                             </button>
 
                             <button className="flex items-center gap-2 text-[#131212] hover:opacity-70 transition">
-                                <span>Calculate your ROI</span>
+                                <p className='hero-button-label' style={{color: 'black'}}>Calculate your ROI</p>
                                 <span>→</span>
                             </button>
                         </div>
@@ -182,11 +179,11 @@ const Hero = () => {
 
                 {/* ===== Logo Cloud ===== */}
                 <div className="w-full py-8 flex flex-col items-center gap-6 overflow-hidden">
-                    <p className="font-mono text-sm uppercase tracking-wider text-[#131212] text-center">
+                    <p className="section-eyebrow">
                         {logoCloud.title}
                     </p>
 
-                    <div className="w-full overflow-hidden mask-fade-x">
+                    <div className="w-full overflow-hidden mask-fade-x" style={{ '--fade': '10px' }}>
                         {LogoMarqueeRow(logoCloud.rows[0])}
                     </div>
                 </div>
