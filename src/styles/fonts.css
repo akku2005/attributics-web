@@ -1,0 +1,127 @@
+
+/* HEADER FONTS */
+
+.header-link {
+    font-family: IBM Plex Mono;
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-align: center;
+    text-transform: uppercase;
+    color: rgb(0, 0, 0);
+}
+.header-link.active {
+    font-weight: 600;
+    color: #ff6658;
+}
+.header-link:hover {
+    color: rgb(128, 128, 128) !important;
+}
+
+.header-button-label {
+    font-family: IBM Plex Sans;
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 14px;
+    line-height: 140%;
+    letter-spacing: 0%;
+    text-align: center;
+    color: rgb(255, 255, 255);
+}
+
+/* HERO FONTS */
+
+.hero-title {
+    font-family: IBM Plex Mono;
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 20px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-transform: uppercase;
+    color: rgb(0, 0, 0);
+}
+
+.hero-description {
+    font-family: IBM Plex Sans;
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 20px;
+    line-height: 140%;
+    letter-spacing: 0%;
+    text-align: center;
+    color: rgb(0, 0, 0);
+}
+
+.hero-button-label {
+    font-family: IBM Plex Sans;
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 16px;
+    line-height: 140%;
+    letter-spacing: 0%;
+    color: rgb(255, 255, 255);
+}
+
+/* SECTION FONTS */
+
+.section-eyebrow {
+    font-family: 'IBM Plex Mono' !important;
+    font-weight: 400 !important;
+    font-style: 'Regular' !important;
+    font-size: 16px !important;
+    line-height: 100% !important;
+    letter-spacing: 0% !important;
+    text-transform: uppercase !important;
+    color: rgb(128, 128, 128) !important;
+
+    margin: 3px 0 8px 0;
+}
+
+.section-title {
+    font-family: 'IBM Plex Sans';
+    font-weight: 500;
+    font-style: 'Regular';
+    font-size: 32px;
+    line-height: 130%;
+    letter-spacing: 0%;
+    color: rgb(0, 0, 0);
+}
+.section-title .highlight {
+    color: #ff6658;
+}
+
+.section-description {
+    font-family: IBM Plex Sans;
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 16px;
+    line-height: 140%;
+    letter-spacing: 0%;
+    color: rgb(0, 0, 0);
+}
+
+/* CONTENT FONTS */
+
+.content-title {
+    font-family: IBM Plex Mono;
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 24px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-transform: uppercase;
+    color: rgb(255, 255, 255);
+}
+
+.content-description {
+    font-family: IBM Plex Sans;
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 16px;
+    line-height: 140%;
+    letter-spacing: 0%;
+    color: rgb(255, 255, 255);
+}

@@ -1,9 +1,8 @@
 import { useRef } from 'react';
 import Container from '../components/layout/Container';
-import { siteContent } from '../constants/content';
+import { team } from '../constants/content';
 
 const CareersPage = () => {
-    const { team } = siteContent;
     const scrollRef = useRef(null);
 
     const scroll = (direction) => {
