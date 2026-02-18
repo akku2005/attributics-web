@@ -13,6 +13,7 @@ const ymarginMap = {
 const topMarginMap = {
   '0': 'lg:mt-0 mt-0',
   '5%': 'lg:mt-[5%] mt-[20%]',
+  '7%': 'lg:mt-[7%] mt-[20%]',
   '10%': 'lg:mt-[10%] mt-[3%]',
 }
 
