@@ -16,7 +16,6 @@ const AboutPage = () => {
     <main style={{overflow: 'hidden'}}>
       <Suspense fallback={<GlobalLoader />}>
         <Vision />
-        <WhiteSpace height={reducedWhiteSpaceHeight} />
 
         <Metrics />
         <WhiteSpace height={whiteSpaceHeight} />

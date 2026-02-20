@@ -4,11 +4,11 @@ import Block from '../../../components/layout/Block';
 
 const Vision = () => {
     return (
-        <Block xpad='15%' topMargin='7%'>
+        <Block xpad='5%' topMargin='7%'>
         <section id="about">
             {/* WHO ARE WE */}
-            <div className="mb-30">
-                <div className="grid grid-cols-1 lg:grid-cols-[3fr_2fr] gap-12 lg:gap-22 items-center hyphens-auto">
+            <div className="mb-25">
+                <div className="grid grid-cols-1 lg:grid-cols-[6fr_6fr] gap-12 lg:gap-22 items-center hyphens-auto">
                     <div className="flex flex-col">
                         <p className="section-eyebrow ">
                             {vision.whoAreWe.eyebrow}
@@ -25,7 +25,7 @@ const Vision = () => {
                         </div>
                     </div>
 
-                    <div className="w-full h-72 sm:h-96 lg:h-117">
+                    <div className="w-full h-72 sm:h-96 lg:h-155">
                         <img
                             src={getGroupPhotos('1')}
                             alt="Group"
@@ -37,15 +37,15 @@ const Vision = () => {
             </div>
 
             {/* STATEMENT */}
-            <div className="text-center mb-30 lg:px-[15%]">
+            <div className="text-center mb-25 lg:px-[15%]">
                 <h3 className="vision-title" style={{fontSize: '31px', fontStyle: 'italic'}}>
-                    {vision.statement[1]}
+                    {vision.statement}
                 </h3>
             </div>
 
             {/* MISSION */}
-            <div className=" grid grid-cols-1 lg:grid-cols-[2fr_3fr] gap-12 lg:gap-22 items-center">
-                <div className="w-full h-72 sm:h-96 lg:h-117">
+            <div className="grid grid-cols-1 lg:grid-cols-[6fr_6fr] gap-12 lg:gap-22 items-center">
+                <div className="w-full h-72 sm:h-96 lg:h-155">
                     <img
                         src={getGroupPhotos('2')}
                         alt="Group"

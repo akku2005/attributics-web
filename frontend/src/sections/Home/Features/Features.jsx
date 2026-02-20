@@ -32,12 +32,12 @@ const Features = () => {
                     </div>
 
                     {/* Overlap Layer */}
-                    <div className="absolute top-0 left-[35%] -translate-x-full flex items-start justify-start py-20 pointer-events-none">
+                    <div className="absolute top-0 left-[38%] -translate-x-full flex items-start justify-start py-20 pointer-events-none">
                         <div className="text-left">
                             <p className='section-eyebrow'>
                                 Agentic AI at work
                             </p>
-                            <h2 className='section-title'>
+                            <h2 className='section-title' style={{fontSize: '2.8rem'}}>
                                 From Engagement
                                 <br />
                                 <span className="highlight">To Life Time Value</span>

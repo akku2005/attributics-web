@@ -75,7 +75,7 @@
     line-height: 100% !important;
     letter-spacing: 0% !important;
     text-transform: uppercase !important;
-    color: rgb(128, 128, 128) !important;
+    color: rgb(128, 128, 128);
 
     margin: 3px 0 8px 0;
 }
@@ -96,11 +96,10 @@
 .section-description {
     font-family: IBM Plex Sans;
     font-weight: 400;
-    font-style: Regular;
-    font-size: 18px;
+    font-size: 1.2rem;
     line-height: 140%;
     letter-spacing: 0%;
-    color: rgb(0, 0, 0);
+    color: rgb(66, 66, 66);
 }
 
 /* CONTENT FONTS */
@@ -162,7 +161,6 @@
   
     /* line-clamp-2 */
     display: -webkit-box;
-    -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
 }

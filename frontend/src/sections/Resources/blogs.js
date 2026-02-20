@@ -25,12 +25,11 @@ export function transformBlog(post, index) {
 
     let filterCategory = "General";
     let isFeatured = false;
-
-    categories.forEach((tag) => {
+    if (!Array.isArray(categories)) categories = [categories];
+    categories.forEach(tag => {
+        if (!tag) return;
         const metaMatch = tag.match(META_REGEX);
-        if (metaMatch && metaMatch[1].toLowerCase() === "featured") {
-            isFeatured = true;
-        }
+        if (metaMatch && metaMatch[1].toLowerCase() === "featured") isFeatured = true;
     });
 
     // Only apply filter tags if NOT featured
@@ -53,8 +52,6 @@ export function transformBlog(post, index) {
         category: filterCategory,
         image: extractImage(post.content),
         link: post.link,
-        featured: isFeatured,
-        content: post.content,
     };
 }
 
@@ -69,23 +66,20 @@ export function sortBlogs(blogs) {
 // Filter by category
 export function filterBlogs(blogs, activeFilter) {
     if (activeFilter === "All") return blogs;
-
-    return blogs.filter(
-        blog => blog.category.toLowerCase() === activeFilter.toLowerCase()
+    return blogs.filter(blog =>
+        (blog.category?.toLowerCase() || "") === activeFilter.toLowerCase()
     );
 }
-
 
 // Search
 export function searchBlogs(blogs, query) {
     if (!query.trim()) return blogs;
-
     const q = query.toLowerCase();
 
     return blogs.filter(blog =>
-        blog.title.toLowerCase().includes(q) ||
-        blog.description.toLowerCase().includes(q) ||
-        blog.category.toLowerCase().includes(q)
+        (blog.title?.toLowerCase() || "").includes(q) ||
+        (blog.description?.toLowerCase() || "").includes(q) ||
+        (blog.category?.toLowerCase() || "").includes(q)
     );
 }
 

@@ -14,6 +14,8 @@
     "axios": "^1.13.5",
     "cors": "^2.8.6",
     "express": "^5.2.1",
+    "gray-matter": "^4.0.3",
+    "marked": "^17.0.3",
     "xml2js": "^0.6.2"
   },
   "devDependencies": {

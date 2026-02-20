@@ -8,6 +8,7 @@ import AboutPage from './pages/AboutPage';
 import ContactPage from './pages/ContactPage';
 import CareersPage from './pages/CareersPage';
 import ResourcesPage from './pages/ResourcesPage';
+import BlogPage from './pages/BlogPage';
 import NotFoundPage from './pages/NotFoundPage';
 
 const ScrollToTop = () => {
@@ -33,6 +34,7 @@ const App = () => {
               <Route path="/contact" element={<ContactPage />} />
               <Route path="/careers" element={<CareersPage />} />
               <Route path="/resources" element={<ResourcesPage />} />
+              <Route path="/resources/:slug" element={<BlogPage />} />
               {/* 404 Catch-all route */}
               <Route path="*" element={<NotFoundPage />} />
             </Routes>

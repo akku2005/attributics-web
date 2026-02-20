@@ -61,8 +61,14 @@ const HeaderTwo = () => {
 
                     {nav.links.map((link) => {
                         // Check if it's a route or anchor link
-                        const isRoute = link.href === '/' || link.href === '/about' || link.href === '/resources' || link.href === '/careers';
-                        const isActive = location.pathname === link.href;
+                        const splits = link.href.split('/');
+                        const baseURL = '/' + splits[1];
+                        console.log(baseURL);
+
+                        const isRoute = baseURL === '/' || baseURL === '/about' || baseURL === '/resources' || baseURL === '/careers';
+                        const pathNameSplits = location.pathname.split('/');
+                        const basePathName = '/' + pathNameSplits[1];
+                        const isActive = basePathName === baseURL;
 
                         return isRoute ? (
                             <Link

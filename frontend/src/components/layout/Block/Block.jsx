@@ -18,12 +18,20 @@ const topMarginMap = {
   '10%': 'lg:mt-[10%] mt-[3%]',
 }
 
+const topPaddingMap = {
+  '0': 'lg:pt-0 pt-0',
+  '5%': 'lg:pt-[5%] pt-[20%]',
+  '7%': 'lg:pt-[7%] pt-[20%]',
+  '10%': 'lg:pt-[10%] pt-[3%]',
+}
+
 const Block = ({
     children,
     minHeight = '',
     background,
     xpad = '1.2%',
     topMargin = '0',
+    topPadding = '0',
     ymargin = '0',
   }) => {
     return (
@@ -32,7 +40,7 @@ const Block = ({
             width: '100%',
             minHeight,
         }}
-        className={`relative ${paddingMap[xpad]} ${ymarginMap[ymargin]} ${topMarginMap[topMargin]} ${background}`}
+        className={`relative ${paddingMap[xpad]} ${ymarginMap[ymargin]} ${topMarginMap[topMargin]} ${topPaddingMap[topPadding]} ${background}`}
       >
         {children}
       </div>

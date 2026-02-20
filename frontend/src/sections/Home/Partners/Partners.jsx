@@ -26,7 +26,7 @@ const Partners = () => {
                 <div className='flex items-center' style={{flexBasis: '50%'}}>
                     {/* Title and Subheading */}
                     <div className="">
-                        <h2 className="section-title">
+                        <h2 className="section-title" style={{fontSize: '3rem'}}>
                             Backed by
                             <br />
                             <span className="highlight">Industry Leaders</span>

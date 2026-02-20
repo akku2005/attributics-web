@@ -51,7 +51,7 @@ const Metrics = () => {
         <Block xpad='15%'>
         <section id="about">
             {/* METRICS */}
-            <div className="relative w-full h-95 lg:h-134.75 overflow-hidden animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+            <div className="relative w-full h-95 lg:h-110 overflow-hidden animate-fade-in-up flex flex-col pb-12 lg:pb-6" style={{ animationDelay: '0.2s' }}>
                 {/* Dot Pattern Background with Gradient */}
                 <div className="absolute inset-0">
                     {/* Base dot pattern using SVG */}
@@ -80,6 +80,7 @@ const Metrics = () => {
                         items-center
                         justify-center
                         mx-auto
+                        mt-auto
 
                         h-auto
                         py-6
@@ -88,7 +89,6 @@ const Metrics = () => {
                         lg:h-[271px]
                         lg:py-0
 
-                        top-16 sm:top-24 lg:top-[204px]
 
                         "
                     style={{

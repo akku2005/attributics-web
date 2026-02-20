@@ -6,15 +6,11 @@ export const vision = {
         description: [
             "Attributics is a customer lifecycle–focused growth partner for enterprise brands.",
             "We help organizations transform scattered customer data, fragmented journeys, and complex Martech stacks into cohesive, intelligence-led lifecycle systems , built to drive measurable business impact.",
-            "From unified customer views to orchestrated multi-channel journeys, we enable brands to move beyond campaigns and toward continuous, value-driven engagement.",
             "Because sustainable growth isn’t built on more messages. It’s built on smarter lifecycle decisions.",
         ],
     },
 
-    statement: [
-        "The shift toward AI-driven lifecycle marketing is not accidental. It reflects a fundamental change in how leading companies drive growth , where retention, personalization, and operational efficiency become the primary drivers of long-term profitability.",
-        "We exist to help enterprises navigate that shift — strategically, practically, and measurably."
-    ],
+    statement: "Sustainable growth is engineered at the intersection of data, automation, and lifecycle intelligence.",
 
     vissionMission: {
         eyebrow: 'mission & vision',
@@ -25,8 +21,8 @@ export const vision = {
         mission: {
             headline: 'Mission',
             description: [
-                "We embed lifecycle intelligence into existing Martech ecosystems — without requiring brands to rebuild from scratch.",
-                "By combining strategic discovery, implementation excellence, and operational execution, we help enterprises:",
+                "We embed lifecycle intelligence into existing Martech ecosystems, without requiring brands to rebuild from scratch.",
+                "We help enterprises:",
             ],
             points: [
                 "Unify customer data into a 360° view",
