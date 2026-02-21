@@ -4,7 +4,7 @@ import Block from '../../../components/layout/Block';
 
 const Team = () => {
     return (
-        <Block xpad='15%'>
+        <Block xpad='large'>
             <section className="bg-white mx-auto relative">
                 <div className="">
                     <p className="text-[12px] font-mono uppercase tracking-wider text-[#999] mb-4">

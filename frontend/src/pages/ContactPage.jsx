@@ -52,7 +52,7 @@ const ContactPage = () => {
     };
 
     return (
-        <Block xpad='15%' topMargin='7%'>
+        <Block xpad='large' topMargin='small'>
             <section className="flex flex-col lg:items-start lg:justify-around grid grid-cols-1 lg:grid-cols-[4fr_3fr] gap-12 lg:gap-22">
                 {/* Left Side - Text Content */}
                 <div className="flex-1">

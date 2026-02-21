@@ -4,7 +4,7 @@ import Block from '../../../components/layout/Block';
 
 const Vision = () => {
     return (
-        <Block xpad='5%' topMargin='7%'>
+        <Block xpad='medium' topMargin='small'>
         <section id="about">
             {/* WHO ARE WE */}
             <div className="mb-25">
@@ -81,7 +81,7 @@ const Vision = () => {
                             {vision.vissionMission.mission.description[1]}
                         </p>
 
-                        <ul className="list-disc lg:pl-[10%] pl-[2%] space-y-2 section-description">
+                        <ul className="list-disc pl-[10%] space-y-2 section-description">
                             {vision.vissionMission.mission.points.map((item, idx) => (
                                 <li key={idx}>
                                     {item}
@@ -89,10 +89,6 @@ const Vision = () => {
                             ))}
                         </ul>
                     </div>
-
-
-
-                    
                 </div>
             </div>
         </section>

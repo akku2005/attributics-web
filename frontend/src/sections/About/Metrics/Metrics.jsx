@@ -48,7 +48,7 @@ const Metrics = () => {
     }, []);
 
     return (
-        <Block xpad='15%'>
+        <Block xpad='large'>
         <section id="about">
             {/* METRICS */}
             <div className="relative w-full h-95 lg:h-110 overflow-hidden animate-fade-in-up flex flex-col pb-12 lg:pb-6" style={{ animationDelay: '0.2s' }}>
@@ -127,35 +127,14 @@ const Metrics = () => {
                             >
                                 {/* Headline */}
                                 <p
-                                    className="
-                                        font-ibm-mono
-                                        font-normal
-                                        text-[42px]
-                                        sm:text-[52px]
-                                        lg:text-[80px]
-                                        leading-[100%]
-                                        uppercase
-                                        tracking-[0]
-                                        text-[#131212]"
-                                >
+                                    className="content-title" style={{fontSize: '4rem', color: 'black'}}>
                                     {animatedMetrics[index]}
                                     {card.unit}
                                 </p>
 
                                 {/* Subheadline */}
                                 <p
-                                    className="
-                                        font-ibm-mono
-                                        font-normal
-                                        text-[12px]
-                                        sm:text-[14px]
-                                        lg:text-[20px]
-                                        leading-[110%]
-                                        tracking-[0]
-                                        uppercase
-                                        text-[#131212]
-                                    "
-                                >
+                                    className="content-description" style={{fontSize: '1.3rem', color: 'black'}}>
 
                                     {card.subheadline}
                                 </p>

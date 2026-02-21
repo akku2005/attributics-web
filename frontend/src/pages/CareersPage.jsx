@@ -17,7 +17,7 @@ const CareersPage = () => {
 
     return (
         <>  
-            <Block xpad='15%' topMargin='7%'>
+            <Block xpad='large' topMargin='small'>
             {/* Hero + Team Section */}
             <section className="overflow-hidden mb-20">
                     {/* Eyebrow + Heading */}
@@ -96,7 +96,7 @@ const CareersPage = () => {
             </Block>
 
             {/* Work For The Future CTA */}
-            <Block xpad='15%'>
+            <Block xpad='large'>
             <section className="pb-16 lg:pb-24 bg-white">
                     <div className="flex justify-center">
                         <div className="border border-[#E0E0E0] rounded-xl px-8 py-10 sm:px-12 sm:py-12 text-center max-w-xl w-full">

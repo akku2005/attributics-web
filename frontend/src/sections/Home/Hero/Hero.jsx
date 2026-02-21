@@ -31,7 +31,7 @@ const renderLogoRow = (row) =>
         return (
             <div
                 key={`logo-${index}`}
-                className="flex items-center mx-14"
+                className="flex items-center lg:mx-14 mx-8"
             >
                 <img src={logoUrl} alt={logo} className="h-10 w-auto" />
             </div>

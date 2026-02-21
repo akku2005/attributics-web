@@ -3,43 +3,7 @@ import Block from '../../../components/layout/Block';
 import { metrics } from '../../../constants/content';
 import useEmblaCarousel from 'embla-carousel-react';
 import Autoplay from 'embla-carousel-autoplay';
-import mainCard01 from '../../../assets/metrics/1.webp';
-import mainCard02 from '../../../assets/metrics/2.webp';
-import mainCard03 from '../../../assets/metrics/3.webp';
-import mainCard04 from '../../../assets/metrics/4.webp';
-
-const caseStudies = [
-  {
-      image: mainCard01,
-      stat: '11% MORE',
-      title: 'ORGANIC LEADS',
-      description: 'Driving digital transformation with MarTech in the Automobile industry',
-  },
-  {
-      image: mainCard02,
-      stat: '10X BOOSTS IN',
-      title: 'CONVERSION RATES',
-      description: 'Powering flexibility with a composable CDP',
-  },
-  {
-      image: mainCard03,
-      stat: '15% REVENUE',
-      title: 'GROWTH',
-      description: 'Turning every lead into an opportunity with Data & CRM',
-  },
-  {
-      image: mainCard04,
-      stat: '25% FASTER',
-      title: 'TIME TO MARKET',
-      description: 'Accelerating product launches with AI-powered automation',
-  },
-  {
-    image: mainCard01,
-    stat: '25% FASTER',
-    title: 'TIME TO MARKET',
-    description: 'Accelerating product launches with AI-powered automation',
-  },
-];
+import caseStudies from '../../../constants/home';
 
 const MetricCard = ({
         study,
@@ -53,18 +17,18 @@ const MetricCard = ({
     return (
       <div
         onMouseEnter={!isMobile ? () => setExpandedCard(index) : undefined}
-        onMouseLeave={!isMobile ? () => setExpandedCard(0) : undefined}
+        // onMouseLeave={!isMobile ? () => setExpandedCard(0) : undefined}
         className={`
           relative rounded-md border border-[#747474] bg-white
           overflow-hidden p-2 flex transition-all duration-700 ease-in-out h-55 lg:h-55
-          ${isMobile ? 'w-full' : isExpanded ? 'flex-[1.8]' : 'flex-[1]'}
+          ${isMobile ? 'w-full' : isExpanded ? 'lg:flex-[2] flex-[4]' : 'flex-[1]'}
         `}
       >
         {/* Image */}
         <div
           className="relative rounded-sm overflow-hidden shrink-0 transition-[width] duration-700 ease-in-out"
           style={{
-            width: isMobile ? '144px' : isExpanded ? '144px' : '100%'
+            width: isMobile ? '144px' : isExpanded ? '25%' : '100%'
           }}
         >
           <img
@@ -76,7 +40,7 @@ const MetricCard = ({
           {/* Overlay (desktop collapsed only) */}
           {!isMobile && (
             <div
-              className="absolute top-0 right-0 bottom-0 left-1/2 bg-white/80 backdrop-blur-md p-3 flex flex-col transition-opacity duration-500"
+              className={`absolute top-0 right-0 bottom-0 left-3/7 bg-white/80 backdrop-blur-md p-3 flex flex-col transition-opacity duration-500`}
               style={{ opacity: isExpanded ? 0 : 1 }}
             >
               <h3 className="text-sm uppercase">{study.stat}</h3>
@@ -134,7 +98,7 @@ const Metrics = () => {
     );
       
     return (
-        <Block xpad='5%'>
+        <Block xpad='medium'>
         <section id="about" className="h-full w-full flex flex-col">
           {/* Headline */}
           <div className="flex-[4] text-center flex justify-center items-center max-w-2xl mx-auto"> 
