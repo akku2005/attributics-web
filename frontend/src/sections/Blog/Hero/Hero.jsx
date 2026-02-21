@@ -63,7 +63,7 @@ const BlogSection = ({ slug }) => {
 
           {/* SUBTITLE */}
           {blog.subtitle && (
-            <p className="section-description text-center mb-12">
+            <p className="section-description text-center mb-4">
               {blog.subtitle}
             </p>
           )}
