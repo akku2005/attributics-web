@@ -127,16 +127,10 @@ const Local = () => {
                     {/* Resources Grid */}
                     <Block xpad='large'>
                         <section className={`${commonMB}`}>
-                            {loading ? (
-                                <div className="text-center py-16">
-                                    <p className="resources-description">
-                                        Loading resources...
-                                    </p>
-                                </div>
-                            ) : filteredResources.length > 0 ? (
+                            {filteredResources.length > 0 ? (
                                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
                                     {filteredResources.map((item, index) => (
-                                        <a key={index} href={`/resources/${item.slug}`} target="_blank" rel="noopener noreferrer" className="group block">
+                                        <a key={index} href={`/resources/${item.slug}`} className="group block">
                                             <article className="h-full flex flex-col rounded-[10px] border border-[#E8E8E8] overflow-hidden hover:border-[#C0C0C0] hover:shadow-lg transition-all duration-300">
                                                 {/* Card Image */}
                                                 <div className="relative h-50 overflow-hidden">

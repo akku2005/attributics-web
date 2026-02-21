@@ -62,7 +62,7 @@ const Hero = () => {
                             </p>
                         </div>
                     ) : (
-                        <a className="block group" href={`/resources/${featuredBlog.slug}`} target="_blank" rel="noopener noreferrer">
+                        <a className="block group" href={`/resources/${featuredBlog.slug}`} >
                             <div className="relative rounded-xl overflow-hidden bg-[#F5F5F5]">
                                 <div className="flex flex-col lg:flex-row">
                                     {/* Image */}
