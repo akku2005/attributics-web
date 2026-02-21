@@ -3,7 +3,7 @@ import AuditCTA from "../../../components/AuditCTA/AuditCTA";
 
 const GetStarted = () => {
     return (
-        <Block xpad='15%'>
+        <Block xpad='large'>
             <AuditCTA />
         </Block>
     )

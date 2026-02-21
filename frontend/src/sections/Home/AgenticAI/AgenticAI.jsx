@@ -50,7 +50,7 @@ const AgenticAI = () => {
   
 
     return (
-        <Block xpad='15%'>
+        <Block xpad='large'>
         <section id="products" className="w-full flex flex-col">
             {/* Top Section - Headline with CTA */}
             <div className="py-8 flex flex-col sm:flex-row sm:items-start sm:justify-between gap-6">
@@ -97,8 +97,8 @@ const AgenticAI = () => {
                       <div className="flex h-full embla__container">
                             {scrollingQuestions.map((q, index) => (
                                 <div key={index}
-                                className="embla__slide shrink-0 w-full h-full flex items-center justify-center px-4">
-                                    <p className="text-center text-sm sm:text-base lg:text-lg xl:text-xl text-[#131212] leading-relaxed [&>strong]:font-bold">
+                                    className="embla__slide shrink-0 w-full h-full flex items-center justify-center px-4">
+                                    <p className="text-center content-title [&>strong]:font-bold" style={{color: 'black'}}>
                                         {q}
                                     </p>
                                 </div>

@@ -13,7 +13,7 @@ export const nav = {
     cta: {
         login: 'Login',
         demo: 'Book a meeting',
-        contact: 'Contact us',
+        contact: 'Contact Us',
     },
 }
 

@@ -77,7 +77,7 @@ const Local = () => {
     return (
         <>
             {/* Filters + Search */}
-            <Block xpad='15%'>
+            <Block xpad='large'>
             <section className={`${commonMB}`}>
                 <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
                     {/* Filter Tabs */}
@@ -122,7 +122,7 @@ const Local = () => {
             </Block>
 
             {/* Resources Grid */}
-            <Block xpad='15%'>
+            <Block xpad='large'>
             <section className={`${commonMB}`}>
                 {loading ? (
                     <div className="text-center py-16">

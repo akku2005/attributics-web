@@ -101,7 +101,7 @@ const RevenueAutomation = () => {
     const isMobile = window.innerWidth < 1024;
 
     return (
-        <Block height='75vh' xpad='15%'>
+        <Block height='75vh' xpad='large'>
         <section className="overflow-hidden w-full h-full flex flex-col">
             {/* Section Header - Inside Container */}
             <div className="flex-[4] w-full py-8 flex flex-col justify-center items-start">

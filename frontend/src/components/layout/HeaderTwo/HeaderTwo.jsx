@@ -37,21 +37,21 @@ const HeaderTwo = () => {
 
     return (
         <header className={`fixed left-0 right-0 z-50 flex justify-center ${isScrolled ? "top-4" : "top-4"}`} >
-        <Block xpad='5%' height='auto'>
+        <Block xpad='medium'>
             <div
                 className={`
                     transition-all duration-300
-                    rounded-lg p-2.5 flex items-center w-full justify-between h-15
+                    rounded-lg flex items-center w-full justify-between h-15
                     ${
                     isScrolled
-                        ? "bg-white/50 backdrop-blur-xl border border-[#858E9B] shadow-lg"
+                        ? "p-2.5 bg-white/50 backdrop-blur-xl border border-[#858E9B] shadow-lg"
                         : "bg-transparent border border-transparent"
                     }
                 `}
             >
-                <div className="flex-1 flex justify-start">
+                <div className={`flex-1 flex justify-start`}>
                     <Link to="/">
-                        <img src={logo} alt="Attributics Logo" className="w-50 h-auto" />
+                        <img src={logo} alt="Attributics Logo" className="w-auto h-8" />
                     </Link>
                 </div>
 
@@ -93,12 +93,11 @@ const HeaderTwo = () => {
                 {/* CTA Section */}
                 <div className="flex-1 flex justify-end items-center gap-3">
 
-                    <div className="hidden lg:block">
+                    <div className="hidden lg:block" style={{color: 'white'}}>
                         <Link to="/contact">
                             <Button
                                 variant="primary"
-                                size="sm"
-                                className="bg-black text-white hover:bg-gray-900 rounded-lg px-6 py-2 text-sm font-semibold transition-colors"
+                                className="text-white w-auto h-9 bg-black px-10 py-5 header-button-label rounded-lg"
                             >
                                 {nav.cta.contact}
                             </Button>

@@ -33,7 +33,7 @@ const Hero = () => {
     return (
         <>
             {/* Hero Section */}
-            <Block xpad='15%' topMargin='7%'>
+            <Block xpad='large' topMargin='small'>
             <section className={`${commonMB}`}>
                     <div className="max-w-2xl">
                         <p className="section-eyebrow mb-2">
@@ -50,7 +50,7 @@ const Hero = () => {
             </Block>
 
             {/* Featured Article */}
-            <Block xpad='15%'>
+            <Block xpad='large'>
                 <section className={`${commonMB}`}>
                     {loading ? (
                     <div className="text-center py-16">

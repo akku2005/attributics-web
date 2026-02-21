@@ -1,11 +1,10 @@
 
 /* HEADER FONTS */
-
 .header-link {
     font-family: IBM Plex Mono;
     font-weight: 400;
     font-style: Regular;
-    font-size: 16px;
+    font-size: 1rem;
     line-height: 100%;
     letter-spacing: 0%;
     text-align: center;
@@ -22,22 +21,21 @@
 
 .header-button-label {
     font-family: IBM Plex Sans;
-    font-weight: 400;
+    font-weight: 600;
     font-style: Regular;
-    font-size: 14px;
-    line-height: 140%;
-    letter-spacing: 0%;
+    font-size: 1rem;
+    line-height: 100%;
+    letter-spacing: 100%;
     text-align: center;
     color: rgb(255, 255, 255);
 }
 
 /* HERO FONTS */
-
 .hero-title {
     font-family: IBM Plex Mono;
     font-weight: 400;
     font-style: Regular;
-    font-size: 20px;
+    font-size: 1.4rem;
     line-height: 100%;
     letter-spacing: 0%;
     text-transform: uppercase;
@@ -48,7 +46,7 @@
     font-family: IBM Plex Sans;
     font-weight: 400;
     font-style: Regular;
-    font-size: 20px;
+    font-size: 1.2rem;
     line-height: 140%;
     letter-spacing: 0%;
     text-align: center;
@@ -59,7 +57,7 @@
     font-family: IBM Plex Sans;
     font-weight: 400;
     font-style: Regular;
-    font-size: 16px;
+    font-size: 1rem;
     line-height: 140%;
     letter-spacing: 0%;
     color: rgb(255, 255, 255);
@@ -68,15 +66,14 @@
 /* SECTION FONTS */
 
 .section-eyebrow {
-    font-family: 'IBM Plex Mono' !important;
-    font-weight: 400 !important;
-    font-style: 'Regular' !important;
-    font-size: 16px !important;
-    line-height: 100% !important;
-    letter-spacing: 0% !important;
-    text-transform: uppercase !important;
+    font-family: 'IBM Plex Mono';
+    font-weight: 400;
+    font-style: 'Regular';
+    font-size: 1rem;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-transform: uppercase;
     color: rgb(128, 128, 128);
-
     margin: 3px 0 8px 0;
 }
 
@@ -84,7 +81,7 @@
     font-family: 'IBM Plex Sans';
     font-weight: 500;
     font-style: 'Regular';
-    font-size: 32px;
+    font-size: 2rem;
     line-height: 130%;
     letter-spacing: 0%;
     color: rgb(0, 0, 0);
@@ -108,7 +105,7 @@
     font-family: IBM Plex Mono;
     font-weight: 400;
     font-style: Regular;
-    font-size: 24px;
+    font-size: 1.3rem;
     line-height: 100%;
     letter-spacing: 0%;
     text-transform: uppercase;
@@ -119,7 +116,7 @@
     font-family: IBM Plex Sans;
     font-weight: 400;
     font-style: Regular;
-    font-size: 16px;
+    font-size: 1rem;
     line-height: 140%;
     letter-spacing: 0%;
     color: rgb(255, 255, 255);
@@ -131,7 +128,7 @@
     font-family: Noto Sans;
     font-weight: 500;
     font-style: Medium;
-    font-size: 35px;
+    font-size: 2rem;
     line-height: 140%;
     letter-spacing: 0%;
     color: rgb(0, 0, 0);

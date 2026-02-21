@@ -29,7 +29,7 @@ const BlogSection = ({ slug }) => {
     return <div className="py-24 text-center">Blog not found</div>;
 
   return (
-    <Block xpad="15%" topMargin="5%">
+    <Block xpad="large" topMargin="5%">
       <div className="w-full mx-auto flex flex-col items-center">
 
         {/* HERO IMAGE */}

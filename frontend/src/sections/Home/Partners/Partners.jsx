@@ -19,7 +19,7 @@ const logos = [
 
 const Partners = () => {
     return (
-        <Block xpad='15%'>
+        <Block xpad='large'>
             <section className="flex w-full overflow-hidden justify-between lg:flex-row flex-col">
 
                 {/* Left side block, contains Title */}
@@ -57,31 +57,15 @@ const Partners = () => {
                     </div>
 
                     {/* Glass Card */}
-                    <div
-                        className="relative z-10 w-full lg:mx-10 mx-2 my-7 flex flex-col items-center justify-center"
-                        style={{
-                            background: 'linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.1) 105%)',
-                            backdropFilter: 'blur(30px)',
-                            WebkitBackdropFilter: 'blur(30px)',
-                            borderRadius: '10px',
-                        }}
-                    >
-                        {/* Logo Grid - 2 columns */}
-                        <div className="w-full grid grid-cols-2 lg:px-20 px-3 py-22 gap-y-16 place-items-center">
-                            {logos.map((logo, i) => (
-                                <div
-                                    key={i}
-                                    className={`w-full flex ${i % 2 === 0 ? 'justify-start' : 'justify-end'}`}
-                                >
-                                    <img
-                                        src={logo}
-                                        alt={`Logo ${i}`}
-                                        className="h-9 w-auto object-contain"
-                                    />
-                                </div>
-                            ))}
-
-                        </div>
+                    <div className="relative z-10 w-full lg:mx-[5%] mx-[5%] my-7 flex flex-col items-center justify-center" 
+                        style={{ 
+                            background: 'linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.1) 105%)', 
+                            backdropFilter: 'blur(30px)', 
+                            WebkitBackdropFilter: 'blur(30px)', 
+                            borderRadius: '10px', 
+                    }} >
+                        {PartnersStaticList()}
+                        {/* {PartnersCarousel()} */}
                     </div>
                 </div>
             </section>
@@ -89,5 +73,20 @@ const Partners = () => {
     );
 };
 
+const PartnersStaticList = () => {
+    return (
+        <div className="w-full flex flex-wrap justify-center items-center py-22 gap-y-16">  
+            {logos.map((logo, i) => (
+                <div key={i} className="flex justify-center items-center w-1/2 flex-none">
+                    <img
+                        src={logo}
+                        alt={`Logo ${i}`}
+                        className="h-9 w-auto object-contain"
+                    />
+                </div>
+            ))}
+        </div>
+    );
+}
 
 export default Partners;
