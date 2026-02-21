@@ -14,8 +14,8 @@ const GlobalLoader = () => {
                 `}
             </style>
             <div className="flex flex-col items-center gap-4">
-                <div style={{ animation: 'pulse-loader 2s infinite ease-in-out' }}>
-                    <img src={logo} alt="Loading..." className="w-auto h-20 object-contain" />
+                <div style={{ animation: 'pulse-loader 1s infinite ease-in-out' }}>
+                    <img src={logo} alt="Loading..." className="max-w-[400px] w-[80vw] h-auto object-contain" />
                 </div>
             </div>
         </div>
