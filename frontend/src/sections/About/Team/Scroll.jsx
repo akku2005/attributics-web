@@ -21,7 +21,7 @@ export default function LeadershipTeam({teamMembers}) {
                                 <div className="lt-image-wrap">
                                     <img
                                         className="lt-image"
-                                        src={`/src/assets/team/${member.imgKey === '' ? 'placeholder.webp' : member.imgKey}`}
+                                        src={member.img}
                                         alt={member.name}
                                         loading='lazy'
                                     />

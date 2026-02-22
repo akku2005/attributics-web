@@ -45,6 +45,13 @@ export const metricCards = [
     { metric: 15, unit: "%", subheadline: "sub-headline" }
 ]
 
+import VishalA from '../assets/team/VishalA.png';
+import VakeshS from '../assets/team/VakeshS.png';
+import ShashankK from '../assets/team/ShashankK.png';
+import ShreyaM from '../assets/team/ShreyaM.png';
+import MudarB from '../assets/team/MudarB.png';
+import MadhuriK from '../assets/team/MadhuriK.png';
+
 export const team = {
     eyebrow: 'Our Team',
     headline: 'Meet Our',
@@ -55,86 +62,86 @@ export const team = {
             name: 'Vishal Agarwal',
             role: 'Founder',
             bio: 'With over 10 years of experience in AI and marketing technology, leading innovation.',
-            imgKey: 'VishalA.png',
+            img: VishalA,
         },
         {
             id: 2,
             name: 'Vakesh Singh',
             role: 'CTO',
             bio: 'Expert in machine learning and data science, driving technical excellence.',
-            imgKey: 'VakeshS.png',
+            img: VakeshS,
         },
         {
             id: 3,
             name: 'Shashank Kumar',
             role: 'CFO',
             bio: 'Marketing strategist with a passion for customer success and growth.',
-            imgKey: 'ShashankK.png',
+            img: ShashankK,
         },
         {
             id: 4,
             name: 'Shreya Mehta',
             role: 'Founder',
             bio: 'Business development leader focused on strategic partnerships.',
-            imgKey: 'ShreyaM.png',
+            img: ShreyaM,
         },
         {
             id: 5,
             name: 'Mudar Bharmal',
             role: 'Founder',
             bio: 'Product visionary dedicated to solving complex marketing challenges.',
-            imgKey: 'MudarB.png',
+            img: MudarB,
         },
         {
             id: 6,
             name: 'Madhuri Kurhade',
             role: 'Founder',
             bio: 'Operations expert ensuring seamless execution and growth.',
-            imgKey: 'MadhuriK.png',
+            img: MadhuriK,
         },
-
         {
             id: 7,
             name: 'Vishal Agarwal',
             role: 'Founder',
             bio: 'With over 10 years of experience in AI and marketing technology, leading innovation.',
-            imgKey: 'VishalA.png',
+            img: VishalA,
         },
         {
             id: 8,
             name: 'Vakesh Singh',
             role: 'CTO',
             bio: 'Expert in machine learning and data science, driving technical excellence.',
-            imgKey: 'VakeshS.png',
+            img: VakeshS,
         },
         {
             id: 9,
             name: 'Shashank Kumar',
             role: 'CFO',
             bio: 'Marketing strategist with a passion for customer success and growth.',
-            imgKey: 'ShashankK.png',
+            img: ShashankK,
         },
         {
             id: 10,
             name: 'Shreya Mehta',
             role: 'Founder',
             bio: 'Business development leader focused on strategic partnerships.',
-            imgKey: 'ShreyaM.png',
+            img: ShreyaM,
         },
         {
             id: 11,
             name: 'Mudar Bharmal',
             role: 'Founder',
             bio: 'Product visionary dedicated to solving complex marketing challenges.',
-            imgKey: 'MudarB.png',
+            img: MudarB,
         },
         {
             id: 12,
             name: 'Madhuri Kurhade',
             role: 'Founder',
             bio: 'Operations expert ensuring seamless execution and growth.',
-            imgKey: 'MadhuriK.png',
+            img: MadhuriK,
         },
+
     ],
 }
 
