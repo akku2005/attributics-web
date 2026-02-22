@@ -4,35 +4,39 @@ import WhiteSpace from '../components/layout/WhiteSpace/WhiteSpace';
 import { useSearchParams } from 'react-router-dom';
 
 // Lazy load sections with explicit paths
-const Form = lazy(() => import('../sections/Contact/Form/Form'));
-const Audit = lazy(() => import('../sections/Contact/Audit/Audit'));
+const ContactForm = lazy(() => import('../sections/Contact/Form/Form'));
+const AuditForm = lazy(() => import('../sections/Contact/Audit/Audit'));
+const CareerForm = lazy(() => import('../sections/Contact/Career/Career'));
 
 const reducedWhiteSpaceHeight = '10vh';
 const whiteSpaceHeight = '15vh';
 
 const HomePage = () => {
     const [searchParams] = useSearchParams();
-    const getQueryParam = (key) => {
-        return searchParams.get(key);
-    };
-    const formType = getQueryParam("type");
-    console.log(formType);
+
+    const formType = searchParams.get("type");
+
+    let content;
+
+    switch (formType) {
+        case "audit":
+            content = <AuditForm />;
+            break;
+
+        case "career":
+            content = <CareerForm />;
+            break;
+
+        default:
+            content = <ContactForm />;
+    }
 
     return (
         <main>
-        <Suspense fallback={<GlobalLoader />}>
-            {formType === "audit" ? ( 
-                <>
-                    <Audit />
-                    <WhiteSpace height={reducedWhiteSpaceHeight} />
-                </>
-            ): (
-                <>
-                    <Form />
-                    <WhiteSpace height={reducedWhiteSpaceHeight} />
-                </>
-            )}
-        </Suspense>
+            <Suspense fallback={<GlobalLoader />}>
+                {content}
+                <WhiteSpace height={reducedWhiteSpaceHeight} />
+            </Suspense>
         </main>
     );
 };

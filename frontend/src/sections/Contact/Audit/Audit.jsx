@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import Block from '../../../components/layout/Block/Block';
 import { MailIcon, MapPinIcon, PhoneIcon } from '../../../components/Icons/Icons';
-import { audit } from '../../../constants/contact';
+import { audit, formLinks } from '../../../constants/contact';
 
-const ContactPage = () => {
+const AuditForm = () => {
     return (
         <Block xpad='large' topMargin='none'>
             <section className="lg:min-h-screen items-center justify-center flex flex-col lg:justify-around grid grid-cols-1 lg:grid-cols-[3fr_3fr] gap-12 lg:gap-22 lg:mt-0 mt-20">
@@ -35,13 +35,13 @@ const ContactPage = () => {
                 </div>
 
                 {/* Right Side - Contact Form */}
-                <ContactForm />
+                <Form />
             </section>
         </Block>
     );
 };
 
-const ContactForm = () => {
+const Form = () => {
     const [formData, setFormData] = useState({
         fullName: '',
         email: '',
@@ -62,8 +62,7 @@ const ContactForm = () => {
         setSubmitStatus({ type: '', message: '' });
 
         try {
-            // Using FormSpree (replace with your FormSpree endpoint)
-            const response = await fetch('https://formspree.io/f/YOUR_FORM_ID', {
+            const response = await fetch(formLinks.audit, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -168,4 +167,4 @@ const ContactForm = () => {
     )
 }
 
-export default ContactPage;
+export default AuditForm;

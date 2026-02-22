@@ -1,3 +1,9 @@
+export const formLinks = {
+    contact: 'https://formspree.io/f/YOUR_FORM_ID',
+    audit: 'https://formspree.io/f/YOUR_FORM_ID',
+    career: 'https://formspree.io/f/YOUR_FORM_ID',
+}
+
 export const contact = {
     eyebrow: 'schedule a call',
     headline: 'Get Started With Your',
@@ -21,5 +27,16 @@ export const audit = {
         phone: '+9176-5789-9382',
         email: 'contact@attributics.com',
         location: 'Pune, India - 411001',
+    }
+}
+
+export const career = {
+    eyebrow: 'reach out to us',
+    headline: "We're Always Looking For",
+    highlighted: "Exceptional Talent.",
+    description: "If you believe you can contribute to building the future of AI-driven marketing systems, we’d love to hear from you — even if there isn’t an open role listed.",
+
+    details: {
+        email: 'careers@attributics.com',
     }
 }

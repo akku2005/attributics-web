@@ -1,5 +1,4 @@
 import unionPattern from '../../../assets/Union.svg';
-import { Container } from '../../../components';
 import { useState, useEffect, useRef } from 'react';
 
 import Block from '../../../components/layout/Block';

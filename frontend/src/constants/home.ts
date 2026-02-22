@@ -3,7 +3,7 @@ import mainCard02 from '../assets/metrics/2.webp';
 import mainCard03 from '../assets/metrics/3.webp';
 import mainCard04 from '../assets/metrics/4.webp';
 
-const caseStudies = [
+export const caseStudies = [
     {
         image: mainCard01,
         stat: '11% MORE',
@@ -36,4 +36,11 @@ const caseStudies = [
     },
 ];
 
-export default caseStudies;
+
+export const partners = {
+    eyebrow: 'our partners',
+    headline: 'Backed by',
+    highlighted: 'Industry Leaders',
+    description: '',
+
+}

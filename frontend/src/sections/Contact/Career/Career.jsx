@@ -1,35 +1,26 @@
 import { useState } from 'react';
 import Block from '../../../components/layout/Block/Block';
 import { MailIcon, MapPinIcon, PhoneIcon } from '../../../components/Icons/Icons';
-import {contact, formLinks } from '../../../constants/contact';
+import { career, formLinks } from '../../../constants/contact';
 
-const ContactForm = () => {
+const CareerForm = () => {
     return (
         <Block xpad='large' topMargin='none'>
             <section className="lg:min-h-screen items-center justify-center flex flex-col lg:justify-around grid grid-cols-1 lg:grid-cols-[3fr_3fr] gap-12 lg:gap-22 lg:mt-0 mt-20">
                 {/* Left Side - Text Content */}
                 <div className="flex-col flex justify-center align-center">
-                    <p className="section-eyebrow">{contact.eyebrow}</p>
+                    <p className="section-eyebrow">{career.eyebrow}</p>
                     <h1 className="section-title">
-                        {contact.headline}{' '}
-                        <span className='highlight'>{contact.highlighted}</span>
+                        {career.headline}
+                        <br />
+                        <span className='highlight'>{career.highlighted}</span>
                     </h1>
-                    <p className="section-description">{contact.description}</p>
+                    <p className="section-description">{career.description}</p>
 
                     <div className='flex gap-2 mt-4 flex-col'>
                         <div className='items-center flex flex-row gap-2'>
-                            <PhoneIcon />
-                            <p className='section-description'>{contact.details.phone}</p>
-                        </div>
-
-                        <div className='items-center flex flex-row gap-2'>
                             <MailIcon />
-                            <p className='section-description'>{contact.details.email}</p>
-                        </div>
-
-                        <div className='items-center flex flex-row gap-2'>
-                            <MapPinIcon />
-                            <p className='section-description'>{contact.details.location}</p>
+                            <p className='section-description'>{career.details.email}</p>
                         </div>
                     </div>
                 </div>
@@ -46,38 +37,53 @@ const Form = () => {
         fullName: '',
         email: '',
         phone: '',
-        website: '',
-        message: '',
+        location: '',
+        resume: null,
     });
     const [submitStatus, setSubmitStatus] = useState({ type: '', message: '' });
     const [isSubmitting, setIsSubmitting] = useState(false);
 
     const handleChange = (e) => {
-        setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+        const { name, value, files } = e.target;
+    
+        if (name === "resume") {
+            setFormData((prev) => ({ ...prev, resume: files[0] }));
+        } else {
+            setFormData((prev) => ({ ...prev, [name]: value }));
+        }
     };
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         setIsSubmitting(true);
         setSubmitStatus({ type: '', message: '' });
-
+    
+        const payload = new FormData();
+        payload.append("fullName", formData.fullName);
+        payload.append("email", formData.email);
+        payload.append("phone", formData.phone);
+        payload.append("location", formData.location);
+        payload.append("resume", formData.resume);
+    
         try {
-            // Using FormSpree (replace with your FormSpree endpoint)
-            const response = await fetch(formLinks.contact, {
+            const response = await fetch(formLinks.career, {
                 method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(formData),
+                body: payload,
             });
-
+    
             if (response.ok) {
                 setSubmitStatus({
                     type: 'success',
-                    message: 'Thank you! We will contact you soon.',
+                    message: 'Application received. We will get back to you soon.',
                 });
-                // Reset form
-                setFormData({ fullName: '', email: '', phone: '', website: '' });
+    
+                setFormData({
+                    fullName: '',
+                    email: '',
+                    phone: '',
+                    location: '',
+                    resume: null,
+                });
             } else {
                 throw new Error('Submission failed');
             }
@@ -108,7 +114,7 @@ const Form = () => {
                     <input
                         type="email"
                         name="email"
-                        placeholder="email@company.com"
+                        placeholder="Email"
                         value={formData.email}
                         onChange={handleChange}
                         className="w-full content-description px-4 py-3 border border-[#D1D5DB] rounded-md placeholder:text-[#999] focus:outline-none focus:border-[#131212] transition-colors"
@@ -125,23 +131,27 @@ const Form = () => {
                         style={{ color: 'black' }}
                     />
                     <input
-                        type="url"
-                        name="website"
-                        placeholder="Website"
-                        value={formData.website}
-                        onChange={handleChange}
-                        className="w-full content-description px-4 py-3 border border-[#D1D5DB] rounded-md placeholder:text-[#999] focus:outline-none focus:border-[#131212] transition-colors"
-                        style={{ color: 'black' }}
-                    />
-                    <textarea
                         type="text"
-                        name="message"
-                        placeholder="Message"
-                        value={formData.message}
+                        name="location"
+                        placeholder="Current Location"
+                        value={formData.location}
                         onChange={handleChange}
                         className="w-full content-description px-4 py-3 border border-[#D1D5DB] rounded-md placeholder:text-[#999] focus:outline-none focus:border-[#131212] transition-colors"
                         style={{ color: 'black' }}
-                        rows={8}
+                        required
+                    />
+                    <input
+                        type="file"
+                        name="resume"
+                        accept=".pdf,.doc,.docx"
+                        onChange={handleChange}
+                        className="w-full content-description px-4 py-3 border border-[#D1D5DB] rounded-md placeholder:text-[#999] focus:outline-none focus:border-[#131212] transition-colors
+                                file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0
+                                file:text-sm file:font-medium
+                                file:bg-[#F5614D] file:text-white
+                                hover:file:bg-[#E8503C]"
+                        style={{ color: 'black' }}
+                        required
                     />
                     <button
                         type="submit"
@@ -168,4 +178,4 @@ const Form = () => {
     )
 }
 
-export default ContactForm;
+export default CareerForm;

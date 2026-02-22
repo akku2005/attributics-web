@@ -3,7 +3,7 @@ import Block from '../../../components/layout/Block';
 import { metrics } from '../../../constants/content';
 import useEmblaCarousel from 'embla-carousel-react';
 import Autoplay from 'embla-carousel-autoplay';
-import caseStudies from '../../../constants/home';
+import {caseStudies} from '../../../constants/home';
 
 const MetricCard = ({
         study,

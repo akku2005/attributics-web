@@ -296,3 +296,20 @@ body::-webkit-scrollbar {
 
 /* GLOBAL VARIABLES */
 
+/* Chrome, Edge, Safari */
+.nicescroll::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  .nicescroll::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  .nicescroll::-webkit-scrollbar-thumb {
+    background: #cfcfcf;
+    border-radius: 999px;
+  }
+  
+  .nicescroll::-webkit-scrollbar-thumb:hover {
+    background: #999;
+  }
