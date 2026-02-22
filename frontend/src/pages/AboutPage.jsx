@@ -9,7 +9,7 @@ const Metrics = lazy(() => import('../sections/About/Metrics/Metrics'));
 const Team = lazy(() => import('../sections/About/Team/Team'));
 const GetStarted = lazy(() => import('../sections/About/GetStarted/GetStarted'));
 
-const reducedWhiteSpaceHeight = '10vh';
+const moreWhiteSpaceHeight = '20vh';
 const whiteSpaceHeight = '15vh';
 
 const AboutPage = () => {

@@ -10,7 +10,7 @@ const VisionTwo = () => {
         <section id="about">
             {/* WHO ARE WE */}
             <div className="mb-25">
-                <div className="grid grid-cols-1 lg:grid-cols-[4fr_6fr] gap-12 lg:gap-22 items-center hyphens-none">
+                <div className="grid grid-cols-1 lg:grid-cols-[6fr_4fr] gap-12 lg:gap-22 items-center hyphens-none">
                     <div className="flex flex-col">
                         <p className="section-eyebrow ">
                             {vision.whoAreWe.eyebrow}
@@ -54,7 +54,7 @@ const VisionTwo = () => {
             
 
             {/* VISSION & MISSION */}
-            <div className="grid grid-cols-1 lg:grid-cols-[4fr_6fr] gap-12 lg:gap-22 items-center">
+            <div className="grid grid-cols-1 lg:grid-cols-[6fr_4fr] gap-12 lg:gap-22 items-center">
                 <div className="w-full h-72 sm:h-96 lg:h-155">
                     <img
                         src={getGroupPhotos('2')}

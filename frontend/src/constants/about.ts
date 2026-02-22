@@ -1,4 +1,3 @@
-
 export const vision = {
     whoAreWe: {
         eyebrow: 'who are we',
@@ -137,4 +136,15 @@ export const team = {
             imgKey: 'MadhuriK.png',
         },
     ],
+}
+
+export const getstarted = {
+    eyebrow: 'Ready to Transform Your Growth?',
+    headline: [
+        'Get A',
+        'For An Intelligent Layer For Your Mar-Tech Stack.',
+    ],
+    highlighted: 'Free Audit',
+    description: "Book a personalized demo with our experts and see how Attributics can revolutionize your customer lifecycle marketing.",
+    ctaText: 'Schedule Your Demo',
 }

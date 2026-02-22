@@ -1,5 +1,5 @@
 import Block from "../../../components/layout/Block";
-import AuditCTA from "../../../components/AuditCTA/AuditCTA";
+import { getstarted } from "../../../constants/about";
 
 const GetStarted = () => {
     return (
@@ -7,6 +7,106 @@ const GetStarted = () => {
             <AuditCTA />
         </Block>
     )
+};
+
+const withBackdrop = () => {
+    return (
+        <>
+            <Block xpad='large'>
+                <div className="relative flex-1 flex items-center justify-center overflow-hidden rounded-xl">
+                    {/* Background Mask */}
+                    <div className="absolute inset-0 pointer-events-none z-0">
+                        <Backdrop />
+                    </div>
+                    <div
+                            className="
+                                mt-30
+                                mb-15
+                                relative z-10
+                                w-[100%]
+                                max-w-5xl
+                                flex flex-col
+                                gap-10
+                                p-8 lg:p-12
+                                rounded-xl
+                            "
+                            style={{
+                                background: 'linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.1) 105%)', 
+                                backdropFilter: 'blur(30px)',
+                                WebkitBackdropFilter: 'blur(30px)',
+                            }}
+                        >
+                        <AuditCTA />
+                    </div>
+                </div>
+            </Block>
+        </>
+    )
+}
+
+const AuditCTA = () => {
+    return (
+        <section className="w-full">
+            <div
+                className="
+                
+                border
+                border-[#CFCFCF]
+                rounded-[24px]
+                px-6
+                py-8
+                lg:px-16
+                lg:py-14
+
+                flex
+                flex-col
+                gap-6
+                items-center
+                text-center
+            "
+            >
+                {/* Left Content */}
+                <div className="max-w-3xl">
+                    <p className="section-eyebrow mb-4">{getstarted.eyebrow}</p>
+                    <h2 className="section-title mb-4" style={{fontSize: '3rem'}}>
+                        {getstarted.headline[0]}{' '}
+                        <span className="highlight">{getstarted.highlighted}</span>{' '}
+                        {getstarted.headline[1]}
+                    </h2>
+                    <h3 className="section-description">
+                        {getstarted.description}
+                    </h3>
+                </div>
+
+                {/* CTA Button */}
+                <div className="flex-shrink-0">
+                    <a
+                        href="/contact?type=audit"
+                        className="
+                        bg-black
+                        text-white
+                        px-6
+                        py-4
+                        rounded-[10px]
+                        text-[16px]
+                        font-medium
+                        flex
+                        items-center
+                        gap-3
+                        hover:opacity-75
+                        transition
+                        w-full
+                        lg:w-auto
+                        justify-center
+                    "
+                    >
+                        {getstarted.ctaText}
+                        <span className="text-xl">→</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+    );
 };
 
 export default GetStarted;
