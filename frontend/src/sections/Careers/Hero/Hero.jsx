@@ -1,5 +1,7 @@
 import { careers } from '../../../constants/careers';
 import Block from '../../../components/layout/Block/Block';
+import { Link } from 'react-router-dom';
+import Button from '../../../components/ui/Button/Button';
 
 const Hero = () => {
     return (
@@ -17,13 +19,15 @@ const Hero = () => {
                             <div className="border border-[#E0E0E0] rounded-xl px-8 py-10 sm:px-12 sm:py-12 text-center  w-full">
                                 <h2 className="content-title mb-4" style={{color: 'black'}}>{careers.workCard.headline}</h2>
                                 <p className="content-description mb-4" style={{color: 'black'}}>{careers.workCard.description}</p>
-                                <a
-                                    href="/contact?type=career"
-                                    className="content-description inline-flex items-center justify-center gap-2 px-8 py-3 bg-[#131212] rounded-md hover:bg-[#333] active:scale-95 transition-all duration-200"
-                                >
-                                    {careers.workCard.buttonLabel}
-                                    <span>→</span>
-                                </a>
+                                <Link to="/contact?type=career">
+                                    <Button
+                                        variant="primary"
+                                        className="text-white w-auto h-9 bg-black px-10 py-5 header-button-label rounded-lg"
+                                    >
+                                        {careers.workCard.buttonLabel}
+                                        <span>→</span>
+                                    </Button>
+                                </Link>
                             </div>
                         </div>
 

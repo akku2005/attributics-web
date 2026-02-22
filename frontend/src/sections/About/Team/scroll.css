@@ -48,7 +48,6 @@
     border-radius: 20px;
     overflow: hidden;
     position: relative;
-    cursor: pointer;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     display: flex;
     flex-direction: column;
