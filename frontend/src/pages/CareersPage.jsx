@@ -1,5 +1,5 @@
 import { useRef } from 'react';
-import { team } from '../constants/content';
+import { team } from '../constants/about';
 import Block from '../components/layout/Block';
 
 const CareersPage = () => {

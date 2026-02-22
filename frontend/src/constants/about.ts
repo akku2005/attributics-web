@@ -2,7 +2,8 @@
 export const vision = {
     whoAreWe: {
         eyebrow: 'who are we',
-        headline: 'Turning Customer Signals Into Growth',
+        headline: 'Turning Customer',
+        highlightedText: 'Signals Into Growth',
         description: [
             "Attributics is a customer lifecycle–focused growth partner for enterprise brands.",
             "We help organizations transform scattered customer data, fragmented journeys, and complex Martech stacks into cohesive, intelligence-led lifecycle systems , built to drive measurable business impact.",
@@ -10,7 +11,10 @@ export const vision = {
         ],
     },
 
-    statement: "Sustainable growth is engineered at the intersection of data, automation, and lifecycle intelligence.",
+    statement: {
+        normal: "Sustainable growth is engineered at the intersection of data, automation, and lifecycle intelligence.",
+        highlighted: "",
+    },
 
     vissionMission: {
         eyebrow: 'mission & vision',
@@ -35,62 +39,102 @@ export const vision = {
     },
 }
 
+export const metricCards = [
+    { metric: 15, unit: "%", subheadline: "sub-headline" },
+    { metric: 100, unit: "+", subheadline: "sub-headline" },
+    { metric: 750, unit: "K", subheadline: "sub-headline" },
+    { metric: 15, unit: "%", subheadline: "sub-headline" }
+]
+
 export const team = {
-    headline: 'Meet our team',
+    eyebrow: 'Our Team',
+    headline: 'Meet Our',
+    highlighted: 'Team',
     members: [
         {
-            name: 'Team member 1',
+            id: 1,
+            name: 'Vishal Agarwal',
             role: 'Founder',
             bio: 'With over 10 years of experience in AI and marketing technology, leading innovation.',
-            imgKey: 'memberName',
+            imgKey: 'VishalA.png',
         },
         {
-            name: 'Team member 2',
+            id: 2,
+            name: 'Vakesh Singh',
             role: 'CTO',
             bio: 'Expert in machine learning and data science, driving technical excellence.',
-            imgKey: 'memberName',
+            imgKey: 'VakeshS.png',
         },
         {
-            name: 'Team member 3',
+            id: 3,
+            name: 'Shashank Kumar',
             role: 'CFO',
             bio: 'Marketing strategist with a passion for customer success and growth.',
-            imgKey: 'memberName',
+            imgKey: 'ShashankK.png',
         },
         {
-            name: 'Team member 4',
+            id: 4,
+            name: 'Shreya Mehta',
             role: 'Founder',
             bio: 'Business development leader focused on strategic partnerships.',
-            imgKey: 'memberName',
+            imgKey: 'ShreyaM.png',
         },
         {
-            name: 'Team member 5',
+            id: 5,
+            name: 'Mudar Bharmal',
             role: 'Founder',
             bio: 'Product visionary dedicated to solving complex marketing challenges.',
-            imgKey: 'memberName',
+            imgKey: 'MudarB.png',
         },
         {
-            name: 'Team member 6',
+            id: 6,
+            name: 'Madhuri Kurhade',
             role: 'Founder',
             bio: 'Operations expert ensuring seamless execution and growth.',
-            imgKey: 'memberName',
+            imgKey: 'MadhuriK.png',
+        },
+
+        {
+            id: 7,
+            name: 'Vishal Agarwal',
+            role: 'Founder',
+            bio: 'With over 10 years of experience in AI and marketing technology, leading innovation.',
+            imgKey: 'VishalA.png',
         },
         {
-            name: 'Team member 7',
-            role: 'Founder',
-            bio: 'Operations expert ensuring seamless execution and growth.',
-            imgKey: 'memberName',
+            id: 8,
+            name: 'Vakesh Singh',
+            role: 'CTO',
+            bio: 'Expert in machine learning and data science, driving technical excellence.',
+            imgKey: 'VakeshS.png',
         },
         {
-            name: 'Team member 8',
-            role: 'Founder',
-            bio: 'Operations expert ensuring seamless execution and growth.',
-            imgKey: 'memberName',
+            id: 9,
+            name: 'Shashank Kumar',
+            role: 'CFO',
+            bio: 'Marketing strategist with a passion for customer success and growth.',
+            imgKey: 'ShashankK.png',
         },
         {
-            name: 'Team member 9',
+            id: 10,
+            name: 'Shreya Mehta',
+            role: 'Founder',
+            bio: 'Business development leader focused on strategic partnerships.',
+            imgKey: 'ShreyaM.png',
+        },
+        {
+            id: 11,
+            name: 'Mudar Bharmal',
+            role: 'Founder',
+            bio: 'Product visionary dedicated to solving complex marketing challenges.',
+            imgKey: 'MudarB.png',
+        },
+        {
+            id: 12,
+            name: 'Madhuri Kurhade',
             role: 'Founder',
             bio: 'Operations expert ensuring seamless execution and growth.',
-            imgKey: 'memberName',
+            imgKey: 'MadhuriK.png',
         },
     ],
 }
