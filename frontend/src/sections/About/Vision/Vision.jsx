@@ -4,6 +4,7 @@ import Block from '../../../components/layout/Block';
 
 const Vision = () => {
     return (
+        <>
         <Block xpad='medium' topMargin='small'>
         <section id="about">
             {/* WHO ARE WE */}
@@ -38,8 +39,9 @@ const Vision = () => {
 
             {/* STATEMENT */}
             <div className="text-center mb-25 lg:px-[15%]">
-                <h3 className="vision-title" style={{fontSize: '31px', fontStyle: 'italic'}}>
-                    {vision.statement}
+                <h3 className="vision-title" style={{fontSize: '2rem', fontStyle: 'italic'}}>
+                    {vision.statement.normal}{' '}
+                    <span className='highlight'>{vision.statement.highlighted}</span>
                 </h3>
             </div>
 
@@ -93,6 +95,7 @@ const Vision = () => {
             </div>
         </section>
         </Block>
+        </>
     );
 };
 

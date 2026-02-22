@@ -68,11 +68,11 @@ const AgenticAI = () => {
                 {/* Button */}
                 <div className="w-full sm:w-auto">
                     <a
-                        href="#contact"
+                        href="/contact?type=audit"
                         className="inline-flex items-center justify-center gap-2 px-4 py-2.5 w-full sm:w-auto bg-[#131212] text-white text-sm font-medium rounded-sm hover:bg-[#333] transition-colors whitespace-nowrap"
                     >
                         <span className="text-blue-400">✦</span>
-                        <span>Book a call</span>
+                        <span>Schedule a call</span>
                         <span>→</span>
                     </a>
                 </div>

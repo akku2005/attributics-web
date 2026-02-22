@@ -6,6 +6,8 @@ import tableau from '../../../assets/brands/tableau.svg';
 import azure from '../../../assets/brands/azure.svg';
 import Block from '../../../components/layout/Block';
 
+import {partners } from '../../../constants/home';
+
 const logos = [
     aws,
     clevertap,
@@ -23,19 +25,18 @@ const Partners = () => {
             <section className="flex w-full overflow-hidden justify-between lg:flex-row flex-col">
 
                 {/* Left side block, contains Title */}
-                <div className='flex items-center' style={{flexBasis: '50%'}}>
+                <div className='flex flex-col justify-center' style={{flexBasis: '50%'}}>
                     {/* Title and Subheading */}
-                    <div className="">
-                        <h2 className="section-title" style={{fontSize: '3rem'}}>
-                            Backed by
-                            <br />
-                            <span className="highlight">Industry Leaders</span>
-                        </h2>
-                        <p className="section-description">
-                            Collaborating with industry leaders to drive innovation and success.
-                            It's the growth that compounds. Intelligent agents continuously optimize engagement, retention, and expansion—turning every customer into a long-term value driver.
-                        </p>
-                    </div>
+                    <p className='section-eyebrow'>{partners.eyebrow}</p>
+                    <h2 className="section-title" style={{fontSize: '3rem'}}>
+                        {partners.headline}
+                        <br />
+                        <span className="highlight">{partners.highlighted}</span>
+                    </h2>
+                    <p className="section-description">
+                        Collaborating with industry leaders to drive innovation and success.
+                        It's the growth that compounds. Intelligent agents continuously optimize engagement, retention, and expansion—turning every customer into a long-term value driver.
+                    </p>
                 </div>
 
                {/* Right side block with self-contained background and glass card */}
