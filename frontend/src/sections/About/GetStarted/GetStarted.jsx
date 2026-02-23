@@ -81,7 +81,7 @@ const AuditCTA = () => {
 
                 {/* CTA Button */}
                 <div className="flex-shrink-0">
-                    <Link to="/contact">
+                    <Link to="/contact?type=audit">
                         <Button
                             variant="primary"
                             className="text-white w-auto h-12 bg-black px-10 py-5 header-button-label rounded-lg"
