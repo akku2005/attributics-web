@@ -166,7 +166,7 @@ const Hero = () => {
                                     className="text-white bg-black rounded-lg"
                                 >
                                     <span className="text-[#6B9FFF]">✦</span>
-                                    {hero.cta.primary}
+                                     {hero.cta.primary}
                                     <span>→</span>
                                 </Button>
                             </Link>
