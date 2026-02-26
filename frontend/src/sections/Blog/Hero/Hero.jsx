@@ -26,6 +26,7 @@ const BlogSection = ({ slug }) => {
     <>
     {loading && <BlogSkeleton />}
     {!loading && blog && 
+    <>
       <Block xpad="large" topMargin="small">
         <div className="w-full mx-auto flex flex-col items-center">
 
@@ -33,11 +34,11 @@ const BlogSection = ({ slug }) => {
           <img
             src={blog.heroImage}
             alt={blog.title}
-            className="w-full max-h-[26rem] object-cover rounded-xl mb-8"
+            className="w-full max-h-[26rem] object-cover rounded-xl mb-4"
           />
 
           {/* META */}
-          <div className="flex items-center gap-3 mb-6 flex-wrap justify-center">
+          <div className="flex items-center gap-3 mb-2 flex-wrap justify-center">
             {blog.author?.avatar && (
               <img
                 src={blog.author.avatar}
@@ -45,7 +46,7 @@ const BlogSection = ({ slug }) => {
                 className="w-7 h-7 rounded-full object-cover"
               />
             )}
-            <span className="section-description">{blog.author?.name}</span>
+            <span className="section-eyebrow">{blog.author?.name}</span>
             <span className="section-eyebrow">·</span>
             <span className="section-eyebrow">{blog.publishedAt}</span>
             {blog.readTime && (
@@ -57,25 +58,29 @@ const BlogSection = ({ slug }) => {
           </div>
 
           {/* TITLE */}
-          <h1 className="section-title leading-tight mb-4" style={{color: 'black'}}>
+          <h1 className="section-title mb-1">
             {blog.title}
           </h1>
 
           {/* SUBTITLE */}
           {blog.subtitle && (
-            <p className="section-description text-center mb-4">
+            <p className="section-description mb-2">
               {blog.subtitle}
             </p>
           )}
+        </div>
 
-          {/* BODY */}
+      </Block>
+
+      <Block xpad="larger" topMargin="small">
+      {/* BODY */}
           <div
             className="blog-article"
             dangerouslySetInnerHTML={{ __html: blog.content }}
           />
-        </div>
-        
       </Block>
+    </>
+
     }
     </>
   );

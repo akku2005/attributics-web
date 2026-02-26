@@ -1,2 +1,4 @@
-responsiveness
-medium k blogs
+home page content
+resources page
+careers page lets grow, center headline and increase font size
+responsiveness on new content

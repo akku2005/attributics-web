@@ -4,6 +4,7 @@ import WhiteSpace from '../components/layout/WhiteSpace/WhiteSpace';
 
 // Lazy load sections with explicit paths
 const Hero = lazy(() => import('../sections/Home/Hero/Hero'));
+const HeroTwo = lazy(() => import('../sections/Home/HeroTwo/HeroTwo'));
 const Metrics = lazy(() => import('../sections/Home/Metrics/Metrics'));
 const Agentic = lazy(() => import('../sections/Home/Agentic/Agentic'));
 const Features = lazy(() => import('../sections/Home/Features/Features'));
@@ -17,7 +18,7 @@ const HomePage = () => {
   return (
     <main>
       <Suspense fallback={<GlobalLoader />}>
-        <Hero />
+        <HeroTwo />
         <WhiteSpace height={reducedWhiteSpaceHeight} />
         
         <Metrics />

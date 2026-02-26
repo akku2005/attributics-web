@@ -77,8 +77,12 @@ const Local = () => {
     return (
         <>
             {/* Filters + Search */}
-            <Block xpad='large'>
+            <Block xpad='large' topMargin='small'>
             <section className={`${commonMB}`}>
+                <h1 className="section-title mb-2" style={{fontSize: '3rem'}}>
+                    Case Studies
+                </h1>
+
                 <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
                     {/* Filter Tabs */}
                     <div className="flex items-center gap-2">

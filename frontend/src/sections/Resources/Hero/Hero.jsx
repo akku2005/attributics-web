@@ -39,7 +39,7 @@ const Hero = () => {
                             <p className="section-eyebrow mb-2">
                                 {hero.eyebrow}
                             </p>
-                            <h1 className="section-title mb-2">
+                            <h1 className="section-title mb-2" style={{fontSize: '3rem'}}>
                                 {hero.headline}
                             </h1>
                             <p className="section-description mb-2">

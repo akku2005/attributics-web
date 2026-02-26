@@ -7,7 +7,7 @@ import {
 
 const API_URL = import.meta.env.VITE_API_URL;
 
-const Hero = () => {
+const Medium = () => {
     const [mediumBlogs, setMediumBlogs] = useState([]);
     const [loading, setLoading] = useState(true);
 
@@ -186,4 +186,4 @@ const MediumGridSkeleton = () => {
     );
 };
 
-export default Hero;
+export default Medium;
