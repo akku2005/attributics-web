@@ -6,13 +6,13 @@ import { useLocation } from "react-router-dom";
 const Calendar = () => {
     const location = useLocation();
 
-    useEffect(() => {
-        if (!window.location.search.includes("r=true")) {
-        window.location.replace(
-            window.location.pathname + "?r=true"
-        );
-        }
-    }, [location.pathname]);
+    // useEffect(() => {
+    //     if (!window.location.search.includes("r=true")) {
+    //     window.location.replace(
+    //         window.location.pathname + "?r=true"
+    //     );
+    //     }
+    // }, [location.pathname]);
     
     return (
         <Block xpad='large'>
