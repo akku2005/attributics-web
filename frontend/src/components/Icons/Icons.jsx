@@ -61,3 +61,27 @@ export function MailIcon({ size = 20, color = "currentColor", ...props }) {
       </svg>
     );
   }
+
+export const SparklesIcon = ({ className = "", size = 18 }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" className={className}>
+    <path d="M12 3l1.5 4.5L18 9l-4.5 1.5L12 15l-1.5-4.5L6 9l4.5-1.5L12 3z" stroke="currentColor" strokeWidth="1.5"/>
+  </svg>
+);
+
+export const ArrowRightIcon = ({ className = "", size = 20 }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" className={className}>
+    <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+  </svg>
+);
+
+export const TrendingUpIcon = ({ className = "", size = 14 }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" className={className}>
+    <path d="M3 17l6-6 4 4 7-7" stroke="currentColor" strokeWidth="1.5"/>
+  </svg>
+);
+
+export const ChevronRightIcon = ({ className = "", size = 20 }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" className={className}>
+    <path d="M9 6l6 6-6 6" stroke="currentColor" strokeWidth="1.5"/>
+  </svg>
+);

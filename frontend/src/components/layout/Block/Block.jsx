@@ -3,7 +3,8 @@ const xPaddingMap = {
   'small': 'lg:px-5 px-3',
   'medium': 'lg:px-25 px-3',
   'large': 'lg:px-50 px-3',
-  'larger': 'lg:px-120 px-3',
+  'larger': 'lg:px-80 px-3',
+  'largest': 'lg:px-120 px-3',
 };
 
 const topMarginMap = {

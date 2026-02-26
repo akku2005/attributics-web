@@ -120,7 +120,7 @@ const HeaderTwo = () => {
                         <Link to="/contact">
                             <Button
                                 variant="primary"
-                                className="text-white bg-black header-button-label rounded-lg"
+                                className="header-button-label"
                             >
                                 {nav.cta.contact}
                             </Button>
@@ -192,7 +192,7 @@ const HeaderTwo = () => {
                         })}
                         <div className="pt-2 border-t border-gray-100 mt-2">
                             <Link to="/contact" onClick={() => setIsMobileMenuOpen(false)}>
-                                <Button variant="primary" size="sm" className="justify-center bg-black rounded-lg text-white">
+                                <Button variant="primary" size="sm">
                                     {nav.cta.contact}
                                 </Button>
                             </Link>
