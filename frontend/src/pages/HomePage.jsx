@@ -9,6 +9,7 @@ const Metrics = lazy(() => import('../sections/Home/Metrics/Metrics'));
 const Agentic = lazy(() => import('../sections/Home/Agentic/Agentic'));
 const Features = lazy(() => import('../sections/Home/Features/Features'));
 const Partners = lazy(() => import('../sections/Home/Partners/Partners'));
+const Calendar = lazy(() => import('../sections/Home/Calendar/Calendar'));
 const RevenueAutomation = lazy(() => import('../sections/Home/RevenueAutomation/RevenueAutomation'));
 
 const reducedWhiteSpaceHeight = '10vh';
@@ -31,6 +32,9 @@ const HomePage = () => {
         <WhiteSpace height={whiteSpaceHeight} />
         
         <Partners />
+        <WhiteSpace height={whiteSpaceHeight} />
+
+        <Calendar />
         <WhiteSpace height={whiteSpaceHeight} />
 
         <RevenueAutomation />

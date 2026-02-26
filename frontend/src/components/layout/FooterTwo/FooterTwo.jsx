@@ -1,6 +1,7 @@
 import Block from '../Block/Block';
 import { brand, footer, newsletter } from '../../../constants/other';
 import logo from '../../../assets/logo/Exclude.svg';
+import Calendar from '../../../sections/Home/Calendar/Calendar';
 
 const links = [
     {
@@ -24,8 +25,10 @@ const links = [
 const FooterTwo = () => {
 
     return (
-        <Block xpad='none'>
-        <footer className="bg-[#000000] text-white lg:px-50 px-4">
+        <Block xpad='medium' background={"bg-black"}>
+        <footer className="bg-[#000000] text-white lg:px-0 px-4">
+
+            {/* <Calendar /> */}
 
             <div className='flex lg:flex-row flex-col pt-10 gap-12 items-center justify-center'>
                 <div className='flex-[1] flex justify-start'>

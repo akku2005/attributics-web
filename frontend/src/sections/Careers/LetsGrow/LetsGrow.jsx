@@ -5,11 +5,11 @@ import Block from '../../../components/layout/Block';
 export default function LetsGrow() {
   return (
     <>
-    <Block xpad='larger'>
+    <Block xpad='large'>
       {/* Header Section */}
       <div className="mb-30">
           <p className='section-eyebrow'>{letsgrow.eyebrow}</p>
-          <h1 className="section-title mb-4" style={{fontSize: '2.5rem'}}>
+            <h1 className="section-title mb-12 text-center" style={{fontSize: '2.5rem'}}>
               {letsgrow.headline[0]}{' '}
               <span className='highlight'>{letsgrow.highlighted}</span>
               {' '}{letsgrow.headline[1]}

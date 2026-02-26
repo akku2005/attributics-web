@@ -45,10 +45,11 @@ const AuditCTA = () => {
                     <Link to="/contact">
                         <Button
                             variant="primary"
-                            className="text-white bg-black header-button-label rounded-lg"
                         >
-                            {getstarted.ctaText}
-                            <span className="text-xl">→</span>
+                            <p className="section-description" style={{color: 'white'}}>
+                              {getstarted.ctaText}{' '}
+                              <span className="text-xl">→</span>
+                            </p>
                         </Button>
                     </Link>
                 </div>
