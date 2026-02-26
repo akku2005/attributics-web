@@ -40,10 +40,11 @@ const Hero = () => {
                     <Button
                         size='lg'
                         variant="primary"
-                        className="text-white bg-black header-button-label rounded-lg"
                     >
-                        {careers.buttonLabel}
-                        <span>→</span>
+                        <p className="section-description" style={{color: 'white'}}>
+                            {careers.buttonLabel}{' '}
+                            <span className="text-xl">→</span>
+                        </p>
                     </Button>
                 </Link>
             </div>

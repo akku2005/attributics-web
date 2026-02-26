@@ -79,7 +79,7 @@ const Local = () => {
             {/* Filters + Search */}
             <Block xpad='large' topMargin='small'>
             <section className={`${commonMB}`}>
-                <h1 className="section-title mb-2" style={{fontSize: '3rem'}}>
+                <h1 className="section-title mb-2">
                     Case Studies
                 </h1>
 

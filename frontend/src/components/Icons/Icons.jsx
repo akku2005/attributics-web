@@ -74,9 +74,20 @@ export const ArrowRightIcon = ({ className = "", size = 20 }) => (
   </svg>
 );
 
-export const TrendingUpIcon = ({ className = "", size = 14 }) => (
-  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" className={className}>
-    <path d="M3 17l6-6 4 4 7-7" stroke="currentColor" strokeWidth="1.5"/>
+export const TrendingUpIcon = ({ className = "", size = 20 }) => (
+  <svg
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="1.8"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    className={className}
+  >
+    <path d="M3 17l6-6 4 4 7-7" />
+    <path d="M14 8h6v6" />
   </svg>
 );
 
