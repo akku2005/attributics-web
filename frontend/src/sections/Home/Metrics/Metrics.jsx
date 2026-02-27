@@ -3,6 +3,14 @@ import Block from '../../../components/layout/Block';
 import useEmblaCarousel from 'embla-carousel-react';
 import Autoplay from 'embla-carousel-autoplay';
 import { metrics } from '../../../constants/home';
+import { motion } from 'motion/react';
+
+const fadeUp = (delay = 0) => ({
+    initial: { opacity: 0, y: 22 },
+    whileInView: { opacity: 1, y: 0 },
+    viewport: { once: true },
+    transition: { duration: 0.55, ease: [0.25, 0.1, 0.25, 1], delay },
+});
 
 const MetricCard = ({
         study,
@@ -16,7 +24,6 @@ const MetricCard = ({
     return (
       <div
         onMouseEnter={!isMobile ? () => setExpandedCard(index) : undefined}
-        // onMouseLeave={!isMobile ? () => setExpandedCard(0) : undefined}
         className={`
           relative rounded-md border border-[#747474] bg-white
           overflow-hidden p-2 flex transition-all duration-700 ease-in-out h-70 lg:h-75
@@ -77,9 +84,8 @@ const MetricCard = ({
               </p>
             </a>
           </div>
-  
         </div>
-      </div>
+        </div>
     );
 };
   
@@ -96,7 +102,6 @@ const Metrics = () => {
                 slidesToScroll: 3,
               },
             },
-
         },
         [Autoplay({ delay: 3500, stopOnInteraction: true })]
     );
@@ -104,19 +109,24 @@ const Metrics = () => {
     return (
         <Block xpad='medium'>
         <section id="about" className="h-full w-full flex flex-col">
+
           {/* Headline */}
-          <div className="flex-[4] text-center flex justify-center items-center max-w-2xl mx-auto"> 
-            <h2 className='section-title'>
+          <motion.div
+            className="flex-[4] text-center flex justify-center items-center max-w-2xl mx-auto"
+            {...fadeUp(0)}
+          >
+            <h2 className='section-title' style={{fontSize: '2.5rem'}}>
               {metrics.headline}{' '}
               <span className="highlight">{metrics.highlightedText}</span>
             </h2>
-          </div>
+          </motion.div>
 
           <div className="flex-[6] w-full flex relative flex-[0_0_100%] sm:flex-[0_0_50%] lg:flex-[0_0_33.333%] lg:items-center lg:justify-center pt-12" style={{ '--fade': '15px'}}>
+
               {/* Mobile carousel */}
               <div ref={emblaRef} className="overflow-hidden lg:hidden">
                   <div className="flex gap-4">
-                      {metrics.map((study, index) => (
+                      {metrics.cards.map((study, index) => (
                       <div key={index} className="flex-[0_0_90%]">
                           <MetricCard study={study} isMobile />
                       </div>
@@ -124,9 +134,15 @@ const Metrics = () => {
                   </div>
               </div>
 
-              {/* Desktop layout (unchanged) */}
-              <div className="hidden lg:flex justify-center gap-5">
-                  {metrics.map((study, index) => (
+              {/* Desktop layout */}
+              <motion.div
+                className="hidden lg:flex justify-center gap-5"
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.55, delay: 0.15, ease: [0.25, 0.1, 0.25, 1] }}
+              >
+                  {metrics.cards.map((study, index) => (
                       <MetricCard
                         key={index}
                         study={study}
@@ -135,7 +151,7 @@ const Metrics = () => {
                         setExpandedCard={setExpandedCard}
                       />
                   ))}
-              </div>
+              </motion.div>
           </div>
         </section>
         </Block>

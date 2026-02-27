@@ -6,9 +6,9 @@ import { careers } from '../../../constants/careers';
 
 import useEmblaCarousel from 'embla-carousel-react';
 import AutoScroll from 'embla-carousel-auto-scroll';
-import { useMemo, useEffect } from "react";
+import { useMemo } from "react";
+import { motion } from 'motion/react';
 
-import Backdrop from '../../../components/Backdrop/Backdrop';
 
 const Hero = () => {
   return (
@@ -18,44 +18,76 @@ const Hero = () => {
                 background: "linear-gradient(to top,rgb(255, 255, 255) 0%,rgba(173, 173, 173, 0.4) 10%,rgba(129, 129, 129, 0.4) 13%,rgb(255, 255, 255) 35%,rgb(255, 255, 255) 100%)"
             }}
             className="min-h-screen flex flex-col lg:pt-25 lg:mt-0 mt-20">
-        {/* <div className="min-h-screen flex flex-col lg:pt-25 lg:mt-0 mt-20"> */}
 
             {/* Header Section */}
-            <div className="text-center mb-4">
-                <p className='section-eyebrow'>{careers.eyebrow}</p>
+            <motion.div 
+                className="text-center mb-4"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, ease: "easeOut" }}
+            >
+                <motion.p 
+                    className='section-eyebrow'
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 0.5, delay: 0.1 }}
+                >
+                    {careers.eyebrow}
+                </motion.p>
 
                 <div className="flex justify-center items-center mb-2">
-                    <h1 className="section-title lg:max-w-[40%]" style={{fontSize: '2.5rem'}}>
+                    <motion.h1 
+                        className="section-title lg:max-w-[40%]" 
+                        style={{fontSize: '2.5rem'}}
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: 0.2 }}
+                    >
                         {careers.headline[0]}{' '}
                         <span className='highlight'>{careers.highlighted}</span>
                         {' '}{careers.headline[1]}
-                    </h1>
+                    </motion.h1>
                 </div>
                 
                 <div className="flex justify-center items-center mb-2">
-                    <p className="section-description mb-4 lg:max-w-[50%]">{careers.description}</p>
+                    <motion.p 
+                        className="section-description mb-4 lg:max-w-[50%]"
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: 0.3 }}
+                    >
+                        {careers.description}
+                    </motion.p>
                 </div>
 
-                <Link to="/contact?type=career">
-                    <Button
-                        size='lg'
-                        variant="primary"
-                    >
-                        <p className="section-description" style={{color: 'white'}}>
-                            {careers.buttonLabel}{' '}
-                            <span className="text-xl">→</span>
-                        </p>
-                    </Button>
-                </Link>
-            </div>
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 0.4 }}
+                >
+                    <Link to="/contact?type=career">
+                        <Button
+                            size='lg'
+                            variant="primary"
+                        >
+                            <p className="section-description" style={{color: 'white'}}>
+                                {careers.buttonLabel}{' '}
+                                <span className="text-xl">→</span>
+                            </p>
+                        </Button>
+                    </Link>
+                </motion.div>
+            </motion.div>
 
             {/* CONTENT */}
-            {/* <div className='px-10'>
-                <StaticImgs />
-            </div> */}
-            <div className="flex-1 flex lg:items-center rounded-t-3xl">
+            <motion.div 
+                className="flex-1 flex lg:items-center rounded-t-3xl"
+                initial={{ opacity: 0, y: 40 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
+            >
                 <CarouselImgs />
-            </div>
+            </motion.div>
         </div>
     </Block>
   );
@@ -72,7 +104,7 @@ const CarouselImgs = () => {
     const [emblaRef, emblaApi] = useEmblaCarousel(
         { 
             loop: true,
-            align: 'center',
+            align: 'start',
             dragFree: true,
         },
         [autoScroll]
@@ -96,8 +128,8 @@ const CarouselImgs = () => {
   return (
     <div className="overflow-x-hidden h-full flex-1 flex py-20" ref={emblaRef}>
       <div className="flex h-full">
-        {imagesWithTilt.map((image) => (
-          <div 
+        {imagesWithTilt.map((image, index) => (
+          <motion.div 
             key={image.id} 
             className="
                 flex-[0_0_90%] 
@@ -107,6 +139,13 @@ const CarouselImgs = () => {
                 xl:flex-[0_0_35%]
                 flex items-center px-4 sm:px-6 lg:px-8
             "
+            initial={{ opacity: 0.9, scale: 1, y: 0 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            transition={{ 
+                duration: 0.6, 
+                delay: 0.6 + (index * 0.1),
+                ease: "easeIn"
+            }}
           >
             <div
               className="transition duration-300"
@@ -118,105 +157,11 @@ const CarouselImgs = () => {
                 className="rounded-3xl w-auto h-full object-cover shadow-2xl shadow-black/15"
               />
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
     </div>
   );
-};
-
-const StaticImgs = () => {
-    return (
-        <>
-            {/* Content Section */}
-            <div className="flex-1 flex items-end">
-            {/* Image Grid */}
-                <div className="h-full grid grid-cols-13 gap-4 flex items-end">
-                    {/* Image 3 - Large Center */}
-                    <div className="col-span-4">
-                        <ImageCard img="https://images.unsplash.com/photo-1497366216548-37526070297c?w=700&h=1000&fit=crop" />
-                    </div>
-
-                    {/* Image 1 - Small */}
-                    <div className="col-span-3">
-                        <ImageCard img="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=400&h=700&fit=crop" />
-                    </div>
-
-                    {/* Image 2 - Medium */}
-                    <div className="col-span-3">
-                        <ImageCard img="https://images.unsplash.com/photo-1531482615713-2afd69097998?w=500&h=700&fit=crop" />
-                    </div>
-
-                    {/* Image 5 - Small */}
-                    <div className="col-span-3">
-                        <ImageCard img="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=300&h=600&fit=crop" />
-                    </div>
-                </div>
-            </div>
-        </>
-    )
-}
-
-const ImageCard = ({img}) => {
-    return (
-        <div className="rounded-3xl overflow-hidden shadow-lg h-auto w-full">
-            <img 
-                src={img}
-                alt="Team collaboration"
-                className="w-full h-full object-cover"
-            />
-        </div>
-    )
-};
-
-const CareerCard = ({ job }) => {
-    return (
-      <div className="group bg-white rounded-2xl p-6 shadow-md transition-all duration-300 border border-gray-100 hover:border-gray-300 flex flex-col justify-between">
-  
-        {/* Top Section */}
-        <div>
-            <div className="flex justify-between items-start">
-                <h3 className="text-xl font-semibold text-[#131212]">
-                    {job.title}
-                </h3>
-                <span className="text-xs uppercase tracking-wide bg-gray-100 px-3 py-1 rounded-full">
-                    {job.department}
-                </span>
-            </div>
-  
-            {/* Meta Info */}
-            <div className="mb-2">
-                <p className='content-description' style={{color: 'black'}}>
-                    {job.location}
-                    <span className="content-description" style={{color: 'black'}}>{' '}·{' '}</span>
-                    {job.type}
-                </p>
-                <p className='content-description' style={{color: 'black'}}>
-                    {job.experience}
-                    <span className="content-description" style={{color: 'black'}}>{' '}·{' '}</span>
-                    {job.compensation}
-                </p>
-            </div>
-  
-            {/* Skills */}
-            <div className="flex flex-wrap gap-2">
-                {job.skills.map((skill, idx) => (
-                <span
-                    key={idx}
-                    className="text-xs bg-gray-100 px-3 py-1 rounded-full"
-                >
-                    {skill}
-                </span>
-                ))}
-            </div>
-        </div>
-  
-        {/* Bottom CTA */}
-        <button className="content-description mt-3 w-full bg-[#131212] py-3 rounded-lg hover:bg-black/70 transition">
-            Apply Now
-        </button>
-      </div>
-    );
 };
 
 export default Hero;

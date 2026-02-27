@@ -2,94 +2,114 @@ import Block from '../../../components/layout/Block/Block';
 import { MailIcon, MapPinIcon, PhoneIcon } from '../../../components/Icons/Icons';
 import { audit } from '../../../constants/contact';
 import { useLocation } from "react-router-dom";
+import { motion } from 'motion/react';
+import { useEffect, useRef, useState } from "react";
+import Calendar from '../../../components/Calendar/Calendar';
 
 const AuditForm = () => {
     const location = useLocation();
 
     useEffect(() => {
         if (!window.location.search.includes("r=true")) {
-        window.location.replace(
-            window.location.pathname + "?r=true"
-        );
+            window.location.replace(
+                window.location.pathname + "?r=true"
+            );
         }
     }, [location.pathname]);
     
     return (
         <Block xpad='medium' topMargin='small'>
-            <section className="min-h-[80vh] items-center justify-center flex flex-col lg:justify-around grid grid-cols-1 lg:grid-cols-[6fr_8fr] gap-6">
+            <section className="min-h-[80vh] justify-center  flex flex-col lg:justify-between grid grid-cols-1 lg:grid-cols-[6fr_8fr] gap-6">
                 
                 {/* Left Side - Text Content */}
-                <div className="flex-col flex ">
-                    <p className="section-eyebrow">{audit.eyebrow}</p>
-                    <h1 className="section-title">
+                <motion.div 
+                    className="flex-col flex lg:self-start lg:mt-[20%]"
+                    initial={{ opacity: 0, x: -30 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.6, ease: "easeOut" }}
+                >
+                    <motion.p 
+                        className="section-eyebrow"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ duration: 0.5, delay: 0.1 }}
+                    >
+                        {audit.eyebrow}
+                    </motion.p>
+                    
+                    <motion.h1 
+                        className="section-title"
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.5, delay: 0.2 }}
+                    >
                         {audit.headline}{' '}
                         <span className='highlight'>{audit.highlighted}</span>
-                    </h1>
-                    <p className="section-description">{audit.description}</p>
+                    </motion.h1>
+                    
+                    <motion.p 
+                        className="section-description"
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.5, delay: 0.3 }}
+                    >
+                        {audit.description}
+                    </motion.p>
 
-                    <div className='flex gap-2 mt-4 flex-col'>
-                        <div className='items-center flex flex-row gap-2'>
-                            <PhoneIcon />
-                            <p className='section-description'>{audit.details.phone}</p>
-                        </div>
+                    <motion.div 
+                        className='flex gap-2 mt-4 flex-col'
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.5, delay: 0.4 }}
+                    >
+                        {[
+                            { Icon: PhoneIcon, text: audit.details.phone },
+                            { Icon: MailIcon, text: audit.details.email },
+                            { Icon: MapPinIcon, text: audit.details.location }
+                        ].map((item, index) => (
+                            <motion.div 
+                                key={index}
+                                className='items-center flex flex-row gap-2'
+                                initial={{ opacity: 0, x: -20 }}
+                                animate={{ opacity: 1, x: 0 }}
+                                transition={{ duration: 0.4, delay: 0.5 + (index * 0.1) }}
+                            >
+                                <item.Icon />
+                                <p className='section-description'>{item.text}</p>
+                            </motion.div>
+                        ))}
+                    </motion.div>
 
-                        <div className='items-center flex flex-row gap-2'>
-                            <MailIcon />
-                            <p className='section-description'>{audit.details.email}</p>
-                        </div>
-
-                        <div className='items-center flex flex-row gap-2'>
-                            <MapPinIcon />
-                            <p className='section-description'>{audit.details.location}</p>
-                        </div>
-                    </div>
-
-                    <div className='flex lg:flex-row w-full mt-8 gap-6 justify-between flex-wrap'>
+                    <motion.div 
+                        className='flex lg:flex-row w-full mt-8 gap-6 justify-around flex-wrap'
+                        initial={{ opacity: 0, y: 10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.5, delay: 0.8 }}
+                    >
                         {audit.metrics.map((metric, index) => (
-                            <div id={index} className='flex flex-col items-center'>
+                            <motion.div 
+                                key={index}
+                                className='flex flex-col items-center'
+                                initial={{ opacity: 0, scale: 0.8 }}
+                                animate={{ opacity: 1, scale: 1 }}
+                                transition={{ duration: 0.4, delay: 0.9 + (index * 0.1) }}
+                            >
                                 <p className='section-title' style={{fontSize: '2.5rem'}}>
                                     <span className=''>{metric.value}{metric.unit}</span>
-                                    
                                 </p>
                                 <p className='section-description'>
                                     {metric.tagline}
                                 </p>
-                            </div>
+                            </motion.div>
                         ))}
-                    </div>
-                </div>
+                    </motion.div>
+                </motion.div>
 
-                {/* Right Side - Contact Form */}
-                <ZCal />
+                {/* Right Side - Calendar */}
+                <Calendar />
             </section>
         </Block>
     );
-};
-
-import { useEffect, useRef } from "react";
-const ZCal = () => {
-  const containerRef = useRef(null);
-
-  useEffect(() => {
-    // Prevent duplicate loading
-    if (document.querySelector('script[src="https://static.zcal.co/embed/v1/embed.js"]')) {
-      return;
-    }
-
-    const script = document.createElement("script");
-    script.src = "https://static.zcal.co/embed/v1/embed.js";
-    script.async = true;
-
-    document.body.appendChild(script);
-
-  }, []);
-
-  return (
-    <div ref={containerRef} className="zcal-inline-widget">
-        <a href="https://zcal.co/i/WpWYKgNI">
-        </a>
-    </div>
-  );
 };
 
 export default AuditForm;

@@ -9,11 +9,12 @@ const Metrics = lazy(() => import('../sections/Home/Metrics/Metrics'));
 const Agentic = lazy(() => import('../sections/Home/Agentic/Agentic'));
 const Features = lazy(() => import('../sections/Home/Features/Features'));
 const Partners = lazy(() => import('../sections/Home/Partners/Partners'));
-const Calendar = lazy(() => import('../sections/Home/Calendar/Calendar'));
+const CTA = lazy(() => import('../sections/Home/CTA/CTA'));
 const RevenueAutomation = lazy(() => import('../sections/Home/RevenueAutomation/RevenueAutomation'));
 
 const reducedWhiteSpaceHeight = '10vh';
 const whiteSpaceHeight = '15vh';
+const biggerWhiteSpaceHeight = '25vh';
 
 const HomePage = () => {
   return (
@@ -23,22 +24,22 @@ const HomePage = () => {
         <WhiteSpace height={reducedWhiteSpaceHeight} />
         
         <Metrics />
-        <WhiteSpace height={whiteSpaceHeight} />
+        <WhiteSpace height={biggerWhiteSpaceHeight} />
 
         <Agentic />
-        <WhiteSpace height={whiteSpaceHeight} />
+        <WhiteSpace height={biggerWhiteSpaceHeight} />
 
         <Features />
-        <WhiteSpace height={whiteSpaceHeight} />
+        <WhiteSpace height={biggerWhiteSpaceHeight} />
         
         <Partners />
-        <WhiteSpace height={whiteSpaceHeight} />
+        <WhiteSpace height={biggerWhiteSpaceHeight} />
 
-        <Calendar />
-        <WhiteSpace height={whiteSpaceHeight} />
+        <CTA />
+        <WhiteSpace height={biggerWhiteSpaceHeight} />
 
         <RevenueAutomation />
-        <WhiteSpace height={whiteSpaceHeight} />
+        <WhiteSpace height={biggerWhiteSpaceHeight} />
 
       </Suspense>
     </main>
