@@ -3,7 +3,6 @@ import GlobalLoader from '../components/ui/Loader/GlobalLoader';
 import WhiteSpace from '../components/layout/WhiteSpace/WhiteSpace';
 
 // Lazy load sections with explicit paths
-const Hero = lazy(() => import('../sections/Home/Hero/Hero'));
 const HeroTwo = lazy(() => import('../sections/Home/HeroTwo/HeroTwo'));
 const Metrics = lazy(() => import('../sections/Home/Metrics/Metrics'));
 const Agentic = lazy(() => import('../sections/Home/Agentic/Agentic'));
