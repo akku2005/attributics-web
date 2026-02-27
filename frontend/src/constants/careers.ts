@@ -53,7 +53,6 @@ import HBOMaxLogo from "../assets/brands/clients/hbomax.svg";
 import JockeyLogo from "../assets/brands/clients/jockey.svg";
 import KFCLogo from "../assets/brands/clients/kfc.svg";
 import LevisLogo from "../assets/brands/clients/levis.svg";
-import PhitureLogo from "../assets/brands/clients/phiture.svg";
 import PizzaHutLogo from "../assets/brands/clients/pizzahut.svg";
 import UnicefLogo from "../assets/brands/clients/unicef.svg";
 
@@ -74,7 +73,6 @@ export const companies = {
         JockeyLogo,
         KFCLogo,
         LevisLogo,
-        PhitureLogo,
         PizzaHutLogo,
         UnicefLogo,
     ]
