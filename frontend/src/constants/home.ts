@@ -33,11 +33,9 @@ import ApparelGroupLogo from "../assets/brands/clients/apparelgroup.svg";
 import CasetifyLogo from "../assets/brands/clients/casetify.svg";
 import ClubMahindraLogo from "../assets/brands/clients/clubmahindra.svg";
 import GynovedaLogo from "../assets/brands/clients/gynoveda.svg";
-import HBOMaxLogo from "../assets/brands/clients/hbomax.svg";
 import JockeyLogo from "../assets/brands/clients/jockey.svg";
 import KFCLogo from "../assets/brands/clients/kfc.svg";
 import LevisLogo from "../assets/brands/clients/levis.svg";
-import PhitureLogo from "../assets/brands/clients/phiture.svg";
 import PizzaHutLogo from "../assets/brands/clients/pizzahut.svg";
 import UnicefLogo from "../assets/brands/clients/unicef.svg";
 
@@ -51,11 +49,9 @@ export const logoCloud = {
         CasetifyLogo,
         ClubMahindraLogo,
         GynovedaLogo,
-        HBOMaxLogo,
         JockeyLogo,
         KFCLogo,
         LevisLogo,
-        PhitureLogo,
         PizzaHutLogo,
         UnicefLogo,
     ],
@@ -67,36 +63,42 @@ import mainCard02 from '../assets/metrics/2.webp';
 import mainCard03 from '../assets/metrics/3.webp';
 import mainCard04 from '../assets/metrics/4.webp';
 
-export const metrics = [
-    {
-        image: mainCard01,
-        stat: '11%',
-        title: 'MORE ORGANIC LEADS',
-        description: 'Driving digital transformation with MarTech in the Automobile industry',
-        readMoreLink: "#readMore1",
-    },
-    {
-        image: mainCard02,
-        stat: '10X',
-        title: 'BOOSTS IN CONVERSION RATES',
-        description: 'Powering flexibility with a composable CDP',
-        readMoreLink: "#readMore2",
-    },
-    {
-        image: mainCard03,
-        stat: '15%',
-        title: 'REVENUE GROWTH',
-        description: 'Turning every lead into an opportunity with Data & CRM',
-        readMoreLink: "#readMore3",
-    },
-    {
-        image: mainCard04,
-        stat: '25%',
-        title: 'FASTER TIME TO MARKET',
-        description: 'Accelerating product launches with AI-powered automation',
-        readMoreLink: "#readMore4",
-    },
-];
+export const metrics = {
+    eyebrow: "",
+    headline: "Businesses Worldwide Trust Us To Help Them",
+    highlightedText: "Grow Their Revenue.",
+    description: "",
+    cards: [
+        {
+            image: mainCard01,
+            stat: '11%',
+            title: 'MORE ORGANIC LEADS',
+            description: 'Driving digital transformation with MarTech in the Automobile industry',
+            readMoreLink: "#readMore1",
+        },
+        {
+            image: mainCard02,
+            stat: '10X',
+            title: 'BOOSTS IN CONVERSION RATES',
+            description: 'Powering flexibility with a composable CDP',
+            readMoreLink: "#readMore2",
+        },
+        {
+            image: mainCard03,
+            stat: '15%',
+            title: 'REVENUE GROWTH',
+            description: 'Turning every lead into an opportunity with Data & CRM',
+            readMoreLink: "#readMore3",
+        },
+        {
+            image: mainCard04,
+            stat: '25%',
+            title: 'FASTER TIME TO MARKET',
+            description: 'Accelerating product launches with AI-powered automation',
+            readMoreLink: "#readMore4",
+        },
+    ],
+};
 
 // AGENTIC AI FLOW
 export const agentic = {
@@ -124,12 +126,12 @@ export const features = {
 }
 
 // PARTNERS
-import AWSLogo from '../assets/brands/partners/aws.svg';
-import AzureLogo from '../assets/brands/partners/azure.svg';
 import ClevertapLogo from '../assets/brands/partners/clevertap.svg';
-import DatabricksLogo from '../assets/brands/partners/databricks.svg';
-import PowerBi from '../assets/brands/partners/powerbi.svg';
-import TableauLogo from '../assets/brands/partners/tableau.svg';
+import PhitureLogo from "../assets/brands/partners/phiture.svg";
+import AmplitudeLogo from "../assets/brands/partners/amplitude.svg"
+import BrazeLogo from "../assets/brands/partners/braze.svg"
+import MoengageLogo from "../assets/brands/partners/moengage.svg"
+import OptimizelyLogo from "../assets/brands/partners/optimizely.svg"
 
 export const partners = {
     eyebrow: 'our partners',
@@ -137,14 +139,21 @@ export const partners = {
     highlighted: 'Industry Leaders',
     description: "Collaborating with industry leaders to drive innovation and success. It's the growth that compounds. Intelligent agents continuously optimize engagement, retention, and expansion—turning every customer into a long-term value driver.",
     logos: [
-        AWSLogo,
-        AzureLogo,
         ClevertapLogo,
-        DatabricksLogo,
-        PowerBi,
-        TableauLogo,
+        PhitureLogo,
+        AmplitudeLogo,
+        BrazeLogo,
+        MoengageLogo,
+        OptimizelyLogo
     ]
 }
+
+// ClevertapLogo,
+// moengage,
+// phiture,
+// braze
+// optimizely
+// amplitude
 
 // REVENUE AUTOMATION CARDS
 import cardBg01 from '../assets/revAuto/1.webp';

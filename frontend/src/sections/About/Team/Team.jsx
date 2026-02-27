@@ -1,72 +1,97 @@
 import { team } from '../../../constants/about';
 import Block from '../../../components/layout/Block';
-import LeadershipTeam from './Scroll';
+import { motion } from 'motion/react';
 
 const Team = () => {
     return (
         <Block xpad='large'>
             <section className="bg-white relative">
-                <div className=''>
-                    <p className="section-eyebrow">
+                <motion.div
+                    initial={{ opacity: 0.8, y: 2 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-100px" }}
+                    transition={{ duration: 0.6, ease: "easeOut" }}
+                >
+                    <motion.p 
+                        className="section-eyebrow"
+                        initial={{ opacity: 0 }}
+                        whileInView={{ opacity: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.5, delay: 0.1 }}
+                    >
                         {team.eyebrow}
-                    </p>
-                    <h1 className='section-title'>
+                    </motion.p>
+                    <motion.h1 
+                        className='section-title'
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.5, delay: 0.2 }}
+                    >
                         {team.headline}{' '}
                         <span className='highlight'>{team.highlighted}</span>
-                    </h1>
-                </div>
+                    </motion.h1>
+                </motion.div>
 
-                {/* <DefaultTeamList /> */}
-                <div className='overflow-x-hidden' style={{ '--fade': '0px' }}>
+                <motion.div 
+                    className='overflow-x-hidden' 
+                    style={{ '--fade': '0px' }}
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6, delay: 0.3 }}
+                >
                     <LeadershipTeam teamMembers={team.members} />
-                </div>
+                </motion.div>
             </section>
         </Block>
     );
 };
 
-const DefaultTeamList = () => {
+import './scroll.css';
+import useEmblaCarousel from 'embla-carousel-react';
+import Autoplay from 'embla-carousel-autoplay';
+import WheelGestures from 'embla-carousel-wheel-gestures';
+
+function LeadershipTeam({teamMembers}) {
+
+    const [emblaRef] = useEmblaCarousel(
+        { 
+            align: 'start',
+            loop: true,
+            dragFree: false,
+        },
+        [
+            Autoplay({ delay: 2500, stopOnInteraction: false, stopOnMouseEnter: true}),
+            WheelGestures({ forceWheelAxis: 'x', wheelSpeed: 1 }),
+        ]
+    );
+    
     return (
         <>
-            {/* Team Members Grid */}
-            <div className="flex gap-8 w-full h-80 overflow-auto scrollbar-hide mask-fade-x" style={{ '--fade': '8px' }}>
-                {team.members.map((member, index) => (
-                    <div key={index} className="group cursor-pointer relative">
-                        <div className="w-58 h-80 overflow-hidden rounded-xl mb-4 aspect-square bg-linear-to-b from-[#2A3D5A] to-[#1a2433]">
-                            {/* Placeholder for member image */}
-                            <img
-                                src={`/src/assets/team/${member.imgKey === '' ? 'placeholder.webp' : member.imgKey}`}
-                                alt={member.name}
-                                className="w-full h-full object-cover"
-                                loading='lazy'
-                            />
-
-                            {/* Intro box */}
-                            <div
-                                className=" absolute left-1/2 -translate-x-1/2
-                                    bottom-3 w-43.25 h-15.5
-                                    text-center rounded-lg px-4 py-2" style={{ backgroundColor: '#ffffff' }}>
-                                <div className="text-center">
-                                    <div className="font-ibm-sans text-[16px] font-normal leading-[140%] text-black">
-                                        {member.name}
-                                    </div>
-                                    <div className="font-ibm-sans text-[12px] font-normal leading-[130%] uppercase text-black">
-                                        {member.role}
-                                    </div>
-                                </div>
+            <div className='lt-viewport' ref={emblaRef}>
+                <div className="lt-cards">
+                    {teamMembers.map((member) => (
+                        <div className="lt-card" key={member.id}>
+                            <div className="lt-card-header">
+                                <div className="lt-name">{member.name.split(' ')[0]}<br />{member.name.split(' ')[1]}</div>
+                                <div className="lt-title">{member.role.split(' ')[0]}<br />{member.role.split(' ')[1]}</div>
                             </div>
 
-                            {/* Details Box, *Replaces card */}
-                            <div className="absolute top-0 left-0 w-full h-full bg-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-4">
-                                <h3 className="text-[18px] font-normal text-[#131212] mb-2">{member.name}</h3>
-                                <p className="text-[14px] text-[#666] leading-[160%] text-center">{member.bio}</p>
+                            <div className="lt-image-wrap">
+                                <img
+                                    className="lt-image"
+                                    src={member.img}
+                                    alt={member.name}
+                                    loading='lazy'
+                                />
                             </div>
                         </div>
-                    </div>
-                ))}
+                    ))}
+                </div>
             </div>
         </>
-    )
+    );
 }
 
 export default Team;

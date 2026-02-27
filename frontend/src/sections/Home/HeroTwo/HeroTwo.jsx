@@ -46,7 +46,7 @@ const HeroTwo = () => {
       
         <motion.div 
           style={{ y: y3 }}
-          className="absolute top-1/4 -left-20 w-64 h-64 bg-brand/10 rounded-3xl blur-3xl z-0"
+          className="absolute top-1/4 -left-20 w-64 h-64 bg-brand/15 rounded-3xl blur-3xl z-0"
         />
         <motion.div 
           style={{ y: y4 }}
@@ -54,7 +54,7 @@ const HeroTwo = () => {
         />
         <motion.div 
           style={{ y: y2 }}
-          className="absolute top-1/2 left-1/3 w-128 h-98 bg-brand/5 rounded-full blur-2xl z-0"
+          className="absolute top-1/2 left-1/3 w-128 h-98 bg-brand/15 rounded-full blur-2xl z-0"
         />
         
         {/* Animated Grid Background (Evolved from original) - Removed dots as requested */}
@@ -71,7 +71,7 @@ const HeroTwo = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand/10 border border-brand/20 !text-brand mb-8"
+            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand/10 border border-brand/20 !text-brand mb-4"
           >
             <TrendingUpIcon size={14} />
             <p className="section-title uppercase" style={{color: 'var(--color-brand)', fontSize: '1rem'}}>Lifetime Value With Our AI Agent</p>
@@ -83,7 +83,7 @@ const HeroTwo = () => {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="mb-4"
           >
-            <h1 className="section-title lg:text-[4rem]" style={{fontSize: '3rem'}}>Autonomous AI agents that</h1>
+            <h1 className="section-title lg:!text-[4.2rem]">Autonomous AI agents that</h1>
             <div className="h-[5.2rem] relative overflow-hidden flex justify-center">
               <AnimatePresence mode="wait">
                 <motion.span
@@ -94,7 +94,7 @@ const HeroTwo = () => {
                   transition={{ duration: 0.8, ease: [0.4, 0, 0.2, 1] }}
                   className="absolute whitespace-wrap"
                 >
-                  <h1 className="section-title lg:text-[4rem]" style={{fontSize: '3rem'}}>
+                  <h1 className="section-title lg:!text-[4.2rem]">
                     <span className="highlight">{phrases[index]}</span>
                   </h1>
                 </motion.span>
@@ -106,10 +106,11 @@ const HeroTwo = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="lg:max-w-[50%] mx-auto mb-12 leading-relaxed"
+            className="lg:max-w-[90%] mx-auto mb-12 leading-relaxed"
           >
-            <p className="section-description">
+            <p className="section-description" style={{fontSize: '1.4rem'}}>
               Improve retention and LTV with real-time decisioning at scale. 
+              <br />
               The next generation of martech is agentic.
             </p>
           </motion.p>

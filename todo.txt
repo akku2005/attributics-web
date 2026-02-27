@@ -1,4 +1,5 @@
-home page content
-resources page
-careers page lets grow, center headline and increase font size
-responsiveness on new content
+contact us buttons as fked
+the agentic ai section is to be made.
+footer cta isnt decided (no for now)
+
+the zcal needs to be better, cleaner, no names or profiles.

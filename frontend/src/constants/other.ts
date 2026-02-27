@@ -1,4 +1,9 @@
+import Exclude from '../assets/logo/Exclude.svg';
+import Wordmark from '../assets/logo/Attributics-Wordmark.png';
+
 export const brand = {
+    logo: Exclude,
+    wordmark: Wordmark,
     name: 'Attributics',
     tagline: 'AI-Powered Revenue Intelligence',
 }
@@ -10,16 +15,6 @@ export const nav = {
         {
             label: 'Resources',
             href: '/resources',
-            // options: [
-            //     {
-            //         label: 'Blogs',
-            //         href: '/resources?type=blogs'
-            //     },
-            //     {
-            //         label: 'Case Studies',
-            //         href: '/resources?type=case'
-            //     }
-            // ]
         },
         { label: 'Careers', href: '/careers' },
     ],
@@ -37,11 +32,34 @@ export const newsletter = {
     disclaimer: 'No spam. Unsubscribe anytime.',
 }
 
+import l from '../components/Icons/linkedin.svg';
+
 export const footer = {
-    copyright: '© 2026 Attributics. All rights reserved.',
-    links: [
-        { label: 'Privacy Policy', href: '/privacy' },
-        { label: 'Terms of Service', href: '/terms' },
-        { label: 'Contact', href: '/contact' },
+    socials: [
+        {
+            logo: null,
+            name: "LinkedIn",
+            href: "",
+        }
     ],
+    links: [
+        {
+            title: 'Company',
+            items: [
+                {
+                    label: 'About',
+                    href: '/about',
+                },
+                {
+                    label: 'Careers',
+                    href: '/careers',
+                },
+                {
+                    label: 'Resources',
+                    href: '/resources',
+                }
+            ]
+        }
+    ],
+    copyright: '© 2026 Attributics. All rights reserved.',
 }

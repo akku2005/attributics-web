@@ -2,6 +2,8 @@ import Block from "../../../components/layout/Block";
 import { getstarted } from "../../../constants/about";
 import { Link } from 'react-router-dom';
 import Button from '../../../components/ui/Button';
+import { motion } from 'motion/react';
+
 const GetStarted = () => {
     return (
         <Block xpad='large'>
@@ -13,35 +15,67 @@ const GetStarted = () => {
 const AuditCTA = () => {
     return (
         <section className="w-full">
-            <div
+            <motion.div
                 className="
-                
-                border
-                border-[#CFCFCF]
-                rounded-[24px]
-                px-6
-                py-8
-                lg:px-16
-                lg:py-14
+                    border
+                    border-[#CFCFCF]
+                    rounded-[24px]
+                    px-6
+                    py-8
+                    lg:px-16
+                    lg:py-14
 
-                flex
-                flex-col
-                gap-6
-                items-center
-                text-center
-            "
+                    flex
+                    flex-col
+                    gap-6
+                    items-center
+                    text-center
+                "
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.6, ease: "easeOut" }}
             >
                 {/* Left Content */}
                 <div className="lg:max-w-[70vw]">
-                    <p className="section-eyebrow mb-4">{getstarted.eyebrow}</p>
-                    <SwitchingHeadline />
-                    <h3 className="section-description mt-3">
+                    <motion.p 
+                        className="section-eyebrow mb-4"
+                        initial={{ opacity: 0 }}
+                        whileInView={{ opacity: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.5, delay: 0.2 }}
+                    >
+                        {getstarted.eyebrow}
+                    </motion.p>
+                    
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.5, delay: 0.3 }}
+                    >
+                        <SwitchingHeadline />
+                    </motion.div>
+                    
+                    <motion.h3 
+                        className="section-description mt-3"
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.5, delay: 0.4 }}
+                    >
                         {getstarted.description}
-                    </h3>
+                    </motion.h3>
                 </div>
 
                 {/* CTA Button */}
-                <div className="flex-shrink-0">
+                <motion.div 
+                    className="flex-shrink-0"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: 0.5 }}
+                >
                     <Link to="/contact">
                         <Button
                             variant="primary"
@@ -52,8 +86,8 @@ const AuditCTA = () => {
                             </p>
                         </Button>
                     </Link>
-                </div>
-            </div>
+                </motion.div>
+            </motion.div>
         </section>
     );
 };

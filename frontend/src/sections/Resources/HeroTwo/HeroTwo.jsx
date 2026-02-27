@@ -2,11 +2,18 @@ import React, { useState, useEffect } from 'react';
 import Block from '../../../components/layout/Block';
 const API_URL = import.meta.env.VITE_API_URL || "localhost:5000";
 import { resourcesData } from '../../../constants/resources';
+import { motion, AnimatePresence } from 'motion/react';
 
 // Skeleton Component
 const HeroSkeleton = () => {
     return (
-        <div className="relative rounded-2xl overflow-hidden bg-white animate-pulse">
+        <motion.div 
+            className="relative rounded-2xl overflow-hidden bg-white"
+            initial={{ opacity: 0.9, y: 0 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.5 }}
+        >
             {/* Background Skeleton */}
             <div className="absolute inset-0 bg-gradient-to-br from-gray-200 via-gray-100 to-gray-200">
                 <div className="w-full h-full bg-gray-300" />
@@ -70,7 +77,7 @@ const HeroSkeleton = () => {
                 </div>
 
             </div>
-        </div>
+        </motion.div>
     );
 };
 
@@ -80,6 +87,7 @@ const HeroTwo = () => {
 
     const [featuredBlog, setFeaturedBlog] = useState(null);
     const [loading, setLoading] = useState(true);
+    const [imageLoaded, setImageLoaded] = useState(false);
 
     useEffect(() => {
         async function loadFeaturedBlog() {
@@ -100,56 +108,125 @@ const HeroTwo = () => {
         loadFeaturedBlog();
     }, []);
 
+    // Preload image
+    useEffect(() => {
+        if (featuredBlog?.heroImage) {
+            const img = new Image();
+            img.src = featuredBlog.heroImage;
+            img.onload = () => {
+                setImageLoaded(true);
+            };
+        }
+    }, [featuredBlog]);
+
+    const showContent = !loading && featuredBlog && imageLoaded;
+
     return (
         <Block xpad='medium' topMargin='small'>
-            {loading ? (
-                <HeroSkeleton />
-            ) : (
-                featuredBlog && (
-                    <div className="relative rounded-2xl overflow-hidden bg-white">
+            <AnimatePresence mode="wait">
+                {!showContent ? (
+                    <HeroSkeleton key="skeleton" />
+                ) : (
+                    <motion.div 
+                        key="content"
+                        className="relative rounded-2xl overflow-hidden bg-white"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ duration: 0.1 }}
+                    >
 
                         {/* Background Image */}
-                        <div className="absolute inset-0 bg-white">
+                        <motion.div 
+                            className="absolute inset-0 bg-white"
+                            initial={{ opacity: 0.9, scale: 1 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            transition={{ duration: 0.4, ease: "easeOut" }}
+                        >
                             <img
                                 src={featuredBlog.heroImage}
                                 alt={featuredBlog.title}
                                 className="w-full h-full object-contain lg:object-cover"
                                 loading='eager'
                             />
-                        </div>
+                        </motion.div>
                     
                         {/* Overlay */}
-                        <div className="absolute inset-0 bg-gradient-to-r from-black/20 via-black/0 to-black/20" />
+                        <motion.div 
+                            className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/0 to-black/50"
+                            initial={{ opacity: 1 }}
+                            animate={{ opacity: 0.05 }}
+                            transition={{ duration: 3, delay: 0.2 }}
+                        />
                     
                         {/* Content Wrapper */}
                         <div className="relative z-10 flex flex-col justify-between">
                     
                             {/* Top Block */}
-                            <div className="bg-white rounded-br-2xl p-6 lg:max-w-[40%] self-start">
-                                <h1 className="section-eyebrow">
+                            <motion.div 
+                                className="bg-white rounded-br-2xl p-6 lg:max-w-[40%] self-start"
+                                initial={{ opacity: 0, x: -1000 }}
+                                animate={{ opacity: 1, x: 0 }}
+                                transition={{ duration: 0.5, delay: 0.1, ease: "easeOut" }}
+                            >
+                                <motion.h1 
+                                    className="section-eyebrow"
+                                    initial={{ opacity: 0 }}
+                                    animate={{ opacity: 1 }}
+                                    transition={{ duration: 0.4, delay: 0.7 }}
+                                >
                                     {hero.eyebrow}
-                                </h1>
-                                <p className="section-title">
+                                </motion.h1>
+                                <motion.p 
+                                    className="section-title"
+                                    initial={{ opacity: 0, y: 10 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    transition={{ duration: 0.4, delay: 0.7 }}
+                                >
                                     {hero.headline}
-                                </p>
-                                <p className="section-description">
+                                </motion.p>
+                                <motion.p 
+                                    className="section-description"
+                                    initial={{ opacity: 0, y: 10 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    transition={{ duration: 0.4, delay: 0.7 }}
+                                >
                                     {hero.description}
-                                </p>
-                            </div>
+                                </motion.p>
+                            </motion.div>
                     
                             {/* Spacer Block */}
                             <div className="flex-grow lg:py-20 py-50" />
                     
                             {/* Bottom Block */}
-                            <div className="bg-white rounded-tl-2xl p-6 lg:max-w-[40%] self-end">
-                                <h1 className="section-title">
+                            <motion.div 
+                                className="bg-white rounded-tl-2xl p-6 lg:max-w-[40%] self-end"
+                                initial={{ opacity: 0, x: 1000 }}
+                                animate={{ opacity: 1, x: 0 }}
+                                transition={{ duration: 0.5, delay: 0.1, ease: "easeOut" }}
+                            >
+                                <motion.h1 
+                                    className="section-title"
+                                    initial={{ opacity: 0, y: -10 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    transition={{ duration: 0.4, delay: 0.7 }}
+                                >
                                     {featuredBlog.title}
-                                </h1>
-                                <p className="section-description">
+                                </motion.h1>
+                                <motion.p 
+                                    className="section-description"
+                                    initial={{ opacity: 0, y: -10 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    transition={{ duration: 0.4, delay: 0.7 }}
+                                >
                                     {featuredBlog.description}
-                                </p>
+                                </motion.p>
                     
-                                <div className="resources-meta mt-1 mb-1">
+                                <motion.div 
+                                    className="resources-meta mt-1 mb-1"
+                                    initial={{ opacity: 0, y: -10 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    transition={{ duration: 0.4, delay: 0.7 }}
+                                >
                                     <img
                                         src={featuredBlog.author.avatar}
                                         alt={featuredBlog.author.name}
@@ -160,19 +237,24 @@ const HeroTwo = () => {
                                     <span>{featuredBlog.publishedAt}</span>
                                     <span>•</span>
                                     <span>{featuredBlog.readTime}</span>
-                                </div>
+                                </motion.div>
                     
-                                <a href={`/resources/${featuredBlog.slug}`}>
+                                <motion.a 
+                                    href={`/resources/${featuredBlog.slug}`}
+                                    initial={{ opacity: 0, y: 10 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    transition={{ duration: 0.4, delay: 0.8 }}
+                                >
                                     <p className='section-description'>
                                         Read More →
                                     </p>
-                                </a>
-                            </div>
+                                </motion.a>
+                            </motion.div>
                     
                         </div>
-                    </div>
-                )
-            )}
+                    </motion.div>
+                )}
+            </AnimatePresence>
         </Block>
     );
 };
