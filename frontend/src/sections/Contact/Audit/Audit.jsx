@@ -1,22 +1,10 @@
 import Block from '../../../components/layout/Block/Block';
 import { MailIcon, MapPinIcon, PhoneIcon } from '../../../components/Icons/Icons';
 import { audit } from '../../../constants/contact';
-import { useLocation } from "react-router-dom";
 import { motion } from 'motion/react';
-import { useEffect, useRef, useState } from "react";
 import Calendar from '../../../components/Calendar/Calendar';
 
 const AuditForm = () => {
-    const location = useLocation();
-
-    useEffect(() => {
-        if (!window.location.search.includes("r=true")) {
-            window.location.replace(
-                window.location.pathname + "?r=true"
-            );
-        }
-    }, [location.pathname]);
-    
     return (
         <Block xpad='medium' topMargin='small'>
             <section className="min-h-[80vh] justify-center  flex flex-col lg:justify-between grid grid-cols-1 lg:grid-cols-[6fr_8fr] gap-6">
