@@ -3,10 +3,13 @@ import GlobalLoader from '../components/ui/Loader/GlobalLoader';
 import WhiteSpace from '../components/layout/WhiteSpace/WhiteSpace';
 
 // Lazy load about sections
-const VisionTwo = lazy(() => import('../sections/About/VisionTwo/VisionTwo'));
+const Intro = lazy(() => import('../sections/About/Intro/Intro'));
+const Statement = lazy(() => import('../sections/About/Statement/Statement'));
+const Vision = lazy(() => import('../sections/About/Vision/Vision'));
 const Team = lazy(() => import('../sections/About/Team/Team'));
 const GetStarted = lazy(() => import('../sections/About/GetStarted/GetStarted'));
 
+const reducedWhiteSpaceHeight = '10vh';
 const moreWhiteSpaceHeight = '20vh';
 const whiteSpaceHeight = '15vh';
 
@@ -14,11 +17,13 @@ const AboutPage = () => {
   return (
     <main style={{overflow: 'hidden'}}>
       <Suspense fallback={<GlobalLoader />}>
-        {/* <Vision /> */}
-        <VisionTwo />
+        <Intro />
+        <WhiteSpace height={reducedWhiteSpaceHeight} />
 
+        <Statement />
+        <WhiteSpace height={reducedWhiteSpaceHeight} />
 
-        {/* <Metrics /> */}
+        <Vision />
         <WhiteSpace height={whiteSpaceHeight} />
 
         <Team />

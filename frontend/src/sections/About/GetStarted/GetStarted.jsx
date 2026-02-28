@@ -6,7 +6,7 @@ import { motion } from 'motion/react';
 
 const GetStarted = () => {
     return (
-        <Block xpad='large'>
+        <Block xpad='largest'>
             <AuditCTA />
         </Block>
     )
@@ -14,30 +14,33 @@ const GetStarted = () => {
 
 const AuditCTA = () => {
     return (
-        <section className="w-full">
+        <section className="w-full ">
             <motion.div
                 className="
                     border
                     border-[#CFCFCF]
-                    rounded-[24px]
+                    rounded-[55px]
                     px-6
                     py-8
-                    lg:px-16
-                    lg:py-14
+
+                    lg:px-26
+                    lg:py-34
 
                     flex
                     flex-col
                     gap-6
                     items-center
                     text-center
+                    relative
+
+                    shadow-[0_22px_52px_-12px_rgba(0,0,0,0.08)]
                 "
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
             >
-                {/* Left Content */}
-                <div className="lg:max-w-[70vw]">
+                <div className="lg:max-w-[50vw] flex relative flex-col mx-auto text-center">
                     <motion.p 
                         className="section-eyebrow mb-4"
                         initial={{ opacity: 0 }}
@@ -49,6 +52,7 @@ const AuditCTA = () => {
                     </motion.p>
                     
                     <motion.div
+                        className="mb-4"
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
@@ -122,11 +126,13 @@ const SwitchingHeadline = () => {
 
   return (
     <div className="flex items-center justify-center">
-        <div className="text-start">
-            <h1 className="section-title" style={{fontSize: '3rem'}}>
-                {getstarted.headline}{' '}
+        <div>
+            <h1 className="section-title text-center" style={{fontSize: '3rem', fontWeight: '600'}}>
+                {getstarted.headline[0]}
+                <br />
+                {getstarted.headline[1]}{' '}
                 <span 
-                    className={`inline-block relative `}
+                    className={`inline-block relative text-start`}
                     style={{ width: maxWidth > 0 ? `${maxWidth}px` : 'auto' }}
                 >
                     <span
