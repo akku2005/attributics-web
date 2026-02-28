@@ -7,7 +7,7 @@ import WheelGestures from 'embla-carousel-wheel-gestures';
 
 const Team = () => {
     return (
-        <Block xpad='large'>
+        <Block xpad='larger'>
             <section className="bg-white relative">
                 <motion.div
                     initial={{ opacity: 0.8, y: 2, x: 0 }}
@@ -68,55 +68,34 @@ function LeadershipTeam({ teamMembers }) {
         <div className="overflow-hidden w-full  mask-fade-x" ref={emblaRef}  style={{"--fade": "10px"}}>
             {/* lt-cards */}
             <div className="flex flex-row gap-4 pb-[32px] pt-[32px]">
-                {teamMembers.map((member) => (
+                {teamMembers.map((member, idx) => (
                     // lt-card
-                    <div
-                        key={member.id}
-                        className="
-                            bg-[#f5efe0]
-                            rounded-[20px]
-                            overflow-hidden
-                            relative
-                            transition-[transform,box-shadow]
-                            duration-700
-                            ease-in-out
-                            flex
-                            flex-col
-                            min-h-[340px]
-                            min-w-[320px]
-                            w-[320px]
-                            shrink-0
-                            hover:-translate-y-1
-                            hover:shadow-[0_0_40px_rgba(0,0,0,0.25)]
-                        "
+                    <motion.div 
+                        key={idx}
+                        initial={{ opacity: 0, x: 30 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true, margin: "-50px" }}
+                        transition={{ duration: 0.5, delay: idx * 0.1 }}
+                        className="min-w-[280px] md:min-w-[320px] h-[420px] snap-center shrink-0 bg-[#F5F2EB] rounded-[2rem] p-8 flex flex-col relative overflow-hidden group"
                     >
-                        {/* lt-card-header */}
-                        <div className="flex justify-between items-start px-[18px] pt-5 relative z-[2]">
-                            {/* lt-name */}
-                            <div
-                                className="section-description"
-                                style={{ fontSize: '1.2rem', color: 'black' }}
-                            >
-                                {member.name.split(' ')[0]}<br />{member.name.split(' ')[1]}
-                            </div>
-                            {/* lt-title */}
-                            <div
-                                className="text-right section-eyebrow"
-                            >
-                                {member.role.split(' ')[0]}<br />{member.role.split(' ')[1]}
-                            </div>
+                        <div className="flex justify-between items-start z-10 relative">
+                            <h3 className="text-xl font-display font-bold text-slate-900 w-1/2 leading-tight">
+                                {member.name}
+                            </h3>
+                            <span className="text-xs font-bold tracking-wider uppercase text-slate-500">
+                                {member.role}
+                            </span>
                         </div>
 
-                        {/* lt-image-wrap */}
-                        <div className="flex-1 flex items-end justify-center overflow-hidden mt-2">
-                            <img
-                                className="w-full h-[320px] object-cover object-top block"
-                                src={member.img}
-                                alt={member.name}
-                                loading="lazy"
-                            />
+                        <div className="absolute inset-x-0 bottom-0 top-20">
+                        <img 
+                            src={member.img} 
+                            alt={member.name} 
+                            className="w-full h-full object-cover object-top mix-blend-multiply grayscale group-hover:grayscale-0 transition-all duration-500"
+                            referrerPolicy="no-referrer"
+                        />
                         </div>
-                    </div>
+                    </motion.div>
                 ))}
             </div>
         </div>

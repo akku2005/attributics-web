@@ -22,30 +22,11 @@ const HeaderTwo = () => {
         setIsMobileMenuOpen(false);
     };
 
-    const [isScrolled, setIsScrolled] = useState(false);
-
-    useEffect(() => {
-        const handleScroll = () => {
-            setIsScrolled(window.scrollY > 10);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-        return () => window.removeEventListener("scroll", handleScroll);
-    }, []);
-
     return (
-        <header className={`fixed left-0 right-0 z-50 flex justify-center ${isScrolled ? "top-4" : "top-4"}`} >
-        <Block xpad='medium'>
+        <header className={`fixed left-0 right-0 z-50 flex justify-center top-0`} >
+        <Block xpad='none'>
             <div
-                className={`
-                    transition-all duration-300
-                    rounded-lg flex items-center w-full justify-between h-15
-                    ${
-                    isScrolled
-                        ? "p-2.5 bg-white/50 backdrop-blur-xl border border-[#858E9B] shadow-lg"
-                        : "bg-transparent border border-transparent"
-                    }
-                `}
+                className="p-2.5 bg-white/50 backdrop-blur-xl flex items-center w-full justify-between h-16"
             >
                 <div className={`flex-1 flex justify-start`}>
                     <Link to="/">

@@ -5,20 +5,20 @@ import Metrics from './Metrics';
 
 const Statement = () => {
     return (
-        <Block xpad='large'>
+        <Block xpad='larger'>
         <section id="about" className='h-full w-full'>
             {/* STATEMENT */}
             <motion.div 
-                className="relative h-auto hyphens-none"
+                className="relative h-auto hyphens-none flex flex-col items-center mx-auto"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.5 }}
             >
-                <div className="h-auto flex flex-col justify-end items-center">
+                <div className=" mb-12 h-auto flex flex-col items-center lg:max-w-[60%]">
                    
                     <motion.h3
-                        className="section-title lg:text-right text-center lg:!text-[2.3rem]"
+                        className="section-title text-center lg:!text-[2.2rem]"
                         initial={{ opacity: 0, y: 15 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
@@ -26,9 +26,7 @@ const Statement = () => {
                     >
                         Sustainable Growth is built on{" "}
                         <span className="highlight">Data</span>,
-                        <br />
                         powered by <span className="highlight">Automation</span>,
-                        <br />
                         and scaled through{" "}
                         <span className="highlight">Lifecycle Intelligence</span>.
                     </motion.h3>
