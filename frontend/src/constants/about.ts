@@ -1,6 +1,6 @@
 // VISION & MISSION
-import WhoAreWeImg from '../assets/team/group/whoAreWe.webp';
-import VissionMissionImg from '../assets/team/group/visionMission.webp';
+import WhoAreWeImg from '../assets/team/group/whoAreWe.png';
+import VissionMissionImg from '../assets/team/group/visionMission.png';
 
 export const vision = {
     whoAreWe: {
@@ -120,119 +120,6 @@ export const team = {
             bio: 'Expert in machine learning and data science, driving technical excellence.',
             img: VakeshS,
         },
-        {
-            id: 9,
-            name: 'Shashank Kumar',
-            role: 'CFO',
-            bio: 'Marketing strategist with a passion for customer success and growth.',
-            img: ShashankK,
-        },
-        {
-            id: 10,
-            name: 'Shreya Mehta',
-            role: 'Founder',
-            bio: 'Business development leader focused on strategic partnerships.',
-            img: ShreyaM,
-        },
-        {
-            id: 11,
-            name: 'Mudar Bharmal',
-            role: 'Founder',
-            bio: 'Product visionary dedicated to solving complex marketing challenges.',
-            img: MudarB,
-        },
-        {
-            id: 12,
-            name: 'Madhuri Kurhade',
-            role: 'Founder',
-            bio: 'Operations expert ensuring seamless execution and growth.',
-            img: MadhuriK,
-        },
-        {
-            id: 1,
-            name: 'Vishal Agarwal',
-            role: 'Founder',
-            bio: 'With over 10 years of experience in AI and marketing technology, leading innovation.',
-            img: VishalA,
-        },
-        {
-            id: 2,
-            name: 'Vakesh Singh',
-            role: 'CTO',
-            bio: 'Expert in machine learning and data science, driving technical excellence.',
-            img: VakeshS,
-        },
-        {
-            id: 3,
-            name: 'Shashank Kumar',
-            role: 'CFO',
-            bio: 'Marketing strategist with a passion for customer success and growth.',
-            img: ShashankK,
-        },
-        {
-            id: 4,
-            name: 'Shreya Mehta',
-            role: 'Founder',
-            bio: 'Business development leader focused on strategic partnerships.',
-            img: ShreyaM,
-        },
-        {
-            id: 5,
-            name: 'Mudar Bharmal',
-            role: 'Founder',
-            bio: 'Product visionary dedicated to solving complex marketing challenges.',
-            img: MudarB,
-        },
-        {
-            id: 6,
-            name: 'Madhuri Kurhade',
-            role: 'Founder',
-            bio: 'Operations expert ensuring seamless execution and growth.',
-            img: MadhuriK,
-        },
-        {
-            id: 7,
-            name: 'Vishal Agarwal',
-            role: 'Founder',
-            bio: 'With over 10 years of experience in AI and marketing technology, leading innovation.',
-            img: VishalA,
-        },
-        {
-            id: 8,
-            name: 'Vakesh Singh',
-            role: 'CTO',
-            bio: 'Expert in machine learning and data science, driving technical excellence.',
-            img: VakeshS,
-        },
-        {
-            id: 9,
-            name: 'Shashank Kumar',
-            role: 'CFO',
-            bio: 'Marketing strategist with a passion for customer success and growth.',
-            img: ShashankK,
-        },
-        {
-            id: 10,
-            name: 'Shreya Mehta',
-            role: 'Founder',
-            bio: 'Business development leader focused on strategic partnerships.',
-            img: ShreyaM,
-        },
-        {
-            id: 11,
-            name: 'Mudar Bharmal',
-            role: 'Founder',
-            bio: 'Product visionary dedicated to solving complex marketing challenges.',
-            img: MudarB,
-        },
-        {
-            id: 12,
-            name: 'Madhuri Kurhade',
-            role: 'Founder',
-            bio: 'Operations expert ensuring seamless execution and growth.',
-            img: MadhuriK,
-        },
-
     ],
 }
 
@@ -240,7 +127,8 @@ export const team = {
 export const getstarted = {
     eyebrow: 'Ready to Transform Your Growth?',
     headline: [
-        'Add Intelligence. Unlock',
+        'Add Intelligence.',
+        'Unlock',
     ],
     highlighted: [
         'Retention',
