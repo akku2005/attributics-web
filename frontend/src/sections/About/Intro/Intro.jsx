@@ -4,7 +4,7 @@ import { motion } from 'motion/react';
 
 const Intro = () => {
     return (
-        <Block xpad='large' topMargin='small'>
+        <Block xpad='larger' topMargin='large'>
         <section id="about" className='h-full w-full'>
             {/* WHO ARE WE */}
             <motion.div 
@@ -14,7 +14,7 @@ const Intro = () => {
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.5, ease: "easeOut" }}
             >
-                <div className="grid grid-cols-1 lg:grid-cols-[4fr_6fr] gap-12 lg:gap-22 items-center hyphens-none">
+                <div className="grid grid-cols-1 lg:grid-cols-[6fr_6fr] gap-22 lg:gap-24 items-center hyphens-none">
                     <motion.div 
                         className="flex flex-col"
                         initial={{ opacity: 0, y: 15 }}
@@ -32,11 +32,12 @@ const Intro = () => {
                             {vision.whoAreWe.eyebrow}
                         </motion.p>
                         <motion.h2 
-                            className="section-title mb-2 lg:!text-[3.5rem]"
+                            className="section-title mb-6 lg:!text-[3.5rem]"
                             initial={{ opacity: 0, y: 10 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.4, delay: 0.3 }}
+                            style={{fontWeight: '600'}}
                         >
                             {vision.whoAreWe.headline}
                             <br />
@@ -46,7 +47,7 @@ const Intro = () => {
                             {vision.whoAreWe.description.map((item, idx) => (
                                 <motion.p 
                                     key={idx} 
-                                    className="section-description mb-4"
+                                    className="section-description mb-6"
                                     initial={{ opacity: 0, y: 10 }}
                                     whileInView={{ opacity: 1, y: 0 }}
                                     viewport={{ once: true }}

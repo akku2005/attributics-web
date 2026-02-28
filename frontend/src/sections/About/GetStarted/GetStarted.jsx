@@ -23,8 +23,8 @@ const AuditCTA = () => {
                     px-6
                     py-8
 
-                    lg:px-26
-                    lg:py-34
+                    lg:px-32
+                    lg:py-20
 
                     flex
                     flex-col

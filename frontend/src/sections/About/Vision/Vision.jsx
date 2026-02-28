@@ -5,11 +5,11 @@ import {CheckCircle} from 'lucide-react';
 
 const Vision = () => {
     return (
-        <Block xpad='large'>
+        <Block xpad='larger'>
         <section id="about" className='h-full w-full'>
             {/* VISION & MISSION */}
             <motion.div 
-                className="grid grid-cols-1 lg:grid-cols-[6fr_4fr] gap-12 lg:gap-22 items-center hyphens-none"
+                className="grid grid-cols-1 lg:grid-cols-[6fr_6fr] gap-22 lg:gap-24 items-center hyphens-none"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
@@ -50,13 +50,13 @@ const Vision = () => {
                     
                     {/* Vision card */}
                     <motion.div 
-                        className="rounded-[10px] flex flex-col"
+                        className="relative mb-8"
                         initial={{ opacity: 0, y: 10 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.4, delay: 0.4 }}
                     >
-                        <h2 className="vision-title mb-2">
+                        <h2 className="vision-title mb-4" style={{fontWeight: '600'}}>
                             {vision.vissionMission.vision.headline}
                         </h2>
                         <p className="section-description">
@@ -66,19 +66,19 @@ const Vision = () => {
 
                     {/* Mission card */}
                     <motion.div 
-                        className="rounded-[10px] flex flex-col justify-end"
+                        className="relative"
                         initial={{ opacity: 0, y: 10 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.4, delay: 0.5 }}
                     >
-                        <h2 className="vision-title mb-2">
+                        <h2 className="vision-title mb-4" style={{fontWeight: '600'}}>
                             {vision.vissionMission.mission.headline}
                         </h2>
-                        <p className="section-description mb-2">
+                        <p className="section-description mb-4">
                             {vision.vissionMission.mission.description[0]}
                         </p>
-                        <p className="section-description mb-2">
+                        <p className="section-description mb-4">
                             {vision.vissionMission.mission.description[1]}
                         </p>
                         <motion.ul 

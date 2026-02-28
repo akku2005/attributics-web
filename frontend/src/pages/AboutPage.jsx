@@ -18,10 +18,10 @@ const AboutPage = () => {
     <main style={{overflow: 'hidden'}}>
       <Suspense fallback={<GlobalLoader />}>
         <Intro />
-        <WhiteSpace height={reducedWhiteSpaceHeight} />
+        <WhiteSpace height={whiteSpaceHeight} />
 
         <Statement />
-        <WhiteSpace height={reducedWhiteSpaceHeight} />
+        <WhiteSpace height={whiteSpaceHeight} />
 
         <Vision />
         <WhiteSpace height={whiteSpaceHeight} />
