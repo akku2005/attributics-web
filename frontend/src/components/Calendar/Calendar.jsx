@@ -1,9 +1,9 @@
 import { motion } from 'motion/react';
 import { useEffect, useState } from "react";
 
-const GCalendarSrc = "https://calendar.app.google/rzaX9hegiiJ6j1tZ7"
+// const GCalendarSrc = "https://calendar.app.google/rzaX9hegiiJ6j1tZ7"
 // const GCalendarSrc = "https://calendar.google.com/calendar/embed?src=c_2492d85ba7a0b6af8c41aa75b11324c462c70b1295d0fa76763cf2ce072f8205@group.calendar.google.com&showTitle=0&mode=MONTH&bgcolor=%23FF6161&color=%2329527A"
-
+const GCalendarSrc="https://calendar.google.com/calendar/embed?src=c_2492d85ba7a0b6af8c41aa75b11324c462c70b1295d0fa76763cf2ce072f8205%40group.calendar.google.com&ctz=Asia%2FKolkata"
 const Calendar = () => {
     return (
         <>
