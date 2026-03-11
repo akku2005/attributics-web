@@ -90,9 +90,9 @@ const Blogs = () => {
 
     return (
         <>
-            <Block xpad="large" topMargin="none">
+            <Block xpad="medium" topMargin="none">
                 <section className="container relative">
-                    <div className="flex flex-col mb-16">
+                    <div className="flex flex-col mb-16 items-center text-center text-center">
                         <h2
                             className="section-title mb-6"
                             style={typography.title.XXL}
@@ -101,7 +101,7 @@ const Blogs = () => {
                         </h2>
                         <div className="flex items-center gap-4">
                             <p
-                                className="section-description max-w-3xl text-left"
+                                className="section-description max-w-2xl text-center"
                                 style={typography.desc.Normal}
                             >
                                 We help founders, startups, and businesses turn their ideas into reality through strategy, design, and collaboration.

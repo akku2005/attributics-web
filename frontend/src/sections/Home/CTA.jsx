@@ -1,9 +1,10 @@
 import Block from '../../components/layout/Block/Block';
 import Calendar from '../../components/Calendar/Calendar';
-import { CheckCircle2 } from '../../components/Icons/Icons';
 import { motion } from 'motion/react';
 import { cta } from '../../constants/home';
 import { typography } from '../../constants/global';
+
+import { CheckCircle2 } from 'lucide-react';
 
 const fadeUp = {
     hidden: { opacity: 0, y: 24 },
@@ -13,10 +14,6 @@ const fadeUp = {
         transition: { duration: 0.55, ease: [0.25, 0.1, 0.25, 1], delay },
     }),
 };
-
-const ctaTitleSize = 'clamp(2.4rem, 1.2rem + 3.8vw, 4.2rem)';
-const ctaChecklistHeadlineSize = 'clamp(0.95rem, 0.84rem + 0.45vw, 1.2rem)';
-const ctaChecklistItemSize = 'clamp(0.92rem, 0.84rem + 0.35vw, 1rem)';
 
 const CTA = () => {
     return (
@@ -68,7 +65,7 @@ const CTA = () => {
                         {cta.checklist.items.map((item, i) => (
                             <motion.span
                                 key={i}
-                                className="section-description flex flex-row gap-2 items-start"
+                                className="section-description flex flex-row gap-2 items-center"
                                 style={typography.desc.Normal}
                                 variants={fadeUp}
                                 custom={0.3 + i * 0.07}
@@ -76,7 +73,7 @@ const CTA = () => {
                                 whileInView="visible"
                                 viewport={{ once: true }}
                             >
-                                <CheckCircle2 className="shrink-0 mt-0.5" />
+                                <CheckCircle2  className="text-brand shrink-0" />
                                 {item}
                             </motion.span>
                         ))}

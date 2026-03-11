@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import Block from '../../../components/layout/Block/Block';
-import { MailIcon, MapPinIcon, PhoneIcon } from '../../../components/Icons/Icons';
 import { career, formLinks } from '../../../constants/contact';
+import { Mail } from 'lucide-react';
 
 const CareerForm = () => {
     return (
@@ -19,7 +19,7 @@ const CareerForm = () => {
 
                     <div className='flex gap-2 mt-4 flex-col'>
                         <div className='items-center flex flex-row gap-2'>
-                            <MailIcon />
+                            <Mail size={18} className='text-brand' />
                             <p className='section-description'>{career.details.email}</p>
                         </div>
                     </div>

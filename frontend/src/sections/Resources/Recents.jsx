@@ -41,21 +41,20 @@ const Recents = () => {
     return (
         <section className="bg-[#f7f7f7] pt-24 pb-42 border-t border-slate-100">
         <Block xpad="large" topMargin="none">
-        <div className="">
-                <div className="mb-16">
-                    <h2
-                        className="section-title mb-4"
-                        style={typography.title.XXL}
-                    >
-                    Recently <span className="highlight">Added</span>
-                    </h2>
-                    <p
-                        className="section-description"
-                        style={typography.desc.Normal}
-                    >
-                    We provide tips and resources from industry leaders. For real.
-                    </p>
-                </div>
+            <div className="mb-16 text-center">
+                <h2
+                    className="section-title mb-4"
+                    style={typography.title.XXL}
+                >
+                Recently <span className="highlight">Added</span>
+                </h2>
+                <p
+                    className="section-description"
+                    style={typography.desc.Normal}
+                >
+                We provide tips and resources from industry leaders. For real.
+                </p>
+            </div>
 
             <div className="grid md:grid-cols-3 gap-8">
                 {recentArticles.map((article, idx) => (
@@ -107,9 +106,8 @@ const Recents = () => {
                 </motion.div>
                 ))}
             </div>
-            </div>
-            </Block>
-            </section>
+        </Block>
+        </section>
     );
 };
 

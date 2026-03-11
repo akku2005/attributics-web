@@ -1,8 +1,8 @@
 import Block from '../../../components/layout/Block/Block';
-import { MailIcon, MapPinIcon, PhoneIcon } from '../../../components/Icons/Icons';
 import { audit } from '../../../constants/contact';
 import { motion } from 'motion/react';
 import Calendar from '../../../components/Calendar/Calendar';
+import { Mail, MapPin, Phone } from 'lucide-react';
 
 const AuditForm = () => {
     return (
@@ -51,9 +51,9 @@ const AuditForm = () => {
                         transition={{ duration: 0.5, delay: 0.4 }}
                     >
                         {[
-                            { Icon: PhoneIcon, text: audit.details.phone },
-                            { Icon: MailIcon, text: audit.details.email },
-                            { Icon: MapPinIcon, text: audit.details.location }
+                            { Icon: Phone, text: audit.details.phone },
+                            { Icon: Mail, text: audit.details.email },
+                            { Icon: MapPin, text: audit.details.location }
                         ].map((item, index) => (
                             <motion.div 
                                 key={index}
@@ -62,7 +62,7 @@ const AuditForm = () => {
                                 animate={{ opacity: 1, x: 0 }}
                                 transition={{ duration: 0.4, delay: 0.5 + (index * 0.1) }}
                             >
-                                <item.Icon />
+                                <item.Icon size={18} className='text-brand' />
                                 <p className='section-description'>{item.text}</p>
                             </motion.div>
                         ))}
