@@ -3,6 +3,7 @@ import { audit } from '../../../constants/contact';
 import { motion } from 'motion/react';
 import Calendar from '../../../components/Calendar/Calendar';
 import { Mail, MapPin, Phone } from 'lucide-react';
+import CalCom from '../../../components/CalCom/CalCom';
 
 const AuditForm = () => {
     return (
@@ -94,7 +95,8 @@ const AuditForm = () => {
                 </motion.div>
 
                 {/* Right Side - Calendar */}
-                <Calendar />
+                {/* <Calendar /> */}
+                <CalCom />
             </section>
         </Block>
     );

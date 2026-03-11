@@ -5,6 +5,7 @@ import { cta } from '../../constants/home';
 import { typography } from '../../constants/global';
 
 import { CheckCircle2 } from 'lucide-react';
+import CalCom from '../../components/CalCom/CalCom';
 
 const fadeUp = {
     hidden: { opacity: 0, y: 24 },
@@ -17,8 +18,8 @@ const fadeUp = {
 
 const CTA = () => {
     return (
-        <Block xpad='large'>
-            <section className="grid grid-cols-1 lg:grid-cols-[6fr_8fr] gap-10 sm:gap-12 lg:gap-16 items-center">
+        <Block xpad='medium'>
+            <section className="grid grid-cols-1 lg:grid-cols-[6fr_10fr] gap-10 sm:gap-12 lg:gap-8 flex items-center">
 
                 {/* Left: Text */}
                 <div className="flex flex-col">
@@ -88,7 +89,8 @@ const CTA = () => {
                     transition={{ duration: 0.6, delay: 0.15, ease: [0.25, 0.1, 0.25, 1] }}
                     className="w-full"
                 >
-                    <Calendar />
+                    {/* <Calendar /> */}
+                    <CalCom />
                 </motion.div>
 
             </section>
