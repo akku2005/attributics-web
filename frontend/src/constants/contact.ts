@@ -1,6 +1,5 @@
 // FORM LINKS
 export const formEndpoints = {
-    contactUs: 'contact',
     freeAudit: 'audit',
     career: 'career',
 }

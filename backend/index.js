@@ -494,12 +494,12 @@ const upload = multer({
 
 // ─── Email adapters ───────────────────────────────────────────────────────────
 // To swap providers, replace `activeMailer` with a different adapter.
-// Each adapter must implement: sendFormEmail({ formId, fields, submittedAt, attachments })
+// Each adapter must implement: sendFormEmail({ formId, fields, submittedAt, attachments, recipientEmail })
 // `attachments` is an array of multer file objects (may be empty).
 
 const smtpMailer = {
   name: "smtp",
-  async sendFormEmail({ formId, fields, submittedAt, attachments = [] }) {
+  async sendFormEmail({ formId, fields, submittedAt, attachments = [], recipientEmail }) {
     const transporter = nodemailer.createTransport({
       host: process.env.SMTP_HOST,
       port: Number(process.env.SMTP_PORT) || 587,
@@ -524,7 +524,7 @@ const smtpMailer = {
 
     await transporter.sendMail({
       from: `"Attributics Forms" <${process.env.SMTP_FROM}>`,
-      to: process.env.FORMS_RECIPIENT_EMAIL,
+      to: recipientEmail,
       subject: `New ${formId} submission`,
       text: `New submission from form: ${formId}\nSubmitted at: ${submittedAt}\n\n${fieldLines}`,
       html: buildEmailHtml(formId, fields, submittedAt, attachments),
@@ -599,6 +599,10 @@ const formLimiter = rateLimit({
 // ─── Helpers ──────────────────────────────────────────────────────────────────
 
 const SUBMISSIONS_DIR = path.join(process.cwd(), "submissions");
+const FORM_RECIPIENTS = {
+  career: process.env.FORMS_CAREER_RECIPIENT,
+  audit: process.env.FORMS_AUDIT_RECIPIENT,
+};
 
 function ensureFormDir(formId) {
   const dir = path.join(SUBMISSIONS_DIR, formId);
@@ -660,6 +664,12 @@ app.post(
       const { formId } = req.params;
       const { _honeypot, ...fields } = req.body;
       const attachments = req.files ?? [];
+      const recipientEmail = FORM_RECIPIENTS[formId];
+
+      if (!recipientEmail) {
+        console.log(`[forms] unknown formId rejected → ${formId}`);
+        return res.status(404).json({ error: "Unknown form id." });
+      }
 
       console.log(`[forms] incoming submission → formId=${formId}`);
       console.log(`[forms] ip=${req.ip}`);
@@ -719,7 +729,13 @@ app.post(
       console.log(`[forms] attempting to send email → ${formId}`);
 
       activeMailer
-        .sendFormEmail({ formId, fields, submittedAt, attachments })
+        .sendFormEmail({
+          formId,
+          fields,
+          submittedAt,
+          attachments,
+          recipientEmail,
+        })
         .then((result) => {
           console.log(`[forms] email sent successfully → ${formId}`);
           console.log(`[forms] mailer response:`, result);
