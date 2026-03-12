@@ -8,7 +8,7 @@ import { typography } from '../../constants/global';
 import { useEffect, useState } from 'react';
 
 const teamMemberNameSize = 'clamp(1.2rem, 1.06rem + 0.6vw, 1.5rem)';
-const teamMemberRoleSize = 'clamp(0.75rem, 0.69rem + 0.22vw, 0.8rem)';
+const teamMemberRoleSize = 'clamp(1rem, 0.69rem + 0.22vw, 1rem)';
 
 const Team = () => {
     return (

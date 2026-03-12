@@ -18,7 +18,7 @@ const fadeUp = {
 
 const CTA = () => {
     return (
-        <Block xpad='medium'>
+        <Block xpad='large'>
             <section className="grid grid-cols-1 lg:grid-cols-[6fr_10fr] gap-10 sm:gap-12 lg:gap-8 flex items-center">
 
                 {/* Left: Text */}
