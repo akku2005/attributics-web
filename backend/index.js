@@ -98,22 +98,46 @@ app.get("/api/blogs", (req, res) => {
   }
 });
 
-// GET /api/blogs/featured — get featured blog
+// GET /api/blogs/featured — get all featured blogs
 app.get("/api/blogs/featured", (req, res) => {
   try {
     const blogs = getBlogs();
-    const featured = blogs.find(
+    const featured = blogs.filter(
       (b) => b.featured === true || b.featured === "true"
     );
 
-    if (!featured) {
-      return res.status(404).json({ error: "No featured blog found" });
+    if (featured.length === 0) {
+      return res.status(404).json({ error: "No featured blogs found" });
     }
 
     res.json(featured);
   } catch (err) {
     console.error(err);
-    res.status(500).json({ error: "Failed to load featured blog" });
+    res.status(500).json({ error: "Failed to load featured blogs" });
+  }
+});
+
+// GET /api/blogs/recent — return the 3 most recently published blogs
+// NOTE: must be defined before /api/blogs/:slug so Express doesn't
+// treat "recent" as a slug parameter.
+app.get("/api/blogs/recent", (req, res) => {
+  try {
+    const blogs = getBlogs();
+
+    const recent = blogs
+      .filter((b) => b.publishedAt)
+      .sort((a, b) => new Date(b.publishedAt) - new Date(a.publishedAt))
+      .slice(0, 3);
+
+
+    if (recent.length === 0) {
+      return res.status(404).json({ error: "No published blogs found" });
+    }
+
+    res.json(recent);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: "Failed to load recent blogs" });
   }
 });
 
@@ -172,6 +196,8 @@ app.get("/api/blogs/:slug", (req, res) => {
     res.status(500).json({ error: "Failed to fetch blog" });
   }
 });
+
+
 
 // ─── Preview routes ───────────────────────────────────────────────────────────
 
@@ -344,27 +370,58 @@ function ensureFreshCaseStudyCache() {
   }
 }
 
+// Shared summary shape for case study list responses
+function caseStudySummary(data) {
+  return {
+    slug: data.slug,
+    title: data.title,
+    subtitle: data.subtitle,
+    client: data.client,
+    industry: data.industry,
+    timeline: data.timeline,
+    platform: data.platform,
+    heroImage: data.heroImage,
+    role: data.role,
+    featured: data.featured || false,
+    publishedAt: data.publishedAt,
+  };
+}
+
 // GET /api/case-studies — list all case studies (summary fields only)
 app.get("/api/case-studies", (req, res) => {
   try {
     ensureFreshCaseStudyCache();
 
-    const list = Array.from(caseStudyCache.values()).map(({ data }) => ({
-      slug: data.slug,
-      title: data.title,
-      subtitle: data.subtitle,
-      client: data.client,
-      industry: data.industry,
-      timeline: data.timeline,
-      platform: data.platform,
-      heroImage: data.heroImage,
-      role: data.role,
-    }));
+    const list = Array.from(caseStudyCache.values()).map(({ data }) =>
+      caseStudySummary(data)
+    );
 
     res.json(list);
   } catch (err) {
     console.error(err);
     res.status(500).json({ error: "Failed to load case studies" });
+  }
+});
+
+// GET /api/case-studies/featured — list all featured case studies
+// NOTE: must be defined before /api/case-studies/:slug so Express doesn't
+// treat "featured" as a slug parameter.
+app.get("/api/case-studies/featured", (req, res) => {
+  try {
+    ensureFreshCaseStudyCache();
+
+    const list = Array.from(caseStudyCache.values())
+      .filter(({ data }) => data.featured === true || data.featured === "true")
+      .map(({ data }) => caseStudySummary(data));
+
+    if (list.length === 0) {
+      return res.status(404).json({ error: "No featured case studies found" });
+    }
+
+    res.json(list);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: "Failed to load featured case studies" });
   }
 });
 

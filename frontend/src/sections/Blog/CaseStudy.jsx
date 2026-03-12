@@ -1,38 +1,79 @@
-import React, { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { motion } from 'motion/react';
 import { ArrowLeft, ArrowUpRight } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
+import { caseStudies as localCaseStudies } from '../../constants/resources';
+import Block from '../../components/layout/Block';
 
-export default function CaseStudyDetail({ caseStudy }) {
+const API_URL = import.meta.env.VITE_API_URL;
+
+export default function CaseStudyDetail({ slug }) {
+  const navigate = useNavigate();
+  const [caseStudy, setCaseStudy] = useState(null);
+  const [loading, setLoading] = useState(true);
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
+  useEffect(() => {
+    let isMounted = true;
+    const fetchCaseStudy = async () => {
+      try {
+        const res = await fetch(`${API_URL}/api/case-studies/${slug}`);
+        if (res.ok) {
+          const data = await res.json();
+          if (isMounted) setCaseStudy(data);
+          return;
+        }
+      } catch (err) {
+        console.error(err);
+      }
+
+      const fallback = localCaseStudies.find(
+        (study) => study.id === slug || study.slug === slug
+      );
+      if (isMounted) setCaseStudy(fallback || null);
+      setLoading(false);
+    };
+
+    fetchCaseStudy();
+    return () => {
+      isMounted = false;
+    };
+  }, [slug]);
+
+  useEffect(() => {
+    if (caseStudy) setLoading(false);
+  }, [caseStudy]);
+
+  const onBack = () => navigate('/resources');
+
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-white text-zinc-900 font-sans pb-24" />
+    );
+  }
+
+  if (!caseStudy) {
+    return (
+      <div className="min-h-screen bg-white text-zinc-900 font-sans pb-24 flex items-center justify-center">
+        <p className="text-sm text-zinc-500">Case study not found.</p>
+      </div>
+    );
+  }
+
   return (
+    <Block xpad='large' topMargin='small'>
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -20 }}
       transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-      className="min-h-screen bg-white text-zinc-900 font-sans pb-24"
+      className="min-h-screen bg-white text-zinc-900 font-sans pb-0"
     >
-      {/* Navigation */}
-      <nav className="fixed top-0 left-0 w-full bg-white/80 backdrop-blur-md z-50 border-b border-zinc-100">
-        <div className="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
-          <button
-            onClick={onBack}
-            className="group flex items-center gap-2 text-sm font-medium hover:text-orange-500 transition-colors"
-          >
-            <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
-            Back to Work
-          </button>
-          <div className="text-sm font-bold tracking-widest uppercase text-zinc-900">
-            Portfolio
-          </div>
-        </div>
-      </nav>
-
       {/* Hero Section */}
-      <header className="pt-40 pb-20 px-6 max-w-6xl mx-auto">
+      <header className="pt-0 pb-20 px-6 max-w-6xl mx-auto">
         <div className="max-w-4xl">
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
@@ -89,7 +130,7 @@ export default function CaseStudyDetail({ caseStudy }) {
           <img
             src={caseStudy.heroImage}
             alt={caseStudy.title}
-            className="w-full h-full object-cover"
+            className="w-full h-auto object-cover"
             referrerPolicy="no-referrer"
           />
         </div>
@@ -167,7 +208,7 @@ export default function CaseStudyDetail({ caseStudy }) {
         )}
 
         {/* Results */}
-        <div className="bg-zinc-50 rounded-3xl p-12 md:p-20 mb-32">
+        <div className="bg-zinc-50 rounded-3xl p-12 md:p-20 mb-0">
           <h2 className="text-3xl font-bold mb-12 text-center">The Impact</h2>
           <div className="grid md:grid-cols-3 gap-12 text-center">
             {caseStudy.results.map((result, index) => (
@@ -184,7 +225,7 @@ export default function CaseStudyDetail({ caseStudy }) {
         </div>
 
         {/* Next Project CTA */}
-        <div className="text-center border-t border-zinc-200 pt-32">
+        {/* <div className="text-center border-t border-zinc-200 pt-32">
           <p className="text-sm font-bold tracking-widest uppercase text-zinc-400 mb-6">Next Project</p>
           <button
             onClick={onBack}
@@ -193,8 +234,9 @@ export default function CaseStudyDetail({ caseStudy }) {
             View More Work
             <ArrowUpRight className="w-10 h-10 md:w-12 md:h-12 group-hover:translate-x-2 group-hover:-translate-y-2 transition-transform" />
           </button>
-        </div>
+        </div> */}
       </main>
     </motion.div>
+    </Block>
   );
 }
