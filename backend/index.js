@@ -6,7 +6,12 @@ const matter = require("gray-matter");
 const marked = require("marked");
 
 const app = express();
-app.use(cors());
+app.use(cors({
+  origin: [
+    "http://localhost:5173",
+    "https://attributics-demo.vercel.app"
+  ]
+}));
 app.use(express.json({ limit: "2mb" }));
 
 // ─── Shared Helpers ───────────────────────────────────────────────────────────
@@ -445,7 +450,6 @@ app.get("/api/case-studies/:slug", (req, res) => {
 });
 
 // ─── Start ────────────────────────────────────────────────────────────────────
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log("Server running on http://localhost:5000");
+app.listen(3000, () => {
+  console.log("Server running on http://localhost:3000");
 });
